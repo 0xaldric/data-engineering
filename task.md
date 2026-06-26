@@ -1,50 +1,50 @@
 # 📋 task.md — Advanced DE Track (overnight loop)
 
 > Loop tự động mỗi 30 phút (overnight, **MAX OUTPUT**). **Notes-first** tiếng Việt, notes trong `notes/advanced/`.
-> ✅ Đã hoàn thành toàn bộ [`ADVANCED.md`](ADVANCED.md) (6 module A–F). Nay sang phần **ĐÀO SÂU** (Extra): bài tập SQL mới, case study system design mới, deep-dive thêm.
+> ✅ ADVANCED.md (6 module A–F) + Extra G xong. Tiếp tục **ĐÀO SÂU** (Extra H...): case mới, SQL set mới, deep-dive engine.
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
-2. **Làm CÀNG NHIỀU task càng tốt** (nhắm 3–5 note/lượt) giữ chất lượng. Mỗi task = 1 note đầy đủ tiếng Việt trong `notes/advanced/`: khái niệm + "tại sao", sơ đồ/bảng, snippet, cạm bẫy, checklist + "tự mò". Bài tập: **đề + lời giải + giải thích**.
+2. **Làm CÀNG NHIỀU task càng tốt** (nhắm 3–5 note/lượt) giữ chất lượng. Mỗi task = 1 note đầy đủ tiếng Việt: khái niệm + "tại sao", sơ đồ/bảng, snippet, cạm bẫy, checklist + "tự mò". Bài tập: **đề + lời giải + giải thích**.
 3. Mỗi task xong: `[ ]`→`[x]` + dòng vào `PROGRESS.md`.
 4. **Cuối lượt: commit + push** (KHÔNG Claude/co-author):
    ```
    git add -A && git commit -m "<mô tả ngắn>" && git push
    ```
-   Commit message TUYỆT ĐỐI không có "Co-Authored-By"/"Generated với Claude". Push lỗi → commit local, lượt sau push.
-5. **Khi tất cả `[x]`**: sinh batch "Extra" tiếp theo (đào sâu): SQL set mới, case study mới (chọn domain chưa làm: log analytics, gaming, healthcare, IoT khác, marketplace...), hoặc deep-dive chủ đề. Cập nhật `notes/advanced/00-INDEX.md` phần Extra. Giữ PROTOCOL. Không lặp note đã có.
+   Commit message TUYỆT ĐỐI không có "Co-Authored-By"/"Generated with Claude". Push lỗi → commit local, lượt sau push.
+5. **Khi tất cả `[x]`**: sinh batch Extra tiếp theo (I, J...): case domain chưa làm, SQL set mới, deep-dive engine/concept. Cập nhật `00-INDEX.md`. Giữ PROTOCOL. Không lặp note đã có.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`.
 
-**Batch hiện tại:** #17 — Extra G: Deepening (SQL set 3-4, case mới, DS&A cho DE)
-**Nguồn:** đào sâu (post-ADVANCED.md)
+**Batch hiện tại:** #18 — Extra H: case mới + engine deep-dive + mock interview
+**Nguồn:** đào sâu
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] G01 — SQL Interview Problems — Set 3 (advanced)
-- **Note:** `notes/advanced/g01-sql-interview-3.md`. 10 bài khó: nth-highest per group, gaps nâng cao, conditional running total, pivot dynamic (giải thích giới hạn), date spine + fill gaps, top-N with ties, recursive (hierarchy/path), self-join inequality. Đề + lời giải + tư duy.
+### [ ] H01 — SQL Interview Problems — Set 5 (window edge cases)
+- **Note:** `notes/advanced/h01-sql-interview-5.md`. 10 bài mẹo: frame edge (LAST_VALUE sai frame), RANGE vs ROWS với ties, ignore nulls, qualify, lag với default, running distinct (khó), median chính xác, gap-fill forward (carry-forward last value), pivot conditional nâng cao. Đề + lời giải.
 
-### [x] G02 — SQL Interview Problems — Set 4 (analytics-heavy)
-- **Note:** `notes/advanced/g02-sql-interview-4.md`. 10 bài analytics: retention curve, cohort LTV, funnel ordered (time-bound), market basket, churn definition, MAU/DAU stickiness, percentile/median per group, sessionize + metrics. Đề + lời giải.
+### [ ] H02 — Case: Marketplace / Two-sided Platform
+- **Note:** `notes/advanced/h02-case-marketplace.md`. Như Airbnb/eBay/Etsy: buyer + seller, listing, search ranking, transaction, GMV, take rate, supply-demand matching, review/trust, fraud. Hai phía analytics. Khung [[c01-system-design-framework]].
 
-### [x] G03 — Case: Log Analytics / Observability Platform
-- **Note:** `notes/advanced/g03-case-log-analytics.md`. Thu thập log/metric/trace khối lượng khổng lồ (như Datadog/ELK): ingest, parse, index, retention tiered, search, alerting; OLAP store (ClickHouse/Druid); cardinality explosion. Khung [[c01-system-design-framework]].
+### [ ] H03 — Case: SaaS / Subscription Metrics Platform
+- **Note:** `notes/advanced/h03-case-saas-metrics.md`. Metrics SaaS: MRR/ARR, churn (logo vs revenue), expansion/contraction, LTV/CAC, cohort retention; subscription events (CDC từ billing), SCD cho plan changes; báo cáo nhà đầu tư chính xác. Liên hệ [[18-scd]], [[a03-analytics-patterns]].
 
-### [x] G04 — Case: Gaming Telemetry Platform
-- **Note:** `notes/advanced/g04-case-gaming.md`. Telemetry game (player events, sessions, matchmaking, economy): real-time leaderboard, A/B test, anti-cheat, player retention; high write, sessionization, real-time + batch.
+### [ ] H04 — Case: Social Graph / Network Data
+- **Note:** `notes/advanced/h04-case-social-graph.md`. Đồ thị xã hội (follow/friend): graph storage, friend-of-friend, feed generation (fan-out write vs read), graph DB vs relational, recursive traversal ở scale, influencer skew. Liên hệ [[a02-sql-pivot-hierarchical]] recursive.
 
-### [ ] G05 — Case: Healthcare Data Platform (compliance-heavy)
-- **Note:** `notes/advanced/g05-case-healthcare.md`. Dữ liệu y tế: HIPAA/PII cực nhạy, audit, lineage, consent, de-identification; HL7/FHIR; bitemporal (lịch sử bệnh án); chính xác + governance là vua. Liên hệ [[64-governance-pii]], [[e04-bitemporal]].
+### [ ] H05 — Deep-dive: Query Engines (Trino/Presto) & Federation
+- **Note:** `notes/advanced/h05-trino-federation.md`. Trino/Presto kiến trúc (coordinator/worker, MPP, không storage); query federation (join across nguồn: S3+MySQL+Kafka); connector; so với Spark SQL; khi nào dùng. Tối ưu query trên lake.
 
-### [ ] G06 — Case: ML Feature Platform & Data for LLM/RAG
-- **Note:** `notes/advanced/g06-case-ml-llm-data.md`. Data cho ML/AI: feature store (online/offline, point-in-time — [[c09-case-recsys]]); data cho **LLM/RAG** (chunking, embedding, **vector DB**, retrieval pipeline, freshness); vai trò DE trong AI stack.
+### [ ] H06 — Deep-dive: Real-time OLAP (ClickHouse/Druid/Pinot)
+- **Note:** `notes/advanced/h06-realtime-olap.md`. Vì sao cần OLAP store riêng (dashboard sub-giây trên tỉ row); ClickHouse (columnar, vectorized, MergeTree), Druid (segment, real-time ingest), Pinot; so warehouse; khi nào dùng; pre-aggregation. Liên hệ [[g03-case-log-analytics]].
 
-### [ ] G07 — Data Structures & Algorithms cho DE
-- **Note:** `notes/advanced/g07-dsa-for-de.md`. Cấu trúc/giải thuật DE thực dùng: hashing & hash join, sorting & external sort, partitioning, merge, **B-tree vs LSM-tree** (storage engine), heap cho top-K. Vì sao quan trọng (Spark join, DB index).
+### [ ] H07 — Mock Interview: full DE interview walkthrough
+- **Note:** `notes/advanced/h07-mock-interview.md`. Mô phỏng 1 vòng phỏng vấn DE đầy đủ: SQL coding (2 bài + lời giải nói), system design (1 case đi qua framework live), conceptual (5 câu), behavioral (2 STAR). Như kịch bản thật, kèm "tips người phỏng vấn đánh giá gì".
 
-### [ ] G08 — Probabilistic Data Structures & Approximate Queries
-- **Note:** `notes/advanced/g08-probabilistic-ds.md` + cập nhật `00-INDEX.md` (Extra). **Bloom filter** (membership, dùng trong join/storage skip), **HyperLogLog** (approx count distinct — vì sao COUNT DISTINCT đắt), **t-digest/quantile sketch** (approx percentile), Count-Min sketch. Khi nào chấp nhận approx để scale.
+### [ ] H08 — Extra H review + index
+- **Note:** `notes/advanced/00-extraH-summary.md` + cập nhật `00-INDEX.md`. Tổng kết Extra H + self-assessment tổng. Sẵn sàng Extra I.
 
 ---
-*Hết batch → sinh Extra H (case mới: marketplace, fintech khác, social graph...; hoặc SQL set 5, deep-dive khác).*
+*Hết batch → sinh Extra I (case: tài chính/ngân hàng, logistics/supply-chain, video streaming...; SQL set 6; deep-dive: data quality framework, Spark tuning thực chiến...).*

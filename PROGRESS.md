@@ -180,3 +180,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 17:30] G02 — SQL interview set 4 analytics (retention curve, cohort LTV, churn, DAU/MAU, percent_rank) — `notes/advanced/g02-sql-interview-4.md`
 - [2026-06-26 17:30] G03 — Case log analytics/observability (Kafka buffer, ClickHouse/ES, tiered retention, cardinality explosion) — `notes/advanced/g03-case-log-analytics.md`
 - [2026-06-26 17:30] G04 — Case gaming telemetry (Redis leaderboard, anti-cheat stateful, economy ledger, retention) — `notes/advanced/g04-case-gaming.md`
+- [2026-06-26 18:00] G05 — Case healthcare (HIPAA/PHI, de-identify, audit, FHIR, bitemporal bệnh án) — `notes/advanced/g05-case-healthcare.md`
+- [2026-06-26 18:00] G06 — Case ML feature platform & data cho LLM/RAG (feature store point-in-time, chunk/embed/vector DB, incremental) — `notes/advanced/g06-case-ml-llm-data.md`
+- [2026-06-26 18:00] G07 — DS&A cho DE (hash join, external sort, B-tree vs LSM-tree, heap top-K) — `notes/advanced/g07-dsa-for-de.md`
+- [2026-06-26 18:00] G08 — Probabilistic DS (HyperLogLog, bloom filter, t-digest, count-min; approx query) — `notes/advanced/g08-probabilistic-ds.md`. **HOÀN THÀNH EXTRA G (8/8).**

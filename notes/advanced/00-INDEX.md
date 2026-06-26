@@ -21,7 +21,10 @@
 [f01 testing strategy](f01-testing-strategy.md) · [f02 reliability/SRE](f02-reliability-sre.md) · [f03 modern data stack](f03-modern-data-stack.md) · [f04 cost cases](f04-cost-cases.md) · [f05 data mesh](f05-data-mesh.md) · [f06 DataOps](f06-dataops.md) · [f07 career](f07-career-roadmap.md)
 
 ## 🔭 Phần đào sâu (Extra — sau Module F)
-Loop tiếp tục sinh: bộ bài tập SQL mới (set 3+), case study system design mới, deep-dive thêm. Xem PROGRESS.md.
+### Extra G — Deepening 1
+[g01 SQL set 3](g01-sql-interview-3.md) · [g02 SQL set 4](g02-sql-interview-4.md) · [g03 log analytics](g03-case-log-analytics.md) · [g04 gaming](g04-case-gaming.md) · [g05 healthcare](g05-case-healthcare.md) · [g06 ML/LLM-RAG data](g06-case-ml-llm-data.md) · [g07 DS&A cho DE](g07-dsa-for-de.md) · [g08 probabilistic DS](g08-probabilistic-ds.md)
+
+*(Loop tiếp tục sinh Extra H, I... — case mới, SQL set mới, deep-dive. Xem PROGRESS.md.)*
 
 ## Cách dùng Track 2
 - Ôn phỏng vấn: Module A (SQL coding) + B (Q&A) + C (system design) + B07 (behavioral).
