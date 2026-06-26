@@ -170,3 +170,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 16:30] F02 — Reliability & incident mgmt SRE (SLI/SLO/error budget, incident lifecycle, runbook, blameless postmortem) — `notes/advanced/f02-reliability-sre.md`
 - [2026-06-26 16:30] F03 — Modern data stack & chọn tool (bản đồ MDS, build vs buy, tiêu chí) — `notes/advanced/f03-modern-data-stack.md`
 - [2026-06-26 16:30] F04 — Cost optimization case studies (4 case số liệu thật, quy trình FinOps audit) — `notes/advanced/f04-cost-cases.md`
+- [2026-06-26 17:00] F05 — Data mesh & team topology (4 nguyên tắc, data product, khi nào KHÔNG mesh) — `notes/advanced/f05-data-mesh.md`
+- [2026-06-26 17:00] F06 — DataOps & CI/CD nâng cao (automation, version everything, blue-green data deploy) — `notes/advanced/f06-dataops.md`
+- [2026-06-26 17:00] F07 — Career roadmap (junior→staff, T-shaped, nhánh nghề, AI/LLM tác động) — `notes/advanced/f07-career-roadmap.md`
+- [2026-06-26 17:00] F08 — Module F review + Track 2 INDEX (A–F). **HOÀN THÀNH MODULE F + TOÀN BỘ ADVANCED.md (6 module).** — `notes/advanced/00-moduleF-summary.md`, `notes/advanced/00-INDEX.md`
