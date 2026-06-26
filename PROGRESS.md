@@ -113,3 +113,8 @@ Nhật ký các task đã hoàn thành. Mỗi dòng: `[ngày giờ] Txxx — mô
 
 ## 🎓 CURRICULUM HOÀN TẤT — 9/9 PHASE (toàn bộ ROADMAP)
 Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9: notes-first (theo yêu cầu user). Tổng 68 note chủ đề + 10 note tổng kết. Index: `notes/00-COURSE-COMPLETE.md`.
+
+## Track 2 (Advanced) — Batch #11: Module A SQL Mastery — NOTES-FIRST (overnight loop)
+- [2026-06-26 12:00] A01 — Advanced SQL: gaps & islands, sessionization, frame ROWS/RANGE/GROUPS — `notes/advanced/a01-sql-gaps-islands.md`
+- [2026-06-26 12:00] A02 — Advanced SQL: pivot/unpivot, recursive hierarchical, dedup strategies — `notes/advanced/a02-sql-pivot-hierarchical.md`
+- [2026-06-26 12:00] A03 — Analytics patterns: funnel, cohort/retention, RFM — `notes/advanced/a03-analytics-patterns.md`
