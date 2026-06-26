@@ -1,49 +1,54 @@
 # 📋 task.md — Advanced DE Track (overnight loop)
 
-> Loop tự động mỗi 30 phút (overnight, chế độ **MAX OUTPUT**). Nguồn chủ đề: [`ADVANCED.md`](ADVANCED.md). **Notes-first** tiếng Việt, notes trong `notes/advanced/`.
+> Loop tự động mỗi 30 phút (overnight, **MAX OUTPUT**). Nguồn: [`ADVANCED.md`](ADVANCED.md). **Notes-first** tiếng Việt, notes trong `notes/advanced/`.
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
-2. **Làm CÀNG NHIỀU task càng tốt trong lượt** (overnight max-output — nhắm 3–5 note/lượt) trong khi vẫn **giữ chất lượng**. Mỗi task = 1 note đầy đủ (tiếng Việt) trong `notes/advanced/`: khái niệm + "tại sao", sơ đồ/bảng, snippet minh hoạ, cạm bẫy, checklist + "tự mò". Task interview/bài tập: **đề + lời giải + giải thích**.
-3. Mỗi task xong: đổi `[ ]` → `[x]` + thêm dòng vào `PROGRESS.md`.
-4. **Cuối mỗi lượt: commit + push** (KHÔNG kèm Claude/co-author):
+2. **Làm CÀNG NHIỀU task càng tốt** (nhắm 3–5 note/lượt) giữ chất lượng. Mỗi task = 1 note đầy đủ tiếng Việt trong `notes/advanced/`: khái niệm + "tại sao", sơ đồ/bảng, snippet minh hoạ, cạm bẫy, checklist + "tự mò". Case study: nêu requirements → kiến trúc (sơ đồ) → lựa chọn & trade-off → scale.
+3. Mỗi task xong: `[ ]`→`[x]` + dòng vào `PROGRESS.md`.
+4. **Cuối lượt: commit + push** (KHÔNG Claude/co-author):
    ```
    git add -A && git commit -m "<mô tả ngắn>" && git push
    ```
-   Commit message TUYỆT ĐỐI không có "Co-Authored-By" / "Generated with Claude". Push lỗi mạng → commit local, lượt sau push.
-5. **Khi tất cả `[x]`**: sinh batch mới (6–10 task) từ **Module tiếp theo trong `ADVANCED.md`**, ghi đè "BATCH HIỆN TẠI", cập nhật header. Giữ PROTOCOL. Hết module → đào sâu thêm (bài tập/case mới).
+   Commit message TUYỆT ĐỐI không có "Co-Authored-By"/"Generated with Claude". Push lỗi → commit local, lượt sau push.
+5. **Khi tất cả `[x]`**: sinh batch mới (6–10) từ **Module tiếp theo trong `ADVANCED.md`**, ghi đè "BATCH HIỆN TẠI", cập nhật header. Hết module → đào sâu thêm.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #12 — Module B: DE Interview Prep (conceptual)
+**Batch hiện tại:** #13 — Module C: System Design for Data Engineering
 **Nguồn:** ADVANCED.md
+
+> Mỗi case theo khung: **Requirements** (functional + scale/latency) → **Data model** → **Pipeline** (ingest→process→store→serve, batch/stream) → **Tech choices + trade-off** → **Scale & failure** → **DQ/observability**.
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] B01 — Spark & Big Data Q&A
-- **Note:** `notes/advanced/b01-spark-qa.md`. 15+ câu phỏng vấn + đáp án: lazy/action, narrow/wide, shuffle, partition, broadcast vs sort-merge, Catalyst/Tungsten/AQE, cache, skew, OOM, small files, RDD vs DataFrame. Link [[30-spark-model]]..[[33-spark-tuning]].
+### [ ] C01 — Framework thiết kế hệ thống DE ⭐
+- **Note:** `notes/advanced/c01-system-design-framework.md`. Khung 6 bước trả lời system design interview cho DE; câu hỏi làm rõ requirements (volume/velocity/latency/SLA/consistency); batch vs stream vs lambda/kappa; cách trình bày & các trục đánh đổi (cost/latency/complexity).
 
-### [x] B02 — Streaming & Kafka Q&A
-- **Note:** `notes/advanced/b02-kafka-qa.md`. 15+ câu: partition/key/offset, consumer group, delivery semantics, exactly-once, watermark/late data, windowing, retention vs compaction, CDC, Lambda vs Kappa, backpressure. Link [[46-kafka-core]]..[[52-lambda-kappa]].
+### [ ] C02 — Case: E-commerce Analytics Platform
+- **Note:** `notes/advanced/c02-case-ecommerce.md`. Thiết kế nền tảng phân tích bán hàng (như project đã build nhưng quy mô lớn): ingest đa nguồn → lakehouse medallion → dbt → BI; near-real-time inventory; scale tới hàng tỉ event.
 
-### [x] B03 — Warehousing & dbt Q&A
-- **Note:** `notes/advanced/b03-dbt-qa.md`. 15+ câu: ELT vs ETL, materializations, ref/source/DAG, tests (relationships vì sao quan trọng), snapshots SCD2, incremental strategies, macros, exposures, slim CI. Link Phase 3 notes.
+### [ ] C03 — Case: Real-time Fraud Detection ⭐
+- **Note:** `notes/advanced/c03-case-fraud.md`. Phát hiện gian lận giao dịch real-time: Kafka → stream processing (Flink, stateful + windowed features) → model scoring → block/alert ms; exactly-once, late data, feature store.
 
-### [x] B04 — Orchestration & Reliability Q&A
-- **Note:** `notes/advanced/b04-orchestration-qa.md`. 15+ câu: DAG, idempotency (vì sao sống còn), execution_date/data_interval, catchup/backfill, XCom limits, retries/SLA, trigger rules, Airflow vs Dagster vs Prefect. Link Phase 5.
+### [ ] C04 — Case: IoT / Sensor Data Platform
+- **Note:** `notes/advanced/c04-case-iot.md`. Hàng triệu sensor gửi telemetry: ingest tải cao (Kafka/Kinesis), time-series storage, downsampling/rollup, edge vs cloud, out-of-order data, retention.
 
-### [x] B05 — Cloud & Infra Q&A
-- **Note:** `notes/advanced/b05-cloud-qa.md`. 15+ câu: S3 không phải filesystem, partition layout, IAM least privilege, Athena bytes-scanned, EMR vs Glue, Terraform state, Docker layer cache, K8s cho data, CI/CD cho dbt. Link Phase 7.
+### [ ] C05 — Case: Ride-sharing Data Platform
+- **Note:** `notes/advanced/c05-case-ridesharing.md`. Như Uber: trip events, geospatial, surge pricing real-time, ETA, driver-rider matching analytics; lambda/kappa, CDC từ OLTP, lakehouse.
 
-### [ ] B06 — Data Modeling Q&A (sâu)
-- **Note:** `notes/advanced/b06-modeling-qa.md`. 15+ câu sâu hơn A07: grain, fan-out, SCD types & khi nào, fact types & additivity, conformed dimension, surrogate vs natural key, normalize vs denormalize, Data Vault sơ lược, slowly changing fact. Link Phase 2.
+### [ ] C06 — Case: Clickstream / Social Media Analytics
+- **Note:** `notes/advanced/c06-case-clickstream.md`. Tracking event web/app khối lượng khổng lồ: SDK→collector→Kafka→stream+batch; sessionization, funnel/retention ở scale; schema evolution; sampling; One Big Table vs star.
 
-### [ ] B07 — Behavioral & Scenario (STAR)
-- **Note:** `notes/advanced/b07-behavioral-star.md`. Phương pháp **STAR** (Situation/Task/Action/Result); 10 câu behavioral DE hay gặp (pipeline lỗi production, dữ liệu sai, xung đột stakeholder, tối ưu chi phí, deadline...) + khung trả lời mẫu; câu hỏi nên hỏi ngược nhà tuyển dụng.
+### [ ] C07 — Case: Fintech Ledger + Reconciliation ⭐
+- **Note:** `notes/advanced/c07-case-fintech.md`. Sổ cái giao dịch tài chính: **chính xác tuyệt đối** (không mất/trùng tiền), idempotency, exactly-once, audit/immutability, reconciliation đối soát, double-entry, compliance.
 
-### [ ] B08 — "Explain like senior" + Module B review
-- **Note:** `notes/advanced/b08-explain-senior.md` + `notes/advanced/00-moduleB-summary.md`. Giải thích SÂU 10 khái niệm hay bị đào (idempotency, exactly-once, shuffle, SCD2, partitioning, CAP, ELT, lineage, backfill, watermark) ở mức "senior trả lời". + tổng kết Module B. Sẵn sàng sinh Batch #13 (Module C: System Design).
+### [ ] C08 — Case: Ad-tech / Real-time Bidding
+- **Note:** `notes/advanced/c08-case-adtech.md`. RTB: latency cực thấp (<100ms), khối lượng cực lớn, impression/click/conversion join (attribution), budget pacing, fraud, lambda architecture.
+
+### [ ] C09 — Case: Recommendation Pipeline + Module C review
+- **Note:** `notes/advanced/c09-case-recsys.md` + `notes/advanced/00-moduleC-summary.md`. Data pipeline cho hệ gợi ý: feature engineering, **feature store** (online/offline), training data, batch vs real-time features, feedback loop. + tổng kết Module C. Sẵn sàng sinh Batch #14 (Module D: Tool deep-dives).
 
 ---
-*Hết batch → sinh Batch #13 từ Module C (System Design) trong ADVANCED.md.*
+*Hết batch → sinh Batch #14 từ Module D (ADVANCED.md).*

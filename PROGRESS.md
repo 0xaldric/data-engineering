@@ -130,3 +130,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 13:00] B03 — Warehousing & dbt Q&A — `notes/advanced/b03-dbt-qa.md`
 - [2026-06-26 13:00] B04 — Orchestration & Reliability Q&A — `notes/advanced/b04-orchestration-qa.md`
 - [2026-06-26 13:00] B05 — Cloud & Infra Q&A — `notes/advanced/b05-cloud-qa.md`
+- [2026-06-26 13:30] B06 — Data modeling Q&A sâu (grain/fan-out/SCD/additivity/conformed/Data Vault/late-arriving/bridge) — `notes/advanced/b06-modeling-qa.md`
+- [2026-06-26 13:30] B07 — Behavioral & scenario (STAR + 10 câu + hỏi ngược) — `notes/advanced/b07-behavioral-star.md`
+- [2026-06-26 13:30] B08 — "Explain like senior" 10 khái niệm sâu (idempotency/exactly-once/shuffle/SCD2/CAP/...) — `notes/advanced/b08-explain-senior.md`
+- [2026-06-26 13:30] B08b — Module B review. **HOÀN THÀNH MODULE B (8/8).** — `notes/advanced/00-moduleB-summary.md`
