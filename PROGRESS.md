@@ -152,3 +152,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 15:00] D02 — dbt advanced (semantic layer/metrics, packages, project lớn, slim CI, contracts) — `notes/advanced/d02-dbt-advanced.md`
 - [2026-06-26 15:00] D03 — Kafka internals (log segments, page cache/zero-copy, replication/ISR/HW, EOS sâu, tuning) — `notes/advanced/d03-kafka-internals.md`
 - [2026-06-26 15:00] D04 — Snowflake deep (3 lớp, virtual warehouse, micro-partition/pruning, clustering, zero-copy clone, tối ưu chi phí) — `notes/advanced/d04-snowflake.md`
+- [2026-06-26 15:30] D05 — BigQuery deep (Dremel/slot/Colossus, bytes-scanned, partition+cluster, MV) — `notes/advanced/d05-bigquery.md`
+- [2026-06-26 15:30] D06 — Airflow advanced (dynamic DAG, deferrable, TaskGroup, datasets, scale) — `notes/advanced/d06-airflow-advanced.md`
+- [2026-06-26 15:30] D07 — Iceberg deep (metadata layers, hidden+partition evolution, catalog, vs Delta) — `notes/advanced/d07-iceberg.md`
+- [2026-06-26 15:30] D08 — Module D review. **HOÀN THÀNH MODULE D (8/8).** — `notes/advanced/00-moduleD-summary.md`

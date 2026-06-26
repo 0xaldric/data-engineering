@@ -11,39 +11,33 @@
    git add -A && git commit -m "<mô tả ngắn>" && git push
    ```
    Commit message TUYỆT ĐỐI không có "Co-Authored-By"/"Generated with Claude". Push lỗi → commit local, lượt sau push.
-5. **Khi tất cả `[x]`**: sinh batch mới (6–10) từ **Module tiếp theo trong `ADVANCED.md`**, ghi đè "BATCH HIỆN TẠI", cập nhật header. Hết module → đào sâu thêm.
+5. **Khi tất cả `[x]`**: sinh batch mới (6–10) từ **Module tiếp theo trong `ADVANCED.md`**, ghi đè "BATCH HIỆN TẠI", cập nhật header. **Hết Module F → đào sâu thêm** (bài tập SQL mới, case study system design mới) bất kỳ chủ đề nào.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #14 — Module D: Advanced Tool Deep-dives
+**Batch hiện tại:** #15 — Module E: Advanced Data Modeling
 **Nguồn:** ADVANCED.md
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] D01 — Spark Internals deep ⭐
-- **Note:** `notes/advanced/d01-spark-internals.md`. Memory management (execution vs storage, unified memory, spill), Tungsten (codegen, off-heap, columnar), AQE sâu (coalesce shuffle, skew join, dynamic switch), đọc Spark UI debug job chậm (stage/task/SQL/spill). Sâu hơn [[33-spark-tuning]].
+### [ ] E01 — Data Vault 2.0 ⭐
+- **Note:** `notes/advanced/e01-data-vault.md`. Hub (business key) / Link (quan hệ) / Satellite (thuộc tính + lịch sử); vì sao DV (auditability, parallel load, schema linh hoạt, nguồn đổi); raw vault vs business vault; DV → star ở mart; so với Kimball/Inmon. Sơ đồ.
 
-### [x] D02 — dbt Advanced (semantic layer, packages, cấu trúc lớn)
-- **Note:** `notes/advanced/d02-dbt-advanced.md`. Semantic layer / **metrics** (MetricFlow), packages (dbt_utils/dbt_expectations/audit_helper), custom materialization, cấu trúc project lớn (staging/intermediate/marts + domains), CI/CD nâng cao, contracts. Sâu hơn Phase 3.
+### [ ] E02 — One Big Table, Wide Tables & Activity Schema
+- **Note:** `notes/advanced/e02-obt-wide.md`. OBT (denormalize tất cả vào 1 bảng) vs star; khi nào OBT thắng (columnar warehouse, ít join, BI tool); wide tables; **activity schema** (1 bảng stream of events); trade-off storage vs đơn giản/tốc độ.
 
-### [x] D03 — Kafka Internals deep
-- **Note:** `notes/advanced/d03-kafka-internals.md`. Storage (segment, log, page cache, zero-copy), replication protocol (leader epoch, ISR, high watermark), exactly-once sâu (idempotent producer + transactions + read_committed), tuning (batch/linger/compression/partitions). Sâu hơn [[46-kafka-core]].
+### [ ] E03 — Modeling Event / Clickstream Data
+- **Note:** `notes/advanced/e03-event-modeling.md`. Schema event (common + custom properties), semi-structured (JSON/struct), schema evolution, sessionization model, sparse columns, EAV vs wide vs JSON column; liên hệ [[c06-case-clickstream]].
 
-### [x] D04 — Snowflake deep
-- **Note:** `notes/advanced/d04-snowflake.md`. Kiến trúc 3 lớp (storage/compute/services), virtual warehouse (multi-cluster, auto-suspend/resume), **micro-partition** + pruning, clustering keys, time travel/zero-copy clone, tối ưu chi phí (warehouse sizing, query). 
+### [ ] E04 — Bitemporal Modeling
+- **Note:** `notes/advanced/e04-bitemporal.md`. **Valid time** (sự thật đúng trong khoảng nào ngoài đời) vs **transaction time** (hệ thống biết khi nào); bi-temporal table; vì sao cần (audit, "as-of" + "as-known"); so với SCD2 ([[18-scd]]); ví dụ bảo hiểm/tài chính.
 
-### [ ] D05 — BigQuery deep
-- **Note:** `notes/advanced/d05-bigquery.md`. Kiến trúc serverless (Dremel, slot, Colossus), partition + cluster, tối ưu **bytes-scanned** (chi phí), materialized views, BI Engine, streaming inserts, so sánh với Snowflake.
+### [ ] E05 — Semantic Layer & Metrics Layer
+- **Note:** `notes/advanced/e05-semantic-layer.md`. Vì sao cần (metric nhất quán, tránh "mỗi dashboard một số"); semantic model (entity/dimension/measure/metric); headless BI; công cụ (dbt MetricFlow, Cube, LookML); governance metric; liên hệ [[d02-dbt-advanced]].
 
-### [ ] D06 — Airflow Advanced
-- **Note:** `notes/advanced/d06-airflow-advanced.md`. Dynamic DAG generation, custom operator/hook, **deferrable operators** (async, tiết kiệm worker), TaskGroups, datasets/data-aware scheduling, best practice scale (parsing, pools, executor), testing DAG. Sâu hơn Phase 5.
-
-### [ ] D07 — Iceberg deep
-- **Note:** `notes/advanced/d07-iceberg.md`. Metadata layers (metadata file → manifest list → manifest → data file), snapshot/time travel, hidden partitioning + partition evolution, schema evolution by ID, compaction/rewrite, catalog (REST/Glue/Nessie), so Delta vs Iceberg sâu. Sâu hơn [[35-table-formats]].
-
-### [ ] D08 — Module D review + index
-- **Note:** `notes/advanced/00-moduleD-summary.md`. Tổng kết Module D + cheat-sheet internals + self-assessment. Sẵn sàng sinh Batch #15 (Module E: Advanced Data Modeling).
+### [ ] E06 — Module E review + index
+- **Note:** `notes/advanced/00-moduleE-summary.md`. Tổng kết Module E + so sánh các paradigm modeling (Kimball/Inmon/Data Vault/OBT) + self-assessment. Sẵn sàng sinh Batch #16 (Module F: DataOps, Architecture & Career).
 
 ---
-*Hết batch → sinh Batch #15 từ Module E (ADVANCED.md).*
+*Hết batch → sinh Batch #16 từ Module F (ADVANCED.md).*
