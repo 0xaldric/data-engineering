@@ -21,16 +21,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] F01 — Data Testing Strategy toàn diện
+### [x] F01 — Data Testing Strategy toàn diện
 - **Note:** `notes/advanced/f01-testing-strategy.md`. Kim tự tháp test cho data (unit transform → schema/contract → data quality → integration → e2e); test ở đâu trong pipeline; GE/Soda/dbt phối hợp; test data tổng hợp; CI gate. Tổng hợp [[12-testing-de]], [[24-dbt-tests]], [[60-data-quality]].
 
-### [ ] F02 — Pipeline Reliability & Incident Management (SRE cho data)
+### [x] F02 — Pipeline Reliability & Incident Management (SRE cho data)
 - **Note:** `notes/advanced/f02-reliability-sre.md`. SLA/SLO/SLI cho data, error budget; on-call cho data; incident lifecycle (detect→triage→mitigate→resolve→postmortem); TTD/TTR; runbook; blameless postmortem; backfill/replay khi recovery.
 
-### [ ] F03 — Modern Data Stack & chọn tool
+### [x] F03 — Modern Data Stack & chọn tool
 - **Note:** `notes/advanced/f03-modern-data-stack.md`. Bản đồ MDS (ingestion: Fivetran/Airbyte; warehouse/lake; transform: dbt; orchestration; BI; observability; reverse-ETL); build vs buy; tiêu chí chọn tool; lakehouse vs MDS; xu hướng.
 
-### [ ] F04 — Cost Optimization Case Studies
+### [x] F04 — Cost Optimization Case Studies
 - **Note:** `notes/advanced/f04-cost-cases.md`. 3-4 tình huống giảm chi phí thật (số liệu): query Athena/BQ giảm 90% nhờ partition+Parquet; warehouse Snowflake auto-suspend; small files compaction; incremental thay full; storage tiering. Quy trình audit chi phí. Tổng hợp [[59-cost-finops]].
 
 ### [ ] F05 — Data Mesh, Data Products & Team Topology
