@@ -21,16 +21,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] D01 — Spark Internals deep ⭐
+### [x] D01 — Spark Internals deep ⭐
 - **Note:** `notes/advanced/d01-spark-internals.md`. Memory management (execution vs storage, unified memory, spill), Tungsten (codegen, off-heap, columnar), AQE sâu (coalesce shuffle, skew join, dynamic switch), đọc Spark UI debug job chậm (stage/task/SQL/spill). Sâu hơn [[33-spark-tuning]].
 
-### [ ] D02 — dbt Advanced (semantic layer, packages, cấu trúc lớn)
+### [x] D02 — dbt Advanced (semantic layer, packages, cấu trúc lớn)
 - **Note:** `notes/advanced/d02-dbt-advanced.md`. Semantic layer / **metrics** (MetricFlow), packages (dbt_utils/dbt_expectations/audit_helper), custom materialization, cấu trúc project lớn (staging/intermediate/marts + domains), CI/CD nâng cao, contracts. Sâu hơn Phase 3.
 
-### [ ] D03 — Kafka Internals deep
+### [x] D03 — Kafka Internals deep
 - **Note:** `notes/advanced/d03-kafka-internals.md`. Storage (segment, log, page cache, zero-copy), replication protocol (leader epoch, ISR, high watermark), exactly-once sâu (idempotent producer + transactions + read_committed), tuning (batch/linger/compression/partitions). Sâu hơn [[46-kafka-core]].
 
-### [ ] D04 — Snowflake deep
+### [x] D04 — Snowflake deep
 - **Note:** `notes/advanced/d04-snowflake.md`. Kiến trúc 3 lớp (storage/compute/services), virtual warehouse (multi-cluster, auto-suspend/resume), **micro-partition** + pruning, clustering keys, time travel/zero-copy clone, tối ưu chi phí (warehouse sizing, query). 
 
 ### [ ] D05 — BigQuery deep

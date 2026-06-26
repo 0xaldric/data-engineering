@@ -146,3 +146,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 14:30] C08 — Case ad-tech RTB (lambda, <100ms bidder, attribution window) — `notes/advanced/c08-case-adtech.md`
 - [2026-06-26 14:30] C09 — Case recommendation (feature store, train/serve consistency, point-in-time) — `notes/advanced/c09-case-recsys.md`
 - [2026-06-26 14:30] C09b — Module C review. **HOÀN THÀNH MODULE C (10/10).** — `notes/advanced/00-moduleC-summary.md`
+
+## Track 2 — Batch #14: Module D Tool Deep-dives — NOTES-FIRST (overnight)
+- [2026-06-26 15:00] D01 — Spark internals (unified memory/spill, Tungsten codegen, AQE sâu, debug Spark UI) — `notes/advanced/d01-spark-internals.md`
+- [2026-06-26 15:00] D02 — dbt advanced (semantic layer/metrics, packages, project lớn, slim CI, contracts) — `notes/advanced/d02-dbt-advanced.md`
+- [2026-06-26 15:00] D03 — Kafka internals (log segments, page cache/zero-copy, replication/ISR/HW, EOS sâu, tuning) — `notes/advanced/d03-kafka-internals.md`
+- [2026-06-26 15:00] D04 — Snowflake deep (3 lớp, virtual warehouse, micro-partition/pruning, clustering, zero-copy clone, tối ưu chi phí) — `notes/advanced/d04-snowflake.md`
