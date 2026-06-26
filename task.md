@@ -23,16 +23,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] C01 — Framework thiết kế hệ thống DE ⭐
+### [x] C01 — Framework thiết kế hệ thống DE ⭐
 - **Note:** `notes/advanced/c01-system-design-framework.md`. Khung 6 bước trả lời system design interview cho DE; câu hỏi làm rõ requirements (volume/velocity/latency/SLA/consistency); batch vs stream vs lambda/kappa; cách trình bày & các trục đánh đổi (cost/latency/complexity).
 
-### [ ] C02 — Case: E-commerce Analytics Platform
+### [x] C02 — Case: E-commerce Analytics Platform
 - **Note:** `notes/advanced/c02-case-ecommerce.md`. Thiết kế nền tảng phân tích bán hàng (như project đã build nhưng quy mô lớn): ingest đa nguồn → lakehouse medallion → dbt → BI; near-real-time inventory; scale tới hàng tỉ event.
 
-### [ ] C03 — Case: Real-time Fraud Detection ⭐
+### [x] C03 — Case: Real-time Fraud Detection ⭐
 - **Note:** `notes/advanced/c03-case-fraud.md`. Phát hiện gian lận giao dịch real-time: Kafka → stream processing (Flink, stateful + windowed features) → model scoring → block/alert ms; exactly-once, late data, feature store.
 
-### [ ] C04 — Case: IoT / Sensor Data Platform
+### [x] C04 — Case: IoT / Sensor Data Platform
 - **Note:** `notes/advanced/c04-case-iot.md`. Hàng triệu sensor gửi telemetry: ingest tải cao (Kafka/Kinesis), time-series storage, downsampling/rollup, edge vs cloud, out-of-order data, retention.
 
 ### [ ] C05 — Case: Ride-sharing Data Platform

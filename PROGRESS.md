@@ -134,3 +134,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 13:30] B07 — Behavioral & scenario (STAR + 10 câu + hỏi ngược) — `notes/advanced/b07-behavioral-star.md`
 - [2026-06-26 13:30] B08 — "Explain like senior" 10 khái niệm sâu (idempotency/exactly-once/shuffle/SCD2/CAP/...) — `notes/advanced/b08-explain-senior.md`
 - [2026-06-26 13:30] B08b — Module B review. **HOÀN THÀNH MODULE B (8/8).** — `notes/advanced/00-moduleB-summary.md`
+
+## Track 2 — Batch #13: Module C System Design — NOTES-FIRST (overnight)
+- [2026-06-26 14:00] C01 — System design framework (6 bước, batch/stream/lambda, trade-off) — `notes/advanced/c01-system-design-framework.md`
+- [2026-06-26 14:00] C02 — Case: E-commerce analytics platform (CDC+lakehouse+dbt+real-time inventory) — `notes/advanced/c02-case-ecommerce.md`
+- [2026-06-26 14:00] C03 — Case: Real-time fraud detection (Flink, feature store, exactly-once) — `notes/advanced/c03-case-fraud.md`
+- [2026-06-26 14:00] C04 — Case: IoT/sensor platform (edge, time-series, rollup, out-of-order) — `notes/advanced/c04-case-iot.md`
