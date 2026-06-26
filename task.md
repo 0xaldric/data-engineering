@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] G01 — SQL Interview Problems — Set 3 (advanced)
+### [x] G01 — SQL Interview Problems — Set 3 (advanced)
 - **Note:** `notes/advanced/g01-sql-interview-3.md`. 10 bài khó: nth-highest per group, gaps nâng cao, conditional running total, pivot dynamic (giải thích giới hạn), date spine + fill gaps, top-N with ties, recursive (hierarchy/path), self-join inequality. Đề + lời giải + tư duy.
 
-### [ ] G02 — SQL Interview Problems — Set 4 (analytics-heavy)
+### [x] G02 — SQL Interview Problems — Set 4 (analytics-heavy)
 - **Note:** `notes/advanced/g02-sql-interview-4.md`. 10 bài analytics: retention curve, cohort LTV, funnel ordered (time-bound), market basket, churn definition, MAU/DAU stickiness, percentile/median per group, sessionize + metrics. Đề + lời giải.
 
-### [ ] G03 — Case: Log Analytics / Observability Platform
+### [x] G03 — Case: Log Analytics / Observability Platform
 - **Note:** `notes/advanced/g03-case-log-analytics.md`. Thu thập log/metric/trace khối lượng khổng lồ (như Datadog/ELK): ingest, parse, index, retention tiered, search, alerting; OLAP store (ClickHouse/Druid); cardinality explosion. Khung [[c01-system-design-framework]].
 
-### [ ] G04 — Case: Gaming Telemetry Platform
+### [x] G04 — Case: Gaming Telemetry Platform
 - **Note:** `notes/advanced/g04-case-gaming.md`. Telemetry game (player events, sessions, matchmaking, economy): real-time leaderboard, A/B test, anti-cheat, player retention; high write, sessionization, real-time + batch.
 
 ### [ ] G05 — Case: Healthcare Data Platform (compliance-heavy)

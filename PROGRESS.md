@@ -174,3 +174,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 17:00] F06 — DataOps & CI/CD nâng cao (automation, version everything, blue-green data deploy) — `notes/advanced/f06-dataops.md`
 - [2026-06-26 17:00] F07 — Career roadmap (junior→staff, T-shaped, nhánh nghề, AI/LLM tác động) — `notes/advanced/f07-career-roadmap.md`
 - [2026-06-26 17:00] F08 — Module F review + Track 2 INDEX (A–F). **HOÀN THÀNH MODULE F + TOÀN BỘ ADVANCED.md (6 module).** — `notes/advanced/00-moduleF-summary.md`, `notes/advanced/00-INDEX.md`
+
+## Track 2 — Batch #17: Extra G (đào sâu) — NOTES-FIRST (overnight)
+- [2026-06-26 17:30] G01 — SQL interview set 3 (nth/group, conditional running total, date spine, ties, recursive path, self-join inequality) — `notes/advanced/g01-sql-interview-3.md`
+- [2026-06-26 17:30] G02 — SQL interview set 4 analytics (retention curve, cohort LTV, churn, DAU/MAU, percent_rank) — `notes/advanced/g02-sql-interview-4.md`
+- [2026-06-26 17:30] G03 — Case log analytics/observability (Kafka buffer, ClickHouse/ES, tiered retention, cardinality explosion) — `notes/advanced/g03-case-log-analytics.md`
+- [2026-06-26 17:30] G04 — Case gaming telemetry (Redis leaderboard, anti-cheat stateful, economy ledger, retention) — `notes/advanced/g04-case-gaming.md`
