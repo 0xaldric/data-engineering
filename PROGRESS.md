@@ -140,3 +140,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 14:00] C02 — Case: E-commerce analytics platform (CDC+lakehouse+dbt+real-time inventory) — `notes/advanced/c02-case-ecommerce.md`
 - [2026-06-26 14:00] C03 — Case: Real-time fraud detection (Flink, feature store, exactly-once) — `notes/advanced/c03-case-fraud.md`
 - [2026-06-26 14:00] C04 — Case: IoT/sensor platform (edge, time-series, rollup, out-of-order) — `notes/advanced/c04-case-iot.md`
+- [2026-06-26 14:30] C05 — Case ride-sharing (geospatial H3, surge, accumulating snapshot trip) — `notes/advanced/c05-case-ridesharing.md`
+- [2026-06-26 14:30] C06 — Case clickstream (tỉ event, Schema Registry, OBT, sessionization, sampling) — `notes/advanced/c06-case-clickstream.md`
+- [2026-06-26 14:30] C07 — Case fintech ledger (double-entry, idempotency, immutable, reconciliation) — `notes/advanced/c07-case-fintech.md`
+- [2026-06-26 14:30] C08 — Case ad-tech RTB (lambda, <100ms bidder, attribution window) — `notes/advanced/c08-case-adtech.md`
+- [2026-06-26 14:30] C09 — Case recommendation (feature store, train/serve consistency, point-in-time) — `notes/advanced/c09-case-recsys.md`
+- [2026-06-26 14:30] C09b — Module C review. **HOÀN THÀNH MODULE C (10/10).** — `notes/advanced/00-moduleC-summary.md`

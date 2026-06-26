@@ -4,7 +4,7 @@
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
-2. **Làm CÀNG NHIỀU task càng tốt** (nhắm 3–5 note/lượt) giữ chất lượng. Mỗi task = 1 note đầy đủ tiếng Việt trong `notes/advanced/`: khái niệm + "tại sao", sơ đồ/bảng, snippet minh hoạ, cạm bẫy, checklist + "tự mò". Case study: nêu requirements → kiến trúc (sơ đồ) → lựa chọn & trade-off → scale.
+2. **Làm CÀNG NHIỀU task càng tốt** (nhắm 3–5 note/lượt) giữ chất lượng. Mỗi task = 1 note đầy đủ tiếng Việt trong `notes/advanced/`: khái niệm + "tại sao", sơ đồ/bảng, snippet minh hoạ, cạm bẫy, checklist + "tự mò".
 3. Mỗi task xong: `[ ]`→`[x]` + dòng vào `PROGRESS.md`.
 4. **Cuối lượt: commit + push** (KHÔNG Claude/co-author):
    ```
@@ -14,41 +14,36 @@
 5. **Khi tất cả `[x]`**: sinh batch mới (6–10) từ **Module tiếp theo trong `ADVANCED.md`**, ghi đè "BATCH HIỆN TẠI", cập nhật header. Hết module → đào sâu thêm.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #13 — Module C: System Design for Data Engineering
+**Batch hiện tại:** #14 — Module D: Advanced Tool Deep-dives
 **Nguồn:** ADVANCED.md
-
-> Mỗi case theo khung: **Requirements** (functional + scale/latency) → **Data model** → **Pipeline** (ingest→process→store→serve, batch/stream) → **Tech choices + trade-off** → **Scale & failure** → **DQ/observability**.
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] C01 — Framework thiết kế hệ thống DE ⭐
-- **Note:** `notes/advanced/c01-system-design-framework.md`. Khung 6 bước trả lời system design interview cho DE; câu hỏi làm rõ requirements (volume/velocity/latency/SLA/consistency); batch vs stream vs lambda/kappa; cách trình bày & các trục đánh đổi (cost/latency/complexity).
+### [ ] D01 — Spark Internals deep ⭐
+- **Note:** `notes/advanced/d01-spark-internals.md`. Memory management (execution vs storage, unified memory, spill), Tungsten (codegen, off-heap, columnar), AQE sâu (coalesce shuffle, skew join, dynamic switch), đọc Spark UI debug job chậm (stage/task/SQL/spill). Sâu hơn [[33-spark-tuning]].
 
-### [x] C02 — Case: E-commerce Analytics Platform
-- **Note:** `notes/advanced/c02-case-ecommerce.md`. Thiết kế nền tảng phân tích bán hàng (như project đã build nhưng quy mô lớn): ingest đa nguồn → lakehouse medallion → dbt → BI; near-real-time inventory; scale tới hàng tỉ event.
+### [ ] D02 — dbt Advanced (semantic layer, packages, cấu trúc lớn)
+- **Note:** `notes/advanced/d02-dbt-advanced.md`. Semantic layer / **metrics** (MetricFlow), packages (dbt_utils/dbt_expectations/audit_helper), custom materialization, cấu trúc project lớn (staging/intermediate/marts + domains), CI/CD nâng cao, contracts. Sâu hơn Phase 3.
 
-### [x] C03 — Case: Real-time Fraud Detection ⭐
-- **Note:** `notes/advanced/c03-case-fraud.md`. Phát hiện gian lận giao dịch real-time: Kafka → stream processing (Flink, stateful + windowed features) → model scoring → block/alert ms; exactly-once, late data, feature store.
+### [ ] D03 — Kafka Internals deep
+- **Note:** `notes/advanced/d03-kafka-internals.md`. Storage (segment, log, page cache, zero-copy), replication protocol (leader epoch, ISR, high watermark), exactly-once sâu (idempotent producer + transactions + read_committed), tuning (batch/linger/compression/partitions). Sâu hơn [[46-kafka-core]].
 
-### [x] C04 — Case: IoT / Sensor Data Platform
-- **Note:** `notes/advanced/c04-case-iot.md`. Hàng triệu sensor gửi telemetry: ingest tải cao (Kafka/Kinesis), time-series storage, downsampling/rollup, edge vs cloud, out-of-order data, retention.
+### [ ] D04 — Snowflake deep
+- **Note:** `notes/advanced/d04-snowflake.md`. Kiến trúc 3 lớp (storage/compute/services), virtual warehouse (multi-cluster, auto-suspend/resume), **micro-partition** + pruning, clustering keys, time travel/zero-copy clone, tối ưu chi phí (warehouse sizing, query). 
 
-### [ ] C05 — Case: Ride-sharing Data Platform
-- **Note:** `notes/advanced/c05-case-ridesharing.md`. Như Uber: trip events, geospatial, surge pricing real-time, ETA, driver-rider matching analytics; lambda/kappa, CDC từ OLTP, lakehouse.
+### [ ] D05 — BigQuery deep
+- **Note:** `notes/advanced/d05-bigquery.md`. Kiến trúc serverless (Dremel, slot, Colossus), partition + cluster, tối ưu **bytes-scanned** (chi phí), materialized views, BI Engine, streaming inserts, so sánh với Snowflake.
 
-### [ ] C06 — Case: Clickstream / Social Media Analytics
-- **Note:** `notes/advanced/c06-case-clickstream.md`. Tracking event web/app khối lượng khổng lồ: SDK→collector→Kafka→stream+batch; sessionization, funnel/retention ở scale; schema evolution; sampling; One Big Table vs star.
+### [ ] D06 — Airflow Advanced
+- **Note:** `notes/advanced/d06-airflow-advanced.md`. Dynamic DAG generation, custom operator/hook, **deferrable operators** (async, tiết kiệm worker), TaskGroups, datasets/data-aware scheduling, best practice scale (parsing, pools, executor), testing DAG. Sâu hơn Phase 5.
 
-### [ ] C07 — Case: Fintech Ledger + Reconciliation ⭐
-- **Note:** `notes/advanced/c07-case-fintech.md`. Sổ cái giao dịch tài chính: **chính xác tuyệt đối** (không mất/trùng tiền), idempotency, exactly-once, audit/immutability, reconciliation đối soát, double-entry, compliance.
+### [ ] D07 — Iceberg deep
+- **Note:** `notes/advanced/d07-iceberg.md`. Metadata layers (metadata file → manifest list → manifest → data file), snapshot/time travel, hidden partitioning + partition evolution, schema evolution by ID, compaction/rewrite, catalog (REST/Glue/Nessie), so Delta vs Iceberg sâu. Sâu hơn [[35-table-formats]].
 
-### [ ] C08 — Case: Ad-tech / Real-time Bidding
-- **Note:** `notes/advanced/c08-case-adtech.md`. RTB: latency cực thấp (<100ms), khối lượng cực lớn, impression/click/conversion join (attribution), budget pacing, fraud, lambda architecture.
-
-### [ ] C09 — Case: Recommendation Pipeline + Module C review
-- **Note:** `notes/advanced/c09-case-recsys.md` + `notes/advanced/00-moduleC-summary.md`. Data pipeline cho hệ gợi ý: feature engineering, **feature store** (online/offline), training data, batch vs real-time features, feedback loop. + tổng kết Module C. Sẵn sàng sinh Batch #14 (Module D: Tool deep-dives).
+### [ ] D08 — Module D review + index
+- **Note:** `notes/advanced/00-moduleD-summary.md`. Tổng kết Module D + cheat-sheet internals + self-assessment. Sẵn sàng sinh Batch #15 (Module E: Advanced Data Modeling).
 
 ---
-*Hết batch → sinh Batch #14 từ Module D (ADVANCED.md).*
+*Hết batch → sinh Batch #15 từ Module E (ADVANCED.md).*
