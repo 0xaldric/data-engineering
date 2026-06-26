@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] H01 — SQL Interview Problems — Set 5 (window edge cases)
+### [x] H01 — SQL Interview Problems — Set 5 (window edge cases)
 - **Note:** `notes/advanced/h01-sql-interview-5.md`. 10 bài mẹo: frame edge (LAST_VALUE sai frame), RANGE vs ROWS với ties, ignore nulls, qualify, lag với default, running distinct (khó), median chính xác, gap-fill forward (carry-forward last value), pivot conditional nâng cao. Đề + lời giải.
 
-### [ ] H02 — Case: Marketplace / Two-sided Platform
+### [x] H02 — Case: Marketplace / Two-sided Platform
 - **Note:** `notes/advanced/h02-case-marketplace.md`. Như Airbnb/eBay/Etsy: buyer + seller, listing, search ranking, transaction, GMV, take rate, supply-demand matching, review/trust, fraud. Hai phía analytics. Khung [[c01-system-design-framework]].
 
-### [ ] H03 — Case: SaaS / Subscription Metrics Platform
+### [x] H03 — Case: SaaS / Subscription Metrics Platform
 - **Note:** `notes/advanced/h03-case-saas-metrics.md`. Metrics SaaS: MRR/ARR, churn (logo vs revenue), expansion/contraction, LTV/CAC, cohort retention; subscription events (CDC từ billing), SCD cho plan changes; báo cáo nhà đầu tư chính xác. Liên hệ [[18-scd]], [[a03-analytics-patterns]].
 
-### [ ] H04 — Case: Social Graph / Network Data
+### [x] H04 — Case: Social Graph / Network Data
 - **Note:** `notes/advanced/h04-case-social-graph.md`. Đồ thị xã hội (follow/friend): graph storage, friend-of-friend, feed generation (fan-out write vs read), graph DB vs relational, recursive traversal ở scale, influencer skew. Liên hệ [[a02-sql-pivot-hierarchical]] recursive.
 
 ### [ ] H05 — Deep-dive: Query Engines (Trino/Presto) & Federation

@@ -184,3 +184,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 18:00] G06 — Case ML feature platform & data cho LLM/RAG (feature store point-in-time, chunk/embed/vector DB, incremental) — `notes/advanced/g06-case-ml-llm-data.md`
 - [2026-06-26 18:00] G07 — DS&A cho DE (hash join, external sort, B-tree vs LSM-tree, heap top-K) — `notes/advanced/g07-dsa-for-de.md`
 - [2026-06-26 18:00] G08 — Probabilistic DS (HyperLogLog, bloom filter, t-digest, count-min; approx query) — `notes/advanced/g08-probabilistic-ds.md`. **HOÀN THÀNH EXTRA G (8/8).**
+
+## Track 2 — Batch #18: Extra H — NOTES-FIRST (overnight)
+- [2026-06-26 18:30] H01 — SQL set 5 window edge cases (LAST_VALUE frame, RANGE/ROWS ties, carry-forward LOCF, QUALIFY, running distinct, deterministic tie-break) — `notes/advanced/h01-sql-interview-5.md`
+- [2026-06-26 18:30] H02 — Case marketplace two-sided (GMV, take rate, supply-demand, 2 cohort, search ranking) — `notes/advanced/h02-case-marketplace.md`
+- [2026-06-26 18:30] H03 — Case SaaS metrics (MRR movement new/expansion/churn, logo vs revenue churn, SCD2 subscription, LTV/CAC) — `notes/advanced/h03-case-saas-metrics.md`
+- [2026-06-26 18:30] H04 — Case social graph (graph vs edge table, fan-out write/read/hybrid feed, FoF, supernode skew) — `notes/advanced/h04-case-social-graph.md`
