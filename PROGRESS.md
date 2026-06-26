@@ -123,3 +123,10 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 12:30] A06 — SQL performance & optimization (sargable, anti-patterns, EXPLAIN, OLAP pruning) — `notes/advanced/a06-sql-optimization.md`
 - [2026-06-26 12:30] A07 — SQL conceptual Q&A (20+ câu phỏng vấn + đáp án) — `notes/advanced/a07-sql-qa.md`
 - [2026-06-26 12:30] A08 — Module A review + cheat-sheet. **HOÀN THÀNH MODULE A (8/8).** — `notes/advanced/00-moduleA-summary.md`
+
+## Track 2 — Batch #12: Module B Interview Q&A — NOTES-FIRST (overnight)
+- [2026-06-26 13:00] B01 — Spark & Big Data Q&A (15+ câu) — `notes/advanced/b01-spark-qa.md`
+- [2026-06-26 13:00] B02 — Streaming & Kafka Q&A — `notes/advanced/b02-kafka-qa.md`
+- [2026-06-26 13:00] B03 — Warehousing & dbt Q&A — `notes/advanced/b03-dbt-qa.md`
+- [2026-06-26 13:00] B04 — Orchestration & Reliability Q&A — `notes/advanced/b04-orchestration-qa.md`
+- [2026-06-26 13:00] B05 — Cloud & Infra Q&A — `notes/advanced/b05-cloud-qa.md`

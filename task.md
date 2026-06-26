@@ -21,19 +21,19 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] B01 — Spark & Big Data Q&A
+### [x] B01 — Spark & Big Data Q&A
 - **Note:** `notes/advanced/b01-spark-qa.md`. 15+ câu phỏng vấn + đáp án: lazy/action, narrow/wide, shuffle, partition, broadcast vs sort-merge, Catalyst/Tungsten/AQE, cache, skew, OOM, small files, RDD vs DataFrame. Link [[30-spark-model]]..[[33-spark-tuning]].
 
-### [ ] B02 — Streaming & Kafka Q&A
+### [x] B02 — Streaming & Kafka Q&A
 - **Note:** `notes/advanced/b02-kafka-qa.md`. 15+ câu: partition/key/offset, consumer group, delivery semantics, exactly-once, watermark/late data, windowing, retention vs compaction, CDC, Lambda vs Kappa, backpressure. Link [[46-kafka-core]]..[[52-lambda-kappa]].
 
-### [ ] B03 — Warehousing & dbt Q&A
+### [x] B03 — Warehousing & dbt Q&A
 - **Note:** `notes/advanced/b03-dbt-qa.md`. 15+ câu: ELT vs ETL, materializations, ref/source/DAG, tests (relationships vì sao quan trọng), snapshots SCD2, incremental strategies, macros, exposures, slim CI. Link Phase 3 notes.
 
-### [ ] B04 — Orchestration & Reliability Q&A
+### [x] B04 — Orchestration & Reliability Q&A
 - **Note:** `notes/advanced/b04-orchestration-qa.md`. 15+ câu: DAG, idempotency (vì sao sống còn), execution_date/data_interval, catchup/backfill, XCom limits, retries/SLA, trigger rules, Airflow vs Dagster vs Prefect. Link Phase 5.
 
-### [ ] B05 — Cloud & Infra Q&A
+### [x] B05 — Cloud & Infra Q&A
 - **Note:** `notes/advanced/b05-cloud-qa.md`. 15+ câu: S3 không phải filesystem, partition layout, IAM least privilege, Athena bytes-scanned, EMR vs Glue, Terraform state, Docker layer cache, K8s cho data, CI/CD cho dbt. Link Phase 7.
 
 ### [ ] B06 — Data Modeling Q&A (sâu)
