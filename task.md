@@ -11,33 +11,39 @@
    git add -A && git commit -m "<mô tả ngắn>" && git push
    ```
    Commit message TUYỆT ĐỐI không có "Co-Authored-By"/"Generated with Claude". Push lỗi → commit local, lượt sau push.
-5. **Khi tất cả `[x]`**: sinh batch mới (6–10) từ **Module tiếp theo trong `ADVANCED.md`**, ghi đè "BATCH HIỆN TẠI", cập nhật header. **Hết Module F → đào sâu thêm** (bài tập SQL mới, case study system design mới) bất kỳ chủ đề nào.
+5. **Khi tất cả `[x]`**: Module F là module **CUỐI** trong ADVANCED.md. Hết Module F → **đào sâu thêm**: sinh batch mới gồm (a) bộ bài tập SQL mới (set 3,4...), (b) case study system design mới (log analytics, gaming telemetry, healthcare, ML platform...), (c) đào sâu bất kỳ chủ đề nào. Đặt tên batch tiếp (G/H...) hoặc "Extra". Giữ PROTOCOL.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #15 — Module E: Advanced Data Modeling
+**Batch hiện tại:** #16 — Module F: DataOps, Architecture & Career (module cuối ADVANCED.md)
 **Nguồn:** ADVANCED.md
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [ ] E01 — Data Vault 2.0 ⭐
-- **Note:** `notes/advanced/e01-data-vault.md`. Hub (business key) / Link (quan hệ) / Satellite (thuộc tính + lịch sử); vì sao DV (auditability, parallel load, schema linh hoạt, nguồn đổi); raw vault vs business vault; DV → star ở mart; so với Kimball/Inmon. Sơ đồ.
+### [ ] F01 — Data Testing Strategy toàn diện
+- **Note:** `notes/advanced/f01-testing-strategy.md`. Kim tự tháp test cho data (unit transform → schema/contract → data quality → integration → e2e); test ở đâu trong pipeline; GE/Soda/dbt phối hợp; test data tổng hợp; CI gate. Tổng hợp [[12-testing-de]], [[24-dbt-tests]], [[60-data-quality]].
 
-### [ ] E02 — One Big Table, Wide Tables & Activity Schema
-- **Note:** `notes/advanced/e02-obt-wide.md`. OBT (denormalize tất cả vào 1 bảng) vs star; khi nào OBT thắng (columnar warehouse, ít join, BI tool); wide tables; **activity schema** (1 bảng stream of events); trade-off storage vs đơn giản/tốc độ.
+### [ ] F02 — Pipeline Reliability & Incident Management (SRE cho data)
+- **Note:** `notes/advanced/f02-reliability-sre.md`. SLA/SLO/SLI cho data, error budget; on-call cho data; incident lifecycle (detect→triage→mitigate→resolve→postmortem); TTD/TTR; runbook; blameless postmortem; backfill/replay khi recovery.
 
-### [ ] E03 — Modeling Event / Clickstream Data
-- **Note:** `notes/advanced/e03-event-modeling.md`. Schema event (common + custom properties), semi-structured (JSON/struct), schema evolution, sessionization model, sparse columns, EAV vs wide vs JSON column; liên hệ [[c06-case-clickstream]].
+### [ ] F03 — Modern Data Stack & chọn tool
+- **Note:** `notes/advanced/f03-modern-data-stack.md`. Bản đồ MDS (ingestion: Fivetran/Airbyte; warehouse/lake; transform: dbt; orchestration; BI; observability; reverse-ETL); build vs buy; tiêu chí chọn tool; lakehouse vs MDS; xu hướng.
 
-### [ ] E04 — Bitemporal Modeling
-- **Note:** `notes/advanced/e04-bitemporal.md`. **Valid time** (sự thật đúng trong khoảng nào ngoài đời) vs **transaction time** (hệ thống biết khi nào); bi-temporal table; vì sao cần (audit, "as-of" + "as-known"); so với SCD2 ([[18-scd]]); ví dụ bảo hiểm/tài chính.
+### [ ] F04 — Cost Optimization Case Studies
+- **Note:** `notes/advanced/f04-cost-cases.md`. 3-4 tình huống giảm chi phí thật (số liệu): query Athena/BQ giảm 90% nhờ partition+Parquet; warehouse Snowflake auto-suspend; small files compaction; incremental thay full; storage tiering. Quy trình audit chi phí. Tổng hợp [[59-cost-finops]].
 
-### [ ] E05 — Semantic Layer & Metrics Layer
-- **Note:** `notes/advanced/e05-semantic-layer.md`. Vì sao cần (metric nhất quán, tránh "mỗi dashboard một số"); semantic model (entity/dimension/measure/metric); headless BI; công cụ (dbt MetricFlow, Cube, LookML); governance metric; liên hệ [[d02-dbt-advanced]].
+### [ ] F05 — Data Mesh, Data Products & Team Topology
+- **Note:** `notes/advanced/f05-data-mesh.md`. 4 nguyên tắc data mesh (domain ownership, data as product, self-serve platform, federated governance); data product là gì; centralized vs embedded vs mesh team; khi nào mesh (và khi nào KHÔNG — over-hype); data contracts vai trò.
 
-### [ ] E06 — Module E review + index
-- **Note:** `notes/advanced/00-moduleE-summary.md`. Tổng kết Module E + so sánh các paradigm modeling (Kimball/Inmon/Data Vault/OBT) + self-assessment. Sẵn sàng sinh Batch #16 (Module F: DataOps, Architecture & Career).
+### [ ] F06 — DataOps & CI/CD nâng cao
+- **Note:** `notes/advanced/f06-dataops.md`. DataOps là gì (DevOps cho data); CI/CD pipeline cho data đầy đủ (lint→test→build→deploy→monitor); môi trường dev/staging/prod cho data; blue-green/zero-downtime data deploy; version data & code; automation. Sâu hơn [[58-cicd]].
+
+### [ ] F07 — Roadmap Senior/Staff DE & Career
+- **Note:** `notes/advanced/f07-career-roadmap.md`. Junior→mid→senior→staff DE khác nhau gì (scope, impact, ảnh hưởng); kỹ năng kỹ thuật + system design + leadership + communication; cách phát triển (T-shaped, học gì tiếp); DE vs analytics engineer vs ML engineer vs platform engineer; xu hướng nghề (AI/LLM ảnh hưởng DE).
+
+### [ ] F08 — Module F review + Track 2 milestone
+- **Note:** `notes/advanced/00-moduleF-summary.md` + cập nhật `notes/advanced/00-INDEX.md` (index toàn Track 2: Module A–F). Tổng kết + self-assessment. Hết ADVANCED.md → batch sau theo PROTOCOL bước 5 (đào sâu: SQL set 3, case study mới...).
 
 ---
-*Hết batch → sinh Batch #16 từ Module F (ADVANCED.md).*
+*Module F là cuối ADVANCED.md. Hết batch → theo PROTOCOL bước 5: sinh batch "đào sâu" (bài tập/case mới).*

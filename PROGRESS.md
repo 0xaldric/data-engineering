@@ -156,3 +156,11 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 15:30] D06 — Airflow advanced (dynamic DAG, deferrable, TaskGroup, datasets, scale) — `notes/advanced/d06-airflow-advanced.md`
 - [2026-06-26 15:30] D07 — Iceberg deep (metadata layers, hidden+partition evolution, catalog, vs Delta) — `notes/advanced/d07-iceberg.md`
 - [2026-06-26 15:30] D08 — Module D review. **HOÀN THÀNH MODULE D (8/8).** — `notes/advanced/00-moduleD-summary.md`
+
+## Track 2 — Batch #15: Module E Advanced Modeling — NOTES-FIRST (overnight)
+- [2026-06-26 16:00] E01 — Data Vault 2.0 (hub/link/satellite, audit/parallel load, raw vs business vault) — `notes/advanced/e01-data-vault.md`
+- [2026-06-26 16:00] E02 — OBT/Wide/Activity schema (denormalize hoàn toàn, columnar, vs star) — `notes/advanced/e02-obt-wide.md`
+- [2026-06-26 16:00] E03 — Event/clickstream modeling (JSON/STRUCT property, schema evolution, sessionization) — `notes/advanced/e03-event-modeling.md`
+- [2026-06-26 16:00] E04 — Bitemporal (valid vs transaction time, backdated correction) — `notes/advanced/e04-bitemporal.md`
+- [2026-06-26 16:00] E05 — Semantic layer & metrics (metric drift, headless BI, MetricFlow/Cube) — `notes/advanced/e05-semantic-layer.md`
+- [2026-06-26 16:00] E06 — Module E review (so sánh Kimball/Inmon/DV/OBT). **HOÀN THÀNH MODULE E (6/6).** — `notes/advanced/00-moduleE-summary.md`
