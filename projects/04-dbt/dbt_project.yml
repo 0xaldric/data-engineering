@@ -1,0 +1,23 @@
+name: 'de_warehouse'
+version: '1.0.0'
+config-version: 2
+profile: 'de_warehouse'
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+# Materialization mặc định theo layer (medallion):
+#   staging/intermediate = view (rẻ, luôn tươi) ; marts = table (đọc nhanh)
+models:
+  de_warehouse:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

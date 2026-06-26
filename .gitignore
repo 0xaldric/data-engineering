@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+data/raw/*
+data/processed/*
+warehouse/*.db
+warehouse/*.duckdb
+.DS_Store
+*.log
+.ipynb_checkpoints/
+# dbt artifacts
+projects/04-dbt/target/
+projects/04-dbt/dbt_packages/
+projects/04-dbt/logs/
+projects/04-dbt/package-lock.yml

@@ -1,0 +1,32 @@
+-- =====================================================================
+-- exercises.sql — 15 bài tập SQL tổng hợp (Phase 0), dễ → khó
+-- Tự làm vào đây; lời giải tham khảo ở solutions.sql
+-- Dataset views: customers, products, orders, order_items
+--   customers(customer_id,name,email,country,city,signup_date,is_active)
+--   products(product_id,product_name,category,unit_cost,unit_price,is_available)
+--   orders(order_id,customer_id,order_ts,status,channel)
+--   order_items(order_item_id,order_id,product_id,quantity,unit_price,discount,line_total)
+-- Gợi ý: doanh thu = SUM(order_items.line_total); "đơn hợp lệ" = status='completed'.
+-- =====================================================================
+
+-- ---- DỄ -------------------------------------------------------------
+-- Bài 1. Liệt kê 10 sản phẩm có unit_price cao nhất (product_name, unit_price).
+-- Bài 2. Đếm số khách hàng theo từng quốc gia, sắp giảm dần.
+-- Bài 3. Tổng doanh thu của tất cả đơn 'completed'.
+-- Bài 4. Doanh thu theo category (completed), sắp giảm dần.
+-- Bài 5. Đếm số sản phẩm 'is_available = false'.
+
+-- ---- TRUNG BÌNH -----------------------------------------------------
+-- Bài 6. Top 5 khách chi tiêu nhiều nhất (name, tổng chi, completed).
+-- Bài 7. Đếm số đơn theo từng status, gộp thành MỘT hàng (dùng FILTER).
+-- Bài 8. Doanh thu theo tháng của năm 2024 (completed), sắp theo tháng.
+-- Bài 9. Average Order Value (AOV) toàn hệ thống (completed).
+-- Bài 10. Sản phẩm CHƯA từng được bán (anti-join / NOT EXISTS).
+
+-- ---- KHÓ (join + window + CTE) -------------------------------------
+-- Bài 11. Top 3 sản phẩm theo doanh thu TRONG MỖI category (window + QUALIFY).
+-- Bài 12. Tăng trưởng doanh thu tháng-so-tháng (MoM %), dùng LAG.
+-- Bài 13. Running total doanh thu tích lũy theo tháng.
+-- Bài 14. Theo channel: tỉ lệ % đơn bị 'cancelled' trên tổng đơn (conditional agg).
+-- Bài 15. Chia khách thành 4 nhóm (NTILE) theo chi tiêu; mỗi nhóm: số khách,
+--         ngưỡng chi thấp/cao nhất.

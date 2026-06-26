@@ -1,0 +1,10 @@
+# Profile cho dbt-duckdb. Luôn chạy dbt từ thư mục gốc data-engineering/ với:
+#   dbt <cmd> --project-dir projects/04-dbt --profiles-dir projects/04-dbt
+# path DuckDB & external_location của sources đều tương đối so với gốc đó.
+de_warehouse:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: warehouse/dbt.duckdb
+      threads: 4

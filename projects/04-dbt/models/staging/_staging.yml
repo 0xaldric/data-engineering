@@ -1,0 +1,26 @@
+version: 2
+
+# Khai báo & tài liệu cho staging models (sources ở _sources.yml).
+# Quy ước: mỗi staging model ánh xạ 1-1 với 1 source, chỉ làm việc nhẹ
+# (rename, cast, ép kiểu) — KHÔNG join/business logic (để dành cho intermediate/marts).
+models:
+  - name: stg_customers
+    description: "Khách hàng đã chuẩn hoá (1-1 với raw.customers)."
+    columns:
+      - name: customer_id
+        description: "Khoá tự nhiên của khách."
+  - name: stg_products
+    description: "Sản phẩm đã chuẩn hoá kiểu số."
+    columns:
+      - name: product_id
+        description: "Khoá tự nhiên của sản phẩm."
+  - name: stg_orders
+    description: "Đơn hàng; tách order_ts thành timestamp + date."
+    columns:
+      - name: order_id
+        description: "Khoá tự nhiên của đơn."
+  - name: stg_order_items
+    description: "Dòng hàng trong đơn (grain order-item)."
+    columns:
+      - name: order_item_id
+        description: "Khoá tự nhiên của dòng hàng."

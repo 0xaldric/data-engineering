@@ -1,0 +1,16 @@
+duckdb
+pandas
+polars
+pyarrow
+requests
+faker
+sqlalchemy
+pytest
+jupyter
+matplotlib
+great-expectations
+fastavro
+pydantic
+pyyaml
+dbt-duckdb
+deltalake
