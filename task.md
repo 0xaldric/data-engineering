@@ -4,50 +4,46 @@
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
-2. **Làm CÀNG NHIỀU task càng tốt trong lượt** (overnight max-output — nhắm 3–5 note/lượt) trong khi vẫn **giữ chất lượng**. Mỗi task = 1 note đầy đủ (tiếng Việt) trong `notes/advanced/`:
-   - khái niệm + "tại sao", sơ đồ/bảng, **snippet SQL/code minh hoạ** (không cần chạy), cạm bẫy, checklist + gợi ý "tự mò".
-   - Với task interview/bài tập: ghi **đề + lời giải + giải thích**.
+2. **Làm CÀNG NHIỀU task càng tốt trong lượt** (overnight max-output — nhắm 3–5 note/lượt) trong khi vẫn **giữ chất lượng**. Mỗi task = 1 note đầy đủ (tiếng Việt) trong `notes/advanced/`: khái niệm + "tại sao", sơ đồ/bảng, snippet minh hoạ, cạm bẫy, checklist + "tự mò". Task interview/bài tập: **đề + lời giải + giải thích**.
 3. Mỗi task xong: đổi `[ ]` → `[x]` + thêm dòng vào `PROGRESS.md`.
 4. **Cuối mỗi lượt: commit + push** (KHÔNG kèm Claude/co-author):
    ```
-   git add -A
-   git commit -m "<mô tả ngắn các note vừa thêm>"   # TUYỆT ĐỐI không có dòng "Co-Authored-By" hay "Generated with Claude"
-   git push
+   git add -A && git commit -m "<mô tả ngắn>" && git push
    ```
-   (Push lỗi mạng thì commit local vẫn ok, lượt sau push tiếp.)
-5. **Khi tất cả task trong file `[x]`**: sinh batch mới (6–10 task) từ **Module tiếp theo trong `ADVANCED.md`**, ghi đè "BATCH HIỆN TẠI", cập nhật header. Giữ PROTOCOL nguyên vẹn. Khi hết module → đào sâu thêm (bài tập/case mới) bất kỳ chủ đề nào trong ADVANCED.md.
-6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp nội dung đã có (đã có 68 note Phase 0–9 trong `notes/`).
+   Commit message TUYỆT ĐỐI không có "Co-Authored-By" / "Generated with Claude". Push lỗi mạng → commit local, lượt sau push.
+5. **Khi tất cả `[x]`**: sinh batch mới (6–10 task) từ **Module tiếp theo trong `ADVANCED.md`**, ghi đè "BATCH HIỆN TẠI", cập nhật header. Giữ PROTOCOL. Hết module → đào sâu thêm (bài tập/case mới).
+6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #11 — Module A: SQL Mastery & Analytics Patterns
+**Batch hiện tại:** #12 — Module B: DE Interview Prep (conceptual)
 **Nguồn:** ADVANCED.md
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] A01 — Advanced SQL I: Gaps & Islands, Sessionization
-- **Note:** `notes/advanced/a01-sql-gaps-islands.md`. Bài toán gaps & islands (chuỗi liên tiếp), sessionization (gom event thành phiên), running/cumulative nâng cao, frame `ROWS/RANGE/GROUPS`. Snippet trên dataset e-commerce/event.
+### [ ] B01 — Spark & Big Data Q&A
+- **Note:** `notes/advanced/b01-spark-qa.md`. 15+ câu phỏng vấn + đáp án: lazy/action, narrow/wide, shuffle, partition, broadcast vs sort-merge, Catalyst/Tungsten/AQE, cache, skew, OOM, small files, RDD vs DataFrame. Link [[30-spark-model]]..[[33-spark-tuning]].
 
-### [x] A02 — Advanced SQL II: Pivot, Hierarchical, Dedup
-- **Note:** `notes/advanced/a02-sql-pivot-hierarchical.md`. PIVOT/UNPIVOT, recursive CTE cho cây/đồ thị, các chiến lược dedup (ROW_NUMBER vs DISTINCT vs GROUP BY), conditional aggregation nâng cao.
+### [ ] B02 — Streaming & Kafka Q&A
+- **Note:** `notes/advanced/b02-kafka-qa.md`. 15+ câu: partition/key/offset, consumer group, delivery semantics, exactly-once, watermark/late data, windowing, retention vs compaction, CDC, Lambda vs Kappa, backpressure. Link [[46-kafka-core]]..[[52-lambda-kappa]].
 
-### [x] A03 — Analytics Patterns: Funnel, Cohort, RFM
-- **Note:** `notes/advanced/a03-analytics-patterns.md`. Funnel analysis (tỉ lệ chuyển đổi từng bước), cohort & retention (giữ chân theo nhóm tham gia), RFM segmentation (Recency/Frequency/Monetary), attribution cơ bản. SQL mẫu cho từng cái.
+### [ ] B03 — Warehousing & dbt Q&A
+- **Note:** `notes/advanced/b03-dbt-qa.md`. 15+ câu: ELT vs ETL, materializations, ref/source/DAG, tests (relationships vì sao quan trọng), snapshots SCD2, incremental strategies, macros, exposures, slim CI. Link Phase 3 notes.
 
-### [ ] A04 — SQL Interview Problems — Set 1
-- **Note:** `notes/advanced/a04-sql-interview-1.md`. 10 bài SQL phỏng vấn (dễ→khó) + **lời giải + giải thích tư duy**: nth-highest, top-N per group, consecutive, running total, self-join, gaps...
+### [ ] B04 — Orchestration & Reliability Q&A
+- **Note:** `notes/advanced/b04-orchestration-qa.md`. 15+ câu: DAG, idempotency (vì sao sống còn), execution_date/data_interval, catchup/backfill, XCom limits, retries/SLA, trigger rules, Airflow vs Dagster vs Prefect. Link Phase 5.
 
-### [ ] A05 — SQL Interview Problems — Set 2 (window-heavy)
-- **Note:** `notes/advanced/a05-sql-interview-2.md`. 10 bài nâng cao thiên window/CTE: median, moving metrics, year-over-year, retention, sessionization, rank với tie-break, pivot động.
+### [ ] B05 — Cloud & Infra Q&A
+- **Note:** `notes/advanced/b05-cloud-qa.md`. 15+ câu: S3 không phải filesystem, partition layout, IAM least privilege, Athena bytes-scanned, EMR vs Glue, Terraform state, Docker layer cache, K8s cho data, CI/CD cho dbt. Link Phase 7.
 
-### [ ] A06 — SQL Performance & Query Optimization
-- **Note:** `notes/advanced/a06-sql-optimization.md`. Đọc EXPLAIN sâu, rewrite query chậm, index chiến lược, sargable predicates, tránh function trên cột, CTE vs subquery vs temp, partition pruning, tránh OR/NOT IN, EXISTS vs IN.
+### [ ] B06 — Data Modeling Q&A (sâu)
+- **Note:** `notes/advanced/b06-modeling-qa.md`. 15+ câu sâu hơn A07: grain, fan-out, SCD types & khi nào, fact types & additivity, conformed dimension, surrogate vs natural key, normalize vs denormalize, Data Vault sơ lược, slowly changing fact. Link Phase 2.
 
-### [ ] A07 — SQL Conceptual Q&A (interview)
-- **Note:** `notes/advanced/a07-sql-qa.md`. 20+ câu hỏi phỏng vấn SQL + trả lời ngắn gọn chuẩn (WHERE vs HAVING, JOIN types, window vs group by, NULL behavior, index, normalization, ACID, CTE recursive...).
+### [ ] B07 — Behavioral & Scenario (STAR)
+- **Note:** `notes/advanced/b07-behavioral-star.md`. Phương pháp **STAR** (Situation/Task/Action/Result); 10 câu behavioral DE hay gặp (pipeline lỗi production, dữ liệu sai, xung đột stakeholder, tối ưu chi phí, deadline...) + khung trả lời mẫu; câu hỏi nên hỏi ngược nhà tuyển dụng.
 
-### [ ] A08 — Module A review + index
-- **Note:** `notes/advanced/00-moduleA-summary.md`. Tóm tắt Module A + cheat-sheet SQL nâng cao + self-assessment. Sẵn sàng sinh Batch #12 (Module B: Interview Q&A).
+### [ ] B08 — "Explain like senior" + Module B review
+- **Note:** `notes/advanced/b08-explain-senior.md` + `notes/advanced/00-moduleB-summary.md`. Giải thích SÂU 10 khái niệm hay bị đào (idempotency, exactly-once, shuffle, SCD2, partitioning, CAP, ELT, lineage, backfill, watermark) ở mức "senior trả lời". + tổng kết Module B. Sẵn sàng sinh Batch #13 (Module C: System Design).
 
 ---
-*Hết batch → sinh Batch #12 từ Module B trong ADVANCED.md (notes-first, commit+push mỗi lượt, không Claude).*
+*Hết batch → sinh Batch #13 từ Module C (System Design) trong ADVANCED.md.*

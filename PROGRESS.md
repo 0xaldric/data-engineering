@@ -118,3 +118,8 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 12:00] A01 — Advanced SQL: gaps & islands, sessionization, frame ROWS/RANGE/GROUPS — `notes/advanced/a01-sql-gaps-islands.md`
 - [2026-06-26 12:00] A02 — Advanced SQL: pivot/unpivot, recursive hierarchical, dedup strategies — `notes/advanced/a02-sql-pivot-hierarchical.md`
 - [2026-06-26 12:00] A03 — Analytics patterns: funnel, cohort/retention, RFM — `notes/advanced/a03-analytics-patterns.md`
+- [2026-06-26 12:30] A04 — SQL interview problems set 1 (10 bài + lời giải: nth-highest, top-N, consecutive, median...) — `notes/advanced/a04-sql-interview-1.md`
+- [2026-06-26 12:30] A05 — SQL interview problems set 2 (window-heavy: MoM/YoY, cohort, affinity, Pareto, median/group) — `notes/advanced/a05-sql-interview-2.md`
+- [2026-06-26 12:30] A06 — SQL performance & optimization (sargable, anti-patterns, EXPLAIN, OLAP pruning) — `notes/advanced/a06-sql-optimization.md`
+- [2026-06-26 12:30] A07 — SQL conceptual Q&A (20+ câu phỏng vấn + đáp án) — `notes/advanced/a07-sql-qa.md`
+- [2026-06-26 12:30] A08 — Module A review + cheat-sheet. **HOÀN THÀNH MODULE A (8/8).** — `notes/advanced/00-moduleA-summary.md`
