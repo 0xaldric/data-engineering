@@ -1,7 +1,7 @@
 # 📋 task.md — Advanced DE Track (overnight loop)
 
 > Loop tự động mỗi 30 phút (overnight, **MAX OUTPUT**). Notes trong `notes/advanced/`.
-> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 23 script).
+> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 25 script).
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
@@ -15,39 +15,39 @@
 5. **Khi tất cả `[x]`**: sinh batch AI tiếp (vẫn AI/LLM — user ưu tiên). Cập nhật `00-INDEX.md`. Giữ PROTOCOL.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #35 — AI-Advanced 12: Deep Techniques & Debugging ⭐
-**Nguồn:** đào sâu AI/LLM — kỹ thuật sâu, debug, fusion
+**Batch hiện tại:** #36 — AI-Advanced 13: Advanced Patterns & More Verticals ⭐
+**Nguồn:** đào sâu AI/LLM — RAG/agentic patterns + ngành mới
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] AM01 — RAG Failure Modes & Debugging ⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/am01-rag-debugging.md` + code `rag_debugger.py`. Catalog cách RAG HỎNG (retrieval miss, sai chunk, lost-in-middle, chunk quá nhỏ/to, embedding lệch, generation bỏ context) + cách DEBUG từng cái. Code: với query fail, chẩn đoán — doc đúng có trong index? chunk tốt nhất điểm bao nhiêu? bị rank dưới k? note nào "cướp" top? Liên hệ [[ab02-rag-eval-harness]], [[ae01-self-correcting-rag]].
+### [ ] AN01 — RAG Advanced Patterns + Query Router ⭐ (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/an01-rag-advanced-patterns.md` + code `query_router.py`. Mẫu RAG nâng cao: query routing (RAG/SQL/cache/từ chối), multi-vector (1 doc nhiều embedding: summary+chi tiết), hypothetical questions (index câu hỏi giả thay đoạn), RAPTOR (cây tóm tắt phân cấp). Code: router phân loại câu hỏi (định lượng/kiến thức/chitchat/hành động) bằng heuristic + embedding → route đúng đường, in quyết định. Liên hệ [[ae06-query-understanding]], [[ad05-structured-rag]].
 
-### [x] AM02 — Advanced Prompt Patterns
-- **Note:** `notes/advanced/am02-prompt-patterns.md`. Mẫu prompt nâng cao: Chain-of-Thought (nghĩ từng bước), ReAct (reason+act+observe [[aa05-agentic-pipelines]]), few-shot (ví dụ trong prompt), structured output (JSON schema [[ai06-llm-output-governance]]), self-consistency (vote nhiều lần), role/persona. Khi nào dùng cái nào. Liên hệ [[aj08-prompt-optimization]], [[aj01-reasoning-models]].
+### [ ] AN02 — Agentic Patterns Deep
+- **Note:** `notes/advanced/an02-agentic-patterns.md`. Sâu hơn [[aa05-agentic-pipelines]], [[ac04-multi-agent]]: planner-executor, reflection (tự phê + sửa), tool-use patterns (chọn/gọi/lỗi), multi-agent debate (nhiều agent tranh luận → đồng thuận), ReAct vs plan-first, khi nào pattern nào. Vai trò DE: tool + state + trace. Liên hệ [[ag05-agent-platform]].
 
-### [x] AM03 — Advanced Chunking Strategies
-- **Note:** `notes/advanced/am03-advanced-chunking.md`. Sâu hơn [[ai03-chunking]]: semantic chunking (cắt theo điểm đổi ngữ nghĩa), propositional (mệnh đề), parent-child (chunk nhỏ tìm, trả context cha), late chunking (embed cả doc rồi cắt), sliding window + overlap tuning. Trade-off mỗi cái. Liên hệ [[ad06-doc-parsing]], [[ae08-rag-for-code]].
+### [ ] AN03 — Case Study: Telecom AI
+- **Note:** `notes/advanced/an03-case-telecom-ai.md`. AI viễn thông: tối ưu mạng (anomaly/dự báo tải), churn prediction, chăm sóc khách (RAG + chatbot), phát hiện gian lận cước. Nhấn: scale data khổng lồ (CDR [[j02-case-telecom]]), real-time mạng, time-series. Khung 7 bước.
 
-### [x] AM04 — Hybrid Search Tuning: RRF & Fusion ⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/am04-hybrid-fusion.md` + code `rrf_fusion.py`. Sâu về kết hợp vector + keyword: Reciprocal Rank Fusion (RRF — gộp THỨ HẠNG không gộp điểm), weighted fusion, tuning trọng số α. Code: trên capstone, so RRF vs weighted-hybrid vs vector-only, đo recall@k → thấy fusion ảnh hưởng. Sâu hơn [[aa03-rag-production]], [[ae07-reranking-deep]].
+### [ ] AN04 — Case Study: Energy/Utilities AI
+- **Note:** `notes/advanced/an04-case-energy-ai.md`. AI năng lượng: dự báo nhu cầu điện (time-series [[ak08-timeseries-tabular-fm]]), tối ưu lưới (grid), predictive maintenance thiết bị, anomaly tiêu thụ. Nhấn: time-series + real-time grid + an toàn vật lý (không tự điều khiển lưới [[ak05-case-manufacturing-ai]]). Liên hệ [[j03-case-energy]].
 
-### [ ] AM05 — Evaluation Metrics Deep
-- **Note:** `notes/advanced/am05-eval-metrics-deep.md`. Sâu về metric: nDCG (công thức + IDCG + graded relevance), MAP (mean average precision), hit-rate@k, precision/recall trade-off, latency percentiles (p50/p95/p99), RAGAS internals (faithfulness/context-precision/recall). Chọn metric theo bài toán. Liên hệ [[ab02-rag-eval-harness]], [[aa06-llm-eval]].
+### [ ] AN05 — Case Study: Travel/Hospitality AI
+- **Note:** `notes/advanced/an05-case-travel-ai.md`. AI du lịch: trợ lý đặt phòng/vé, reco điểm đến ([[ac02-recsys-llm]]), dynamic pricing, tóm tắt review, chatbot đa ngữ. Nhấn: đa ngữ (khách quốc tế [[ac01-multilingual-rag]]), real-time giá/tồn phòng ([[ak01-case-ecommerce-ai]]), personalization. Khung 7 bước.
 
-### [ ] AM06 — Case Study: Gaming AI Data
-- **Note:** `notes/advanced/am06-case-gaming-ai.md`. AI game: NPC thông minh (LLM dialogue), matchmaking, anti-cheat (anomaly), player analytics, content generation. Nhấn: real-time scale (triệu player [[g04-case-gaming]]), latency thấp, cost (LLM cho NPC đắt), an toàn (chat moderation). Khung 7 bước.
+### [ ] AN06 — Case Study: Social Media AI (Trust & Safety)
+- **Note:** `notes/advanced/an06-case-social-ai.md`. AI mạng xã hội: feed ranking ([[af08-case-personalization]]), moderation ở scale khổng lồ (trust & safety), phát hiện misinformation/spam/bot, đề xuất kết nối. Nhấn: moderation scale tỉ post + an toàn + chống lan truyền độc hại + fairness ([[al04-case-media-ai]]). Liên hệ [[h04-case-social-graph]].
 
-### [ ] AM07 — Case Study: Agriculture/AgriTech AI
-- **Note:** `notes/advanced/am07-case-agritech-ai.md`. AI nông nghiệp: phân tích ảnh cây/sâu bệnh (multimodal [[ae04-multimodal-rag]]), dự báo mùa vụ/thời tiết (time-series [[ak08-timeseries-tabular-fm]]), RAG kiến thức canh tác, edge (đồng ruộng mạng yếu [[ae05-edge-ai-data]]). Nhấn: multimodal + edge + đa ngữ nông dân. Liên hệ [[k04-case-agritech]].
+### [ ] AN07 — AI-DE Mock Interview 3 (đề + lời giải đầy đủ)
+- **Note:** `notes/advanced/an07-mock-interview-3.md`. Mock 3: 1 system-design (multimodal search/moderation ở scale) + 4 câu (chunking, fusion, drift, cost) + 1 behavioral. Đề + lời giải mẫu + thang chấm. Liên hệ [[am03-advanced-chunking]], [[am04-hybrid-fusion]].
 
-### [ ] AM08 — AI-DE Coding Exercises 3 (bài tập + lời giải)
-- **Note:** `notes/advanced/am08-coding-exercises-3.md`. 5 bài (retrieval/fusion/eval nâng cao) có đề + lời giải + reasoning: RRF fusion, nDCG đầy đủ, MMR diversity, sliding-window chunk, semantic-cache lookup. Dạng coding-round. Liên hệ [[am04-hybrid-fusion]], [[am05-eval-metrics-deep]].
+### [ ] AN08 — AI-DE Coding Exercises 4 (bài tập + lời giải)
+- **Note:** `notes/advanced/an08-coding-exercises-4.md`. 5 bài (router/agent/data) có đề + lời giải + reasoning: query router heuristic, ReAct loop mini, provenance log, budget cap counter, point-in-time as-of join. Dạng coding-round. Liên hệ [[an01-rag-advanced-patterns]], [[an02-agentic-patterns]].
 
-### [ ] AM09 — AI review 12 + tổng kết kỹ thuật sâu
-- **Note:** `notes/advanced/am09-ai-review12.md` + cập nhật `00-INDEX.md`. Tổng kết; bảng "kỹ thuật sâu → khi nào dùng"; debug checklist RAG; tổng kết 12 batch Module AI.
+### [ ] AN09 — AI review 13 + tổng kết
+- **Note:** `notes/advanced/an09-ai-review13.md` + cập nhật `00-INDEX.md`. Tổng kết; bảng "RAG pattern → vấn đề giải"; tổng kết 13 batch Module AI; trạng thái curriculum.
 
 ---
-*Hết batch → sinh batch AI tiếp (kỹ thuật mới, ngành mới, mock/exercise mới) — vẫn ưu tiên AI/LLM.*
+*Hết batch → sinh batch AI tiếp (ngành mới, pattern mới, mock/exercise mới) — vẫn ưu tiên AI/LLM.*
