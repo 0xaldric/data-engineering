@@ -236,3 +236,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-27 11:30] AI08 — Cost & latency AI pipeline (token cost, cache/batch embedding, LLM generation đắt nhất, unit economics, latency budget) — `notes/advanced/ai08-ai-cost-latency.md`
 - [2026-06-27 11:30] AI09 — Streaming AI infra (event-driven re-index <1', "vỡ gì khi ×2" theo tầng, đừng over-stream) — `notes/advanced/ai09-streaming-ai.md`
 - [2026-06-27 11:30] AI10 — Module AI review + map 3 câu phỏng vấn mới + bảng "ETL cũ↔AI mới". **HOÀN THÀNH MODULE AI (10 task + 3 script chạy được).** — `notes/advanced/ai10-summary.md`, `00-INDEX.md`
+
+## Track 2 — Batch #24: AI-Advanced (đẩy mạnh AI/LLM) ⭐ — overnight
+- [2026-06-27 12:00] AA01 — ⭐ Text-to-SQL CHẠY ĐƯỢC (schema linking + guardrail chặn DROP/UPDATE + EXPLAIN validate + sandbox read-only); revenue khớp — `projects/06-ai-data-engineering/text_to_sql.py`, `notes/advanced/aa01-text-to-sql.md`
+- [2026-06-27 12:00] AA02 — ⭐⭐ Guardrails CHẠY ĐƯỢC (PII redaction email/phone/CCCD + prompt injection EN/VN + grounding cosine calibrate 0.75) — `projects/06-ai-data-engineering/guardrails_demo.py`, `notes/advanced/aa02-guardrails.md`
+- [2026-06-27 12:00] AA03 — RAG production patterns (semantic cache, citations, fallback, query rewrite/HyDE, rerank, multi-tenancy, online eval) — `notes/advanced/aa03-rag-production.md`
+- [2026-06-27 12:00] AA04 — ⭐ Training data prep CHẠY ĐƯỢC (MinHash+LSH near-dup: 3 candidate vs 21 brute-force, bắt exact+reword; decontamination, quality filter) — `projects/06-ai-data-engineering/dedup_minhash.py`, `notes/advanced/aa04-training-data-prep.md`

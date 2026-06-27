@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AA01 — Text-to-SQL / NL2SQL Pipeline ⭐ (CHẠY ĐƯỢC)
+### [x] AA01 — Text-to-SQL / NL2SQL Pipeline ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/aa01-text-to-sql.md` + code `projects/06-ai-data-engineering/text_to_sql.py`. Vai trò DE: schema linking (đưa schema context cho LLM), SQL validation (parse/EXPLAIN trước khi chạy), **guardrail** (chặn DROP/DELETE, chỉ SELECT, giới hạn rows), sandbox execution, eval. Code: mock-LLM sinh SQL từ câu hỏi → validate trên DuckDB e-commerce → chặn lệnh nguy hiểm → chạy an toàn (không cần API). Liên hệ [[e05-semantic-layer]].
 
-### [ ] AA02 — Guardrails & Safety cho LLM ⭐⭐ (CHẠY ĐƯỢC)
+### [x] AA02 — Guardrails & Safety cho LLM ⭐⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/aa02-guardrails.md` + code `guardrails_demo.py`. **PII redaction** input/output (regex email/phone/CCCD), prompt injection detection (pattern), output filtering, grounding/hallucination check (output có trong context không). Code: redact PII + phát hiện injection + kiểm output grounded bằng cosine (dùng fastembed). Liên hệ [[64-governance-pii]], [[ai07-testing-nondeterministic]].
 
-### [ ] AA03 — RAG Production Patterns
+### [x] AA03 — RAG Production Patterns
 - **Note:** `notes/advanced/aa03-rag-production.md`. Semantic cache (câu hỏi tương tự → cache, dùng cosine), citations (trả nguồn chunk), fallback (retrieval rỗng → "không biết"), multi-tenancy (filter theo tenant), reranking, query rewriting/HyDE, online eval. Sâu hơn [[k05-vector-rag-deep]], [[ai05-retrieval-eval]].
 
-### [ ] AA04 — Training / Fine-tuning Data Prep (vai trò DE) ⭐ (CHẠY ĐƯỢC)
+### [x] AA04 — Training / Fine-tuning Data Prep (vai trò DE) ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/aa04-training-data-prep.md` + code `dedup_minhash.py`. DE chuẩn bị dữ liệu train: **near-duplicate detection (MinHash + LSH)**, quality filtering, dedup, instruction/RLHF data format, decontamination (loại test khỏi train), data mixing. Code: MinHash/LSH dedup phát hiện near-dup trên tập văn bản, đo. Liên hệ [[g07-dsa-for-de]].
 
 ### [ ] AA05 — Agentic Data Pipelines
