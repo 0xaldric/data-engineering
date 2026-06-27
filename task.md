@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AJ01 — Reasoning Models & Process Supervision Data
+### [x] AJ01 — Reasoning Models & Process Supervision Data
 - **Note:** `notes/advanced/aj01-reasoning-models.md`. Model suy luận (o1-style, chain-of-thought): data cho reasoning — process supervision (chấm từng BƯỚC suy luận, không chỉ đáp án cuối), CoT dataset, verifier/PRM (process reward model), test-time compute. Vai trò DE: thu/chấm reasoning traces, token nhiều ([[ah04-tokenization]]). Liên hệ [[ag03-rlhf-preference-data]].
 
-### [ ] AJ02 — AI Alignment & Safety (sâu)
+### [x] AJ02 — AI Alignment & Safety (sâu)
 - **Note:** `notes/advanced/aj02-ai-alignment.md`. Căn chỉnh model theo giá trị con người: RLHF → Constitutional AI (AI tự phê theo "hiến pháp"), refusal/safety training, helpfulness vs harmlessness trade-off, jailbreak resistance, value alignment. Vai trò DE: data alignment + red-team ([[ah03-red-teaming]]). Liên hệ [[ag03-rlhf-preference-data]], [[ad04-llm-security]].
 
-### [ ] AJ03 — Capstone Integration: AI Data Product ⭐ (CHẠY ĐƯỢC)
+### [x] AJ03 — Capstone Integration: AI Data Product ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/aj03-capstone-integration.md` + code `ai_product.py`. Ghép các script thành 1 LUỒNG hoàn chỉnh: câu hỏi → guardrail ([[aa02-guardrails]]) → semantic cache ([[ad08-semantic-cache]]) → retrieve ([[ai02-rag-capstone-writeup]]) → (mock generate) → validate ([[ai06-llm-output-governance]]) → log trace mỗi tầng. Chạy vài câu, in hành trình mỗi câu (cache hit? chặn? quarantine?). Đây là "AI data product" thu nhỏ — portfolio mạnh nhất ([[ad09-ai-review4]]).
 
-### [ ] AJ04 — Next-gen Vector Search: Matryoshka & Binary Quant ⭐ (CHẠY ĐƯỢC)
+### [x] AJ04 — Next-gen Vector Search: Matryoshka & Binary Quant ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/aj04-nextgen-vector.md` + code `vector_compression.py`. Kỹ thuật mới: Matryoshka embedding (cắt chiều 384→128→64 vẫn dùng được), binary quantization (mỗi chiều→1 bit, Hamming distance). Code: trên capstone, cắt chiều + binary-quantize vector, đo recall@5 vs full → thấy trade-off RAM/recall thật. Sâu hơn [[af04-vector-db-internals]], [[ab07-vector-search-opt]].
 
 ### [ ] AJ05 — Case Study: Healthcare AI Data Platform
