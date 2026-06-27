@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AB01 — Synthetic Data Generation với LLM ⭐ (CHẠY ĐƯỢC)
+### [x] AB01 — Synthetic Data Generation với LLM ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ab01-synthetic-data.md` + code `projects/06-ai-data-engineering/synthetic_data.py`. Sinh dữ liệu giả bằng LLM (cho train/test khi thiếu data): đa dạng (diversity), quality filter, dedup (MinHash — [[aa04-training-data-prep]]), tránh mode collapse, label balance; rủi ro (bias khuếch đại, distribution drift vs data thật). Code: mock-LLM sinh N synthetic ticket đa dạng → dedup + balance + quality filter, đo.
 
-### [ ] AB02 — RAG Eval Harness (CHẠY ĐƯỢC)
+### [x] AB02 — RAG Eval Harness (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ab02-rag-eval-harness.md` + code `rag_eval_harness.py`. Eval harness hoàn chỉnh: golden set → chạy retrieval → metric (recall@k/precision@k/MRR/nDCG) → report + so cấu hình (chunk size / hybrid on-off). Code: harness chạy nhiều cấu hình trên capstone, in bảng so sánh. Sâu hơn [[ai05-retrieval-eval]], [[aa06-llm-eval]].
 
-### [ ] AB03 — Context Engineering & Memory cho Agent
+### [x] AB03 — Context Engineering & Memory cho Agent
 - **Note:** `notes/advanced/ab03-context-engineering.md`. Quản context window (token budget): chọn/cắt/nén context, memory (short-term conversation + long-term vector), tool-result caching, context compression, "lost in the middle"; DE cung cấp memory store + retrieval cho agent. Liên hệ [[aa05-agentic-pipelines]].
 
-### [ ] AB04 — Semantic Layer cho LLM (NL→metrics)
+### [x] AB04 — Semantic Layer cho LLM (NL→metrics)
 - **Note:** `notes/advanced/ab04-semantic-layer-llm.md`. Vì sao text-to-SQL thô nguy hiểm → LLM sinh **metric query qua semantic layer** ([[e05-semantic-layer]]) thay SQL thô: an toàn (metric định nghĩa sẵn), nhất quán, ít hallucination schema; NL → metric/dimension đã governed. Liên hệ [[aa01-text-to-sql]].
 
 ### [ ] AB05 — Embedding Fine-tuning & Domain Adaptation

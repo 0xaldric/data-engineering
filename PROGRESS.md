@@ -248,3 +248,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-27 12:30] AA08 — Multimodal pipelines (CLIP/OCR/Whisper, cross-modal search, multimodal RAG, object store + cost/incremental) — `notes/advanced/aa08-multimodal.md`
 - [2026-06-27 13:00] AA09 — GraphRAG + knowledge graph (LLM trích entity/relation, entity resolution, graph+vector hybrid, multi-hop, khi nào > vector RAG) — `notes/advanced/aa09-graphrag.md`
 - [2026-06-27 13:00] AA10 — LLMOps + vector DB at scale (version/deploy/monitor/cost/safety, quality drift, ANN/PQ/sharding, API vs self-host) + tổng kết AI-Advanced. **HOÀN THÀNH AI-ADVANCED (AA01–AA10 + 3 script mới).** — `notes/advanced/aa10-llmops.md`, `00-INDEX.md`
+
+## Track 2 — Batch #25: AI-Advanced 2 (đẩy mạnh AI/LLM) ⭐ — overnight
+- [2026-06-27 13:30] AB01 — ⭐ Synthetic Data Generation CHẠY ĐƯỢC (mock-LLM + 4 cổng chất lượng: quality/dedup/diversity/balance; 144 thô→42 sạch, diversity 0.09→0.34; mode collapse, bias amplify, drift, model collapse) — `projects/06-ai-data-engineering/synthetic_data.py`, `notes/advanced/ab01-synthetic-data.md`
+- [2026-06-27 13:30] AB02 — ⭐ RAG Eval Harness CHẠY ĐƯỢC (sweep config trên capstone: hybrid k=5 88% > vector-only 75%, k↑→recall↑ MRR phẳng; nDCG sửa chia IDCG ∈[0,1]; harness→CI gate) — `projects/06-ai-data-engineering/rag_eval_harness.py`, `notes/advanced/ab02-rag-eval-harness.md`
+- [2026-06-27 13:30] AB03 — Context Engineering & Memory (token budget, lost-in-the-middle, short-term vs long-term=RAG, truncate/summarize/retrieve/compress/cache/structured) — `notes/advanced/ab03-context-engineering.md`
+- [2026-06-27 13:30] AB04 — Semantic Layer cho LLM (NL→{metric,dim,filter} thay SQL thô: nhất quán/an toàn/ít hallucinate, function-calling có kỷ luật, 80/20 vs text-to-SQL) — `notes/advanced/ab04-semantic-layer-llm.md`
