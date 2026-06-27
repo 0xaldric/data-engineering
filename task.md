@@ -31,10 +31,10 @@
 ### [x] AE03 — Data Quality cho LLM Training Data ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ae03-training-data-quality.md` + code `data_quality_score.py`. Chấm CHẤT LƯỢNG dataset train: chiều đo (độ dài, trùng lặp, đa dạng, ngôn ngữ, toxic-flag heuristic, format-valid), quality score tổng hợp, lọc theo ngưỡng. Code: chấm 1 tập mẫu (tốt + xấu trộn), in điểm từng chiều + quyết định giữ/bỏ. Liên hệ [[aa04-training-data-prep]], [[ab01-synthetic-data]], [[ab08-finetune-pipeline]].
 
-### [ ] AE04 — Multimodal RAG sâu (ảnh + text)
+### [x] AE04 — Multimodal RAG sâu (ảnh + text)
 - **Note:** `notes/advanced/ae04-multimodal-rag.md`. Sâu hơn [[aa08-multimodal]]: shared embedding space (CLIP), cross-modal retrieval (text→ảnh, ảnh→text), multimodal chunking (ảnh+caption), khi nào OCR vs visual embedding, pipeline data ảnh (object store, cost, incremental). Liên hệ [[ad06-doc-parsing]], [[ac05-voice-audio-pipeline]].
 
-### [ ] AE05 — On-device / Edge AI Data
+### [x] AE05 — On-device / Edge AI Data
 - **Note:** `notes/advanced/ae05-edge-ai-data.md`. AI chạy trên thiết bị (điện thoại/IoT): model lượng tử hoá nhỏ, local embedding (như fastembed!), vì sao (privacy/latency/offline/cost), thách thức data (sync, eval phân tán, model update OTA), federated learning (khái niệm). Liên hệ [[ad03-privacy-compliance]], [[c04-case-iot]].
 
 ### [ ] AE06 — Query Understanding & Routing
