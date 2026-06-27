@@ -22,19 +22,19 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AK01 — Case Study: E-commerce AI Platform
+### [x] AK01 — Case Study: E-commerce AI Platform
 - **Note:** `notes/advanced/ak01-case-ecommerce-ai.md`. AI cho thương mại điện tử: product search ngữ nghĩa + ảnh ([[ae04-multimodal-rag]]), reco ([[ac02-recsys-llm]]), tóm tắt review, chatbot mua hàng, tạo mô tả sản phẩm. Nhấn: scale catalog lớn, real-time tồn kho/giá ([[af08-case-personalization]]), đa ngữ ([[ac01-multilingual-rag]]), cold-start sản phẩm mới. Khung 7 bước ([[af09-ai-review6]]).
 
-### [ ] AK02 — Case Study: Legal AI Platform
+### [x] AK02 — Case Study: Legal AI Platform
 - **Note:** `notes/advanced/ak02-case-legal-ai.md`. AI cho pháp lý: phân tích hợp đồng, RAG case law/luật, citation BẮT BUỘC (trích điều luật thật, không bịa — [[ag02-hallucination-detection]]), privilege/bảo mật, audit. Nhấn: grounding + citation chính xác tuyệt đối, privacy tài liệu, human (luật sư) quyết. Tương tự y tế ([[aj05-case-healthcare-ai]]) về độ gắt.
 
-### [ ] AK03 — Case Study: Education AI Platform
+### [x] AK03 — Case Study: Education AI Platform
 - **Note:** `notes/advanced/ak03-case-education-ai.md`. AI giáo dục: gia sư cá nhân hoá, sinh nội dung/câu hỏi, chấm bài tự động + feedback, theo dõi tiến độ. Nhấn: personalization ([[af08-case-personalization]]), eval chất lượng sư phạm, an toàn trẻ em ([[aj02-ai-alignment]]), chống gian lận, đa trình độ. Data flywheel từ tương tác học ([[aj07-data-flywheel]]).
 
-### [ ] AK04 — Case Study: Government/Public Service AI
+### [x] AK04 — Case Study: Government/Public Service AI
 - **Note:** `notes/advanced/ak04-case-govt-ai.md`. AI dịch vụ công: trợ lý thủ tục hành chính, RAG văn bản pháp quy, đa ngữ/dân tộc, accessibility, minh bạch (giải trình quyết định công), công bằng (không thiên lệch nhóm — [[af06-ai-data-governance]]). Nhấn: transparency + fairness + privacy công dân + độ phủ ngôn ngữ.
 
-### [ ] AK05 — Case Study: Manufacturing/IoT AI
+### [x] AK05 — Case Study: Manufacturing/IoT AI
 - **Note:** `notes/advanced/ak05-case-manufacturing-ai.md`. AI sản xuất/IoT: predictive maintenance (sensor + LLM giải thích), anomaly detection, RAG tài liệu kỹ thuật/máy, edge AI ([[ae05-edge-ai-data]]), digital twin. Nhấn: time-series sensor scale lớn ([[c04-case-iot]]), real-time edge, LLM bổ trợ chẩn đoán không tự dừng máy.
 
 ### [ ] AK06 — Data Labeling & Annotation Infrastructure ⭐ (CHẠY ĐƯỢC)
