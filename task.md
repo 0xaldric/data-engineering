@@ -37,10 +37,10 @@
 ### [x] AI05 — Retrieval eval sâu (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ai05-retrieval-eval.md` + mở rộng capstone. recall@k, precision@k, MRR, nDCG; re-ranking; RAG faithfulness/groundedness (RAGAS/LLM-judge khái niệm); golden set xây thế nào. Code: thêm hàm tính MRR/nDCG vào rag_over_notes, in bảng metric.
 
-### [ ] AI06 — LLM-as-data-producer Governance ⭐⭐ (GAP quan trọng)
+### [x] AI06 — LLM-as-data-producer Governance ⭐⭐ (GAP quan trọng)
 - **Note:** `notes/advanced/ai06-llm-output-governance.md` + code demo. Dữ liệu LLM sinh (nhãn/JSON/tóm tắt) đổ vào bảng production: validate structured output (pydantic + retry/repair), **data contract cho output LLM** (schema+confidence+provenance), version `model+prompt+input→output` (lineage/reproducibility), human-in-loop sampling, drift khi model nâng cấp. Code: `llm_output_pipeline.py` mô phỏng LLM trả JSON (đôi khi lỗi) → validate/repair/quarantine + log provenance (chạy được, không cần API thật).
 
-### [ ] AI07 — Testing dữ liệu Non-deterministic ⭐⭐ (GAP quan trọng)
+### [x] AI07 — Testing dữ liệu Non-deterministic ⭐⭐ (GAP quan trọng)
 - **Note:** `notes/advanced/ai07-testing-nondeterministic.md` + code. Vì sao không exact-match (cùng input khác output); golden set; **semantic equivalence test** (cosine > ngưỡng, dùng embedding đã có); schema/format validation; statistical/distribution test; snapshot + review; CI cho output LLM. Code: `test_semantic.py` so 2 câu trả lời "khác chữ cùng nghĩa" pass, "khác nghĩa" fail (dùng fastembed).
 
 ### [ ] AI08 — Cost & Latency cho AI pipeline
@@ -53,4 +53,4 @@
 - **Note:** `notes/advanced/ai10-summary.md` + cập nhật `00-INDEX.md`. Tổng kết Module AI; map 3 câu hỏi phỏng vấn mới (RAG pipeline / eval retrieval / version dữ liệu LLM) → note nào trả lời; checklist "sẵn sàng trụ cột thứ 4"; "danh từ đổi tư duy không đổi" — bảng đối chiếu ETL cũ ↔ RAG mới.
 
 ---
-*Hết Module AI → quay lại Extra L (HR/manufacturing/retail) hoặc thêm bài AI nâng cao (agentic data pipeline, RAG production patterns...).*
+*Hết Module AI (AI01–AI10) → sinh batch **AI-Advanced** từ ADVANCED.md (agentic, RAG production, guardrails, training-data, LLMOps, multimodal, text-to-SQL...). User ƯU TIÊN tiếp tục AI/LLM, chưa quay Extra. Ưu tiên task có code chạy được (local).*

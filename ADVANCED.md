@@ -74,5 +74,21 @@ Loop lấy chủ đề từ các **Module** dưới đây, mỗi chủ đề →
 - **Streaming cho AI infra**: re-index <1 phút khi tài liệu đổi (event-driven), feature serving real-time
 - Module AI review + map sang tiêu chuẩn phỏng vấn mới
 
+### Module AI-Advanced (sau AI10 — user muốn đẩy mạnh AI/LLM; ưu tiên tiếp tục mảng này)
+- **Agentic data pipelines**: LLM agent điều phối công việc data, tool use, text-to-SQL agent, self-healing pipeline
+- **RAG production patterns**: caching (semantic cache), fallback, citations, multi-tenancy, freshness, eval online
+- **Guardrails & safety** ⭐: PII redaction in/out, prompt injection, output filtering, hallucination/grounding check
+- **Training/Fine-tuning data prep** (vai trò DE): curation, dedup (MinHash/LSH), quality filtering, instruction data, RLHF data
+- **LLM evaluation frameworks**: RAGAS sâu, eval harness, golden dataset, human eval, online eval, regression
+- **Prompt management & versioning**: prompt as code, registry, A/B prompt, prompt + output lineage
+- **Multimodal data pipelines**: image/audio/video embedding, OCR, transcription (Whisper), CLIP
+- **GraphRAG / Knowledge graph + RAG**: entity/relation extraction, graph + vector hybrid retrieval
+- **Synthetic data generation** với LLM (cho training/test); data augmentation
+- **LLMOps**: deploy/monitor model+prompt, cost dashboard, drift, A/B, model registry
+- **Context engineering / memory cho agent**: context window mgmt, memory store, tool-result caching
+- **Vector DB at scale**: sharding, quantization (PQ), filtered search performance, hybrid tuning
+- **Text-to-SQL / NL2SQL pipeline**: schema linking, semantic layer cho LLM, eval, guardrail
+- **Real-time/streaming RAG**: cập nhật tri thức real-time, CDC → re-embed, freshness SLA
+
 ---
-*Khi hết tất cả module → loop có thể đào sâu thêm bất kỳ chủ đề nào ở trên (set bài tập mới, case study mới), hoặc dừng.*
+*Hết module → tiếp tục AI-Advanced (user ưu tiên AI/LLM), rồi mới quay Extra (case/SQL). Hoặc đào sâu bất kỳ chủ đề nào.*
