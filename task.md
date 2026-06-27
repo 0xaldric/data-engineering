@@ -22,10 +22,10 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AD01 — Real-time / Streaming RAG ⭐ (CHẠY ĐƯỢC)
+### [x] AD01 — Real-time / Streaming RAG ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ad01-streaming-rag.md` + code `streaming_rag.py`. RAG tươi gần real-time: doc mới → index trong vài giây (incremental theo hash/CDC), freshness SLA, khi nào cần streaming vs batch. Code: mô phỏng "stream" — thêm 1 note MỚI vào corpus, query TRƯỚC (không thấy) → incremental re-index → query SAU (thấy ngay), đo độ trễ freshness. Sâu hơn [[ai09-streaming-ai]], [[ac06-kb-freshness]].
 
-### [ ] AD02 — LLM-as-Judge tự động ⭐ (CHẠY ĐƯỢC)
+### [x] AD02 — LLM-as-Judge tự động ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ad02-llm-judge.md` + code `llm_judge.py`. Eval tự động bằng "judge" (rubric chấm điểm): pointwise/pairwise, rubric, bias (vị trí/độ dài/tự khen), calibrate vs human. Code: mock-judge chấm câu trả lời theo rubric (grounding bằng cosine với reference + heuristic độ dài/từ khoá), so 2 câu (pairwise), in điểm + cảnh báo bias. Sâu hơn [[aa06-llm-eval]], [[ac03-eval-driven-dev]].
 
 ### [ ] AD03 — Privacy & Compliance cho LLM

@@ -270,3 +270,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-27 16:00] AC07 — Feature Store cho ML/LLM (online/offline parity, point-in-time correctness + as-of join chống leakage, embedding=feature, Feast/Tecton) — `notes/advanced/ac07-feature-store.md`
 - [2026-06-27 16:00] AC08 — Cost Optimization ở scale (routing/cascade model nhỏ↔lớn, cache nhiều tầng exact/semantic/embedding + invalidation, prompt compression, distill, $/query unit economics, budget cap) — `notes/advanced/ac08-ai-cost-scale.md`
 - [2026-06-27 16:00] AC09 — AI review 3 + **ngân hàng 45 câu hỏi phỏng vấn AI-DE** (6 nhóm RAG/output/data-cho-AI/eval-LLMOps/kiến-trúc/ML-cost) + portfolio pitch 90s. **HOÀN THÀNH AI-ADVANCED 3 (AC01–AC09, +2 script: cross_lingual_eval, semantic_recsys = 10 script AI).** — `notes/advanced/ac09-ai-review3.md`, `00-INDEX.md`
+
+## Track 2 — Batch #27: AI-Advanced 4 (đẩy mạnh AI/LLM) ⭐ — overnight
+- [2026-06-27 16:30] AD01 — ⭐ Streaming/Real-time RAG CHẠY ĐƯỢC (doc mới stream vào → searchable 191ms, incremental embed 1/207 doc, reconcile chống ghost; incremental-embed≠incremental-index HNSW rebuild nghẽn; streaming vs batch đừng over-stream) — `projects/06-ai-data-engineering/streaming_rag.py`, `notes/advanced/ad01-streaming-rag.md`
+- [2026-06-27 16:30] AD02 — ⭐ LLM-as-Judge CHẠY ĐƯỢC (rubric grounding+coverage, pointwise/pairwise, GOOD 0.964>VERBOSE 0.555, soi length/position bias; 5 bias + calibrate với nhãn người) — `projects/06-ai-data-engineering/llm_judge.py`, `notes/advanced/ad02-llm-judge.md`
