@@ -13,3 +13,4 @@ projects/04-dbt/target/
 projects/04-dbt/dbt_packages/
 projects/04-dbt/logs/
 projects/04-dbt/package-lock.yml
+warehouse/*.json

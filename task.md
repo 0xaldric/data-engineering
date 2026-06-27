@@ -1,7 +1,7 @@
 # 📋 task.md — Advanced DE Track (overnight loop)
 
 > Loop tự động mỗi 30 phút (overnight, **MAX OUTPUT**). Notes trong `notes/advanced/`.
-> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 16 script).
+> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 17 script).
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
@@ -15,39 +15,39 @@
 5. **Khi tất cả `[x]`**: sinh batch AI tiếp (vẫn AI/LLM — user ưu tiên). Cập nhật `00-INDEX.md`. Giữ PROTOCOL.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #29 — AI-Advanced 6: Case Studies AI-DE + Scale/Internals ⭐
-**Nguồn:** đào sâu AI/LLM — system design & vận hành thực tế
+**Batch hiện tại:** #30 — AI-Advanced 7: Production AI Systems (hallucination, drift, RLHF, agent platform) ⭐
+**Nguồn:** đào sâu AI/LLM — vận hành & data sâu hơn
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] AF01 — Case Study: Customer Support AI Platform (system design)
-- **Note:** `notes/advanced/af01-case-support-ai.md`. Thiết kế hệ AI hỗ trợ khách: ingest tài liệu/ticket → RAG trả lời + trích dẫn → guardrail (PII/injection) → escalation sang người khi không tự tin ([[ae01-self-correcting-rag]]) → feedback loop. Kiến trúc, data flow, freshness, eval (deflection rate), cost. Tổng hợp [[aa03-rag-production]], [[ad02-llm-judge]], [[ac05-voice-audio-pipeline]].
+### [ ] AG01 — RAG cho BI/Analytics & Conversational Data
+- **Note:** `notes/advanced/ag01-rag-bi-analytics.md`. "Chat với dữ liệu": NL → insight, kết hợp semantic layer ([[ab04-semantic-layer-llm]]) + text-to-SQL ([[aa01-text-to-sql]]) + RAG metadata (hiểu bảng/cột). Conversational analytics (follow-up, ngữ cảnh), trả số chính xác + giải thích, viz gợi ý. Khác RAG text ([[ad05-structured-rag]]). Cạm bẫy số sai = mất niềm tin.
 
-### [x] AF02 — Case Study: Enterprise Knowledge Assistant (multi-source + permissions)
-- **Note:** `notes/advanced/af02-case-enterprise-kb.md`. RAG trên nhiều nguồn (Confluence/Drive/Slack/DB) với **phân quyền** (user chỉ thấy doc được phép — row-level security cho RAG), freshness đa nguồn ([[ac06-kb-freshness]]), conflicting info, audit. Thách thức: permission-aware retrieval, multi-tenancy ([[ad03-privacy-compliance]]).
+### [ ] AG02 — Hallucination Detection & Mitigation ⭐ (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/ag02-hallucination-detection.md` + code `hallucination_detect.py`. Phát hiện bịa: grounding (bám context?), **self-consistency** (hỏi N lần, lệch nhau nhiều = bịa), NLI/entailment, citation check. Code: mock-LLM trả N lần cho 2 câu (1 chắc chắn, 1 bịa) → đo độ nhất quán bằng cosine giữa các lần → cờ "có thể bịa". Liên hệ [[aa02-guardrails]], [[ad02-llm-judge]].
 
-### [x] AF03 — Case Study: AI Coding Assistant Data Platform
-- **Note:** `notes/advanced/af03-case-coding-assistant.md`. Nền data cho code assistant ở repo scale: index nghìn repo ([[ae08-rag-for-code]]), incremental theo commit, repo-context (import/call graph), eval (acceptance rate), privacy (code là tài sản), latency thấp. Kiến trúc + trade-off.
+### [ ] AG03 — RLHF & Preference Data Pipeline
+- **Note:** `notes/advanced/ag03-rlhf-preference-data.md`. Data cho RLHF/DPO: thu preference pair (chosen/rejected), nguồn (human annotation, AI feedback - RLAIF), chất lượng annotation (agreement, guideline), reward model data, cạm bẫy (annotator bias, reward hacking). Vai trò DE: pipeline thu/validate/version preference data. Liên hệ [[ab08-finetune-pipeline]], [[ae03-training-data-quality]].
 
-### [x] AF04 — Vector DB Internals sâu
-- **Note:** `notes/advanced/af04-vector-db-internals.md`. Bên trong vector DB: HNSW build (layer/M/ef), IVF-PQ (cụm + nén), **DiskANN** (ANN trên đĩa khi vector vượt RAM), filtered search internals, sharding/replication, consistency. Vì sao chọn Qdrant/Milvus/pgvector. Sâu hơn [[ab07-vector-search-opt]], [[aa10-llmops]].
+### [ ] AG04 — AI Observability sâu: Drift Detection ⭐ (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/ag04-drift-detection.md` + code `drift_detect.py`. Phát hiện drift trong hệ AI: input drift (phân phối câu hỏi đổi), embedding drift (centroid dịch), output drift, quality drift. Code: so 2 batch embedding (cũ vs mới) bằng khoảng cách centroid + avg pairwise → cờ drift khi vượt ngưỡng. Liên hệ [[ab06-llm-observability]], [[aa10-llmops]].
 
-### [x] AF05 — LLM Training Data Pipeline ở Scale (petabyte)
-- **Note:** `notes/advanced/af05-training-data-scale.md`. Pipeline data train LLM ở scale lớn: thu thập web-scale, dedup ở scale (MinHash/LSH phân tán — [[aa04-training-data-prep]]), tokenization, sharding/streaming tới trainer, data mixing/weighting, quality filter ở scale ([[ae03-training-data-quality]]), decontamination. Spark/Ray, định dạng (WebDataset/Parquet).
+### [ ] AG05 — Agent Platform Data Infrastructure (sâu)
+- **Note:** `notes/advanced/ag05-agent-platform.md`. Sâu hơn [[ad07-agent-data]]: tool registry (đăng ký/version/scope tool), orchestration state machine, multi-agent coordination (shared blackboard/message), agent run store (mỗi run = 1 trace có thể replay), human-in-loop queue. Nền tảng vận hành agent ở scale. Liên hệ [[ac04-multi-agent]].
 
-### [ ] AF06 — AI Data Governance & Compliance
-- **Note:** `notes/advanced/af06-ai-data-governance.md`. Governance cho AI: data catalog + lineage cho AI artifact (dataset→model→prompt→output), **model cards** & **datasheets**, audit trail ([[ad03-privacy-compliance]]), EU AI Act/risk tiers (khái niệm), data provenance & consent, bias/fairness audit. Liên hệ [[k06-data-contract-impl]], [[f06-dataops]].
+### [ ] AG06 — Multimodal AI in Production (video/ảnh scale)
+- **Note:** `notes/advanced/ag06-multimodal-production.md`. Sâu hơn [[ae04-multimodal-rag]]: pipeline video/ảnh ở scale (frame sampling, scene detection, transcode), object store + CDN, cost cực lớn (GPU encode/embed), incremental, eval cross-modal. Case: search video, kiểm duyệt nội dung. Liên hệ [[ac05-voice-audio-pipeline]], [[af05-training-data-scale]].
 
-### [ ] AF07 — Continuous RAG Eval & Regression Gate ⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/af07-continuous-eval.md` + code `continuous_eval.py`. Eval liên tục như CI: chạy harness → so với baseline lưu (JSON) → PASS/FAIL theo ngưỡng (exit code) → cảnh báo regression. Code: chạy eval, lưu/đọc baseline, gate recall@k, in delta + exit ≠0 nếu tụt. Sâu hơn [[ab02-rag-eval-harness]], [[ac03-eval-driven-dev]].
+### [ ] AG07 — Conversational Memory & Long Context
+- **Note:** `notes/advanced/ag07-conversational-memory.md`. Sâu hơn [[ab03-context-engineering]]: kiến trúc memory hội thoại dài (episodic/semantic/working), tóm tắt phân cấp, long-context vs RAG-memory (khi nào nhồi cả vs retrieve), entity memory (fact bền), forgetting/TTL. Cạm bẫy chi phí token + lost-in-middle. Liên hệ [[ad07-agent-data]].
 
-### [ ] AF08 — Case Study: Real-time AI Personalization
-- **Note:** `notes/advanced/af08-case-personalization.md`. Cá nhân hoá real-time bằng AI: streaming features ([[ac07-feature-store]]) + embedding user/item ([[ac02-recsys-llm]]) + LLM re-rank/giải thích; point-in-time, freshness, cold-start, cost ở scale. Kiến trúc lambda/kappa cho AI personalization.
+### [ ] AG08 — Data Contracts cho AI I/O & Schema Evolution
+- **Note:** `notes/advanced/ag08-ai-data-contracts.md`. Hợp đồng dữ liệu cho I/O của AI: schema cho output LLM ([[ai06-llm-output-governance]]), versioning prompt+schema ([[aa07-prompt-management]]), breaking change (đổi schema output phá downstream), backward compat, contract test. Mở rộng [[k06-data-contract-impl]] cho AI.
 
-### [ ] AF09 — AI review 6 + system-design interview drill
-- **Note:** `notes/advanced/af09-ai-review6.md` + cập nhật `00-INDEX.md`. Tổng kết case studies; **khung trả lời system-design AI** (clarify→data flow→retrieval→safety→eval→scale→cost) + 3 đề system-design AI có lời giải; tổng kết 6 batch Module AI.
+### [ ] AG09 — AI review 7 + tổng kết toàn Module AI
+- **Note:** `notes/advanced/ag09-ai-review7.md` + cập nhật `00-INDEX.md`. Tổng kết AI-Advanced 7; **bản đồ năng lực AI-DE hoàn chỉnh** (7 batch → mọi chủ đề), 19 script, reflection cuối hành trình, định hướng tiếp tục.
 
 ---
-*Hết batch → sinh batch AI tiếp (agent platform data, RAG cho analytics/BI, AI observability sâu, data cho fine-tune RLHF, multi-modal production...) — vẫn ưu tiên AI/LLM.*
+*Hết batch → sinh batch AI tiếp (RAG benchmark public, LLM serving infra, data cho multimodal LLM, AI red-teaming, case study mới...) — vẫn ưu tiên AI/LLM.*
