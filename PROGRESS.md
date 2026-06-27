@@ -292,3 +292,10 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-27 19:00] AE07 — Reranking sâu (2 tầng retrieve-rộng×rerank-tinh, bi-encoder vs cross-encoder, ColBERT/LLM-rerank/MMR chống trùng, tăng-k không sửa hạng nên cần rerank) — `notes/advanced/ae07-reranking-deep.md`
 - [2026-06-27 19:00] AE08 — RAG cho Code (chunk theo AST/hàm không cắt giữa, embedding code chuyên + hybrid cho định danh, repo-context=GraphRAG import/call graph, incremental theo file) — `notes/advanced/ae08-rag-for-code.md`
 - [2026-06-27 19:00] AE09 — AI review 5 + **portfolio 16 script** map kỹ năng→phỏng vấn + định vị career "AI Data Engineer" (trụ cột thứ 4) + 5 thông điệp + tổng kết 5 batch (~55 note + 16 script). **HOÀN THÀNH AI-ADVANCED 5 (AE01–AE09).** — `notes/advanced/ae09-ai-review5.md`, `00-INDEX.md`
+
+## Track 2 — Batch #29: AI-Advanced 6 — Case Studies AI-DE + Scale ⭐ — overnight
+- [2026-06-28 08:00] AF01 — Case Study: Customer Support AI (kiến trúc ingest+serve, chống bịa=trích dẫn, escalation "biết khi nào không trả lời", deflection/CSAT eval, feedback loop) — `notes/advanced/af01-case-support-ai.md`
+- [2026-06-28 08:00] AF02 — Case Study: Enterprise KB (⭐ permission-aware retrieval pre-filter ACL an-toàn>tiện, connector đa nguồn giữ ACL gốc, freshness mỗi nguồn 1 nhịp, authority rank mâu thuẫn) — `notes/advanced/af02-case-enterprise-kb.md`
+- [2026-06-28 08:00] AF03 — Case Study: Coding Assistant (incremental theo commit diff, repo-context=vector+graph import/call, cách ly tenant code=tài sản, latency pre-compute+model nhỏ) — `notes/advanced/af03-case-coding-assistant.md`
+- [2026-06-28 08:00] AF04 — Vector DB Internals (HNSW tầng/M/ef, IVF-PQ cụm+nén, DiskANN vector trên SSD vượt RAM, filtered search trong-duyệt, sharding/consistency, chọn DB) — `notes/advanced/af04-vector-db-internals.md`
+- [2026-06-28 08:00] AF05 — Training Data Pipeline ở Scale (8 bước web-scale, dedup phân tán MinHash+LSH O(n), tokenize+shard+stream shuffle-buffer, data mixing/weighting quyết định model, idempotent/resumable) — `notes/advanced/af05-training-data-scale.md`
