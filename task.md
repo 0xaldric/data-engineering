@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] I01 — SQL Interview Problems — Set 6 (tricky/edge)
+### [x] I01 — SQL Interview Problems — Set 6 (tricky/edge)
 - **Note:** `notes/advanced/i01-sql-interview-6.md`. 10 bài hóc: overlapping intervals (merge khoảng), gaps in sequence, conditional join, anti-pattern rewrite, correlated → window, exists vs in vs join, NULL trong aggregate/join bẫy, pivot nhiều chiều, cumulative distinct, "second purchase date". Đề + lời giải.
 
-### [ ] I02 — Case: Logistics / Supply Chain Platform
+### [x] I02 — Case: Logistics / Supply Chain Platform
 - **Note:** `notes/advanced/i02-case-logistics.md`. Theo dõi hàng (shipment lifecycle, warehouse, route, inventory), IoT tracking, ETA, demand forecast, inventory optimization; accumulating snapshot, geospatial, CDC từ WMS/ERP. Khung [[c01-system-design-framework]].
 
-### [ ] I03 — Case: Video Streaming Platform (Netflix/YouTube)
+### [x] I03 — Case: Video Streaming Platform (Netflix/YouTube)
 - **Note:** `notes/advanced/i03-case-video-streaming.md`. Playback events (start/pause/buffer/quality), QoE (quality of experience), recommendation data, A/B test encoding, CDN analytics, watch-time; khối lượng cực lớn, real-time QoE + batch.
 
-### [ ] I04 — Case: Banking Core / Payments
+### [x] I04 — Case: Banking Core / Payments
 - **Note:** `notes/advanced/i04-case-banking.md`. Hệ ngân hàng lõi: account/transaction, double-entry ledger, reconciliation, fraud, regulatory reporting (immutable, audit), real-time balance; chính xác + compliance tuyệt đối. Sâu hơn [[c07-case-fintech]].
 
 ### [ ] I05 — Deep-dive: Spark Tuning thực chiến (scenarios)

@@ -194,3 +194,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 19:00] H06 — Real-time OLAP (ClickHouse/Druid/Pinot, sub-giây user-facing, MergeTree, pre-agg) — `notes/advanced/h06-realtime-olap.md`
 - [2026-06-26 19:00] H07 — Mock interview đầy đủ (SQL+system design+conceptual+behavioral, tips đánh giá) — `notes/advanced/h07-mock-interview.md`
 - [2026-06-26 19:00] H08 — Extra H review + self-assessment tổng. **HOÀN THÀNH EXTRA H (7+1).** — `notes/advanced/00-extraH-summary.md`
+
+## Track 2 — Batch #19: Extra I — NOTES-FIRST (overnight)
+- [2026-06-26 19:30] I01 — SQL set 6 tricky (merge intervals, NOT IN+NULL, correlated→window, gaps, EXISTS vs IN vs JOIN) — `notes/advanced/i01-sql-interview-6.md`
+- [2026-06-26 19:30] I02 — Case logistics/supply-chain (shipment accumulating snapshot, inventory semi-additive, geospatial) — `notes/advanced/i02-case-logistics.md`
+- [2026-06-26 19:30] I03 — Case video streaming (QoE real-time, watch-time, audience retention, Druid OLAP) — `notes/advanced/i03-case-video-streaming.md`
+- [2026-06-26 19:30] I04 — Case banking core/payments (double-entry, exactly-once, reconciliation, AML, bitemporal reporting) — `notes/advanced/i04-case-banking.md`
