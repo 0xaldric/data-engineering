@@ -210,3 +210,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 20:30] J02 — Case telecom/CDR (mediation, rating, charging real-time, fraud SIM box, billing chính xác) — `notes/advanced/j02-case-telecom.md`
 - [2026-06-26 20:30] J03 — Case energy/smart meter (VEE, interval data, gap-fill, rollup, anomaly trộm điện) — `notes/advanced/j03-case-energy.md`
 - [2026-06-26 20:30] J04 — Case govtech (Data Vault tích hợp, MDM, de-identify/k-anonymity, open data, privacy) — `notes/advanced/j04-case-govtech.md`
+- [2026-06-26 21:00] J05 — Streaming exactly-once thực chiến (3 điểm trùng/mất, idempotent producer+transaction+sink upsert) — `notes/advanced/j05-streaming-eos.md`
+- [2026-06-26 21:00] J06 — Lakehouse migration (dual-run+validate+blue-green cutover, Hive→Iceberg in-place, audit_helper) — `notes/advanced/j06-lakehouse-migration.md`
+- [2026-06-26 21:00] J07 — dbt at scale (domain+layer, contracts/exposures, slim CI, semantic layer, tránh spaghetti) — `notes/advanced/j07-dbt-at-scale.md`
+- [2026-06-26 21:00] J08 — Extra J review. **HOÀN THÀNH EXTRA J (7+1).** — `notes/advanced/00-extraJ-summary.md`

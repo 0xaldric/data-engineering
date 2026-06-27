@@ -1,7 +1,7 @@
 # 📋 task.md — Advanced DE Track (overnight loop)
 
 > Loop tự động mỗi 30 phút (overnight, **MAX OUTPUT**). **Notes-first** tiếng Việt, notes trong `notes/advanced/`.
-> ✅ ADVANCED.md (A–F) + Extra G,H,I xong. Tiếp tục **ĐÀO SÂU** (Extra J...).
+> ✅ ADVANCED.md (A–F) + Extra G,H,I,J xong. Tiếp tục **ĐÀO SÂU** (Extra K...).
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
@@ -12,39 +12,39 @@
    git add -A && git commit -m "<mô tả ngắn>" && git push
    ```
    Commit message TUYỆT ĐỐI không có "Co-Authored-By"/"Generated with Claude". Push lỗi → commit local, lượt sau push.
-5. **Khi tất cả `[x]`**: sinh batch Extra tiếp theo (K...): case domain chưa làm, SQL set mới, deep-dive. Cập nhật `00-INDEX.md`. Giữ PROTOCOL. Không lặp note đã có.
+5. **Khi tất cả `[x]`**: sinh batch Extra tiếp theo (L...): case domain chưa làm, SQL set mới, deep-dive. Cập nhật `00-INDEX.md`. Giữ PROTOCOL. Không lặp note đã có.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`.
 
-**Batch hiện tại:** #20 — Extra J: case mới + deep-dive
+**Batch hiện tại:** #21 — Extra K: case mới + deep-dive AI/contract/observability
 **Nguồn:** đào sâu
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] J01 — SQL Interview Problems — Set 7 (mixed hard)
-- **Note:** `notes/advanced/j01-sql-interview-7.md`. 10 bài tổng hợp khó: running max/min, islands có điều kiện, pivot + aggregate, recursive running balance, lead/lag nhiều bước, conditional first/last, dedup phức tạp, percentile bucket, time-weighted average, "khách mua đủ N category". Đề + lời giải.
+### [ ] K01 — SQL Interview Problems — Set 8 (mixed)
+- **Note:** `notes/advanced/k01-sql-interview-8.md`. 10 bài: overlapping count (max concurrent), running count distinct theo window, conditional pivot, hierarchical aggregate (rollup theo cây), nearest neighbor (asof join), first event after condition, ratio/share, sliding window distinct, deduplicate keeping latest non-null, sequence gap detection. Đề + lời giải.
 
-### [x] J02 — Case: Telecom / CDR Platform
-- **Note:** `notes/advanced/j02-case-telecom.md`. Call Detail Records (CDR) khối lượng khổng lồ: billing, network usage, dropped call analytics, churn prediction; rating/charging real-time, fraud (SIM box), data usage; high volume + chính xác billing.
+### [ ] K02 — Case: Insurance Data Platform
+- **Note:** `notes/advanced/k02-case-insurance.md`. Bảo hiểm: policy lifecycle, claims processing, underwriting/risk pricing, fraud detection, actuarial; bitemporal (policy/claim sửa hồi tố), reserving chính xác, regulatory. Liên hệ [[e04-bitemporal]], [[c07-case-fintech]].
 
-### [x] J03 — Case: Energy / Utility / Smart Meter
-- **Note:** `notes/advanced/j03-case-energy.md`. Smart meter (đọc điện/nước theo interval), demand forecast, billing, grid monitoring, anomaly (rò rỉ/trộm); time-series khổng lồ, out-of-order, interval data, rollup. Liên hệ [[c04-case-iot]].
+### [ ] K03 — Case: Real Estate / PropTech
+- **Note:** `notes/advanced/k03-case-realestate.md`. Listing, pricing/valuation (AVM), market analytics, search; ingest đa nguồn (MLS, public records), geospatial, slowly changing listing, price history; estimate model data.
 
-### [x] J04 — Case: GovTech / Public Data Platform
-- **Note:** `notes/advanced/j04-case-govtech.md`. Dữ liệu công (census, thuế, y tế công, giao thông): tích hợp nhiều nguồn (Data Vault), privacy/anonymization, open data, audit, độ tin cậy; governance + lineage nặng. Liên hệ [[e01-data-vault]], [[64-governance-pii]].
+### [ ] K04 — Case: AgriTech / Precision Farming
+- **Note:** `notes/advanced/k04-case-agritech.md`. Cảm biến nông nghiệp (đất/thời tiết/drone/satellite), yield prediction, irrigation optimization; IoT + geospatial + weather data integration; time-series + image data. Liên hệ [[c04-case-iot]].
 
-### [ ] J05 — Deep-dive: Streaming Exactly-once thực chiến
-- **Note:** `notes/advanced/j05-streaming-eos.md`. Triển khai exactly-once end-to-end thật: Kafka EOS (idempotent producer + transaction) + Spark/Flink checkpoint + **sink idempotent** (upsert/dedup theo key); các điểm có thể trùng/mất; pattern cho sink ngoài (DB/lake). Sâu hơn [[47-kafka-consumers]], [[49-stream-processing]].
+### [ ] K05 — Deep-dive: Vector DB & RAG sâu
+- **Note:** `notes/advanced/k05-vector-rag-deep.md`. Vector DB nội tại (HNSW/IVF index, ANN search), embedding pipeline, chunking strategies, hybrid search (vector + keyword/BM25), re-ranking, RAG eval (recall@k, faithfulness), freshness/incremental re-embed. Sâu hơn [[g06-case-ml-llm-data]].
 
-### [ ] J06 — Deep-dive: Lakehouse Migration
-- **Note:** `notes/advanced/j06-lakehouse-migration.md`. Di chuyển: Hive→Iceberg/Delta, on-prem Hadoop→cloud lakehouse, warehouse→lakehouse; chiến lược (dual-write, backfill, cutover, validation); rủi ro & rollback; chi phí; downtime. Liên hệ [[35-table-formats]], [[i07-backfill-reprocessing]].
+### [ ] K06 — Deep-dive: Data Contract Implementation
+- **Note:** `notes/advanced/k06-data-contract-impl.md`. Triển khai data contract thật: định nghĩa (YAML/JSON schema + SLA + semantics), enforcement (CI schema diff, runtime validation, Schema Registry), versioning & breaking change workflow, producer/consumer responsibility. Sâu hơn [[61-data-contracts]].
 
-### [ ] J07 — Deep-dive: dbt at Scale (large project)
-- **Note:** `notes/advanced/j07-dbt-at-scale.md`. dbt project nghìn model: cấu trúc theo domain, naming, tags, exposures, performance (incremental, không full rebuild), CI slim, governance metric, ownership; tránh "spaghetti dbt". Sâu hơn [[d02-dbt-advanced]].
+### [ ] K07 — Deep-dive: Data Observability Tooling
+- **Note:** `notes/advanced/k07-observability-tooling.md`. Triển khai observability: 5 trụ (freshness/volume/schema/distribution/lineage) đo thế nào; Elementary (dbt-native), Monte Carlo, Soda; anomaly detection (baseline + ML); alerting + incident; SLO data. Sâu hơn [[62-observability]].
 
-### [ ] J08 — Extra J review + index
-- **Note:** `notes/advanced/00-extraJ-summary.md` + cập nhật `00-INDEX.md`. Tổng kết Extra J. Sẵn sàng Extra K.
+### [ ] K08 — Extra K review + index
+- **Note:** `notes/advanced/00-extraK-summary.md` + cập nhật `00-INDEX.md`. Tổng kết Extra K. Sẵn sàng Extra L.
 
 ---
-*Hết batch → sinh Extra K (case: insurance, real estate, agritech...; SQL set 8; deep-dive: vector DB/RAG sâu, data contract implementation...).*
+*Hết batch → sinh Extra L (case: HR/people analytics, manufacturing, retail omnichannel...; SQL set 9; deep-dive: data catalog, FinOps sâu, schema evolution patterns...).*
