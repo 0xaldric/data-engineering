@@ -224,3 +224,6 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 22:00] K06 — Data contract implementation (YAML schema+SLA+semantics, enforce 4 điểm, SemVer dual-publish) — `notes/advanced/k06-data-contract-impl.md`
 - [2026-06-26 22:00] K07 — Observability tooling (5 trụ đo cụ thể, rule vs anomaly, Elementary/Soda/Monte Carlo, SLO) — `notes/advanced/k07-observability-tooling.md`
 - [2026-06-26 22:00] K08 — Extra K review. **HOÀN THÀNH EXTRA K (7+1).** — `notes/advanced/00-extraK-summary.md`
+
+## Track 2 — Batch #23: Module AI Data Engineering ⭐ (tiêu chuẩn phỏng vấn mới) — overnight
+- [2026-06-26 22:30] AI01 — ⭐ RAG capstone CHẠY ĐƯỢC: chunk 169 notes→1454 chunks, fastembed bge-small (local, no API/Java), DuckDB vector store + HNSW, hybrid search, incremental idempotent (re-embed chỉ file đổi, lần 2: 0.2s), recall@5=88% — `projects/06-ai-data-engineering/rag_over_notes.py` + README; +fastembed

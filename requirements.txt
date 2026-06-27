@@ -14,3 +14,4 @@ pydantic
 pyyaml
 dbt-duckdb
 deltalake
+fastembed

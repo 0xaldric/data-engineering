@@ -61,5 +61,18 @@ Loop lấy chủ đề từ các **Module** dưới đây, mỗi chủ đề →
 - DataOps & CI/CD nâng cao cho data
 - Roadmap senior/staff DE & cách phát triển sự nghiệp
 
+## Module AI — AI Data Engineering ⭐ (ƯU TIÊN — tiêu chuẩn phỏng vấn mới 2025+)
+> Trụ cột thứ 4 trong tiêu chuẩn DE mới: **hạ tầng dữ liệu cho AI** (trọng số ngang SQL/pipeline/modeling). "Danh từ đổi, tư duy không đổi." Mục này có **code chạy được** (ngoại lệ notes-first) vì là portfolio piece. Đã có capstone `projects/06-ai-data-engineering/rag_over_notes.py` (RAG trên chính kho notes, local).
+- RAG capstone over own notes (chunk→embed→DuckDB vector store→search→recall@k) — ĐÃ BUILD
+- Chunking strategies sâu (fixed/semantic/structure-aware, overlap, parent-child)
+- Embedding models & **versioning** (chọn model, dimension, re-embed khi đổi model — đắt)
+- Vector DB internals (HNSW/IVF, ANN vs brute-force, DuckDB VSS, metadata filter)
+- Retrieval **eval** sâu (recall@k, MRR, nDCG, re-ranking, RAG faithfulness/RAGAS)
+- **LLM-as-data-producer governance** ⭐: validate structured output (pydantic+repair), data contract cho output LLM, version model+prompt+output, drift, human-in-loop
+- **Testing dữ liệu non-deterministic** ⭐: golden set, semantic equivalence (cosine), schema validation, statistical/distribution tests thay exact-match
+- **Cost & latency** cho AI pipeline (token cost, cache/batch embedding, rate-limit, real-time serving)
+- **Streaming cho AI infra**: re-index <1 phút khi tài liệu đổi (event-driven), feature serving real-time
+- Module AI review + map sang tiêu chuẩn phỏng vấn mới
+
 ---
 *Khi hết tất cả module → loop có thể đào sâu thêm bất kỳ chủ đề nào ở trên (set bài tập mới, case study mới), hoặc dừng.*
