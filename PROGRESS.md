@@ -246,3 +246,5 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-27 12:30] AA06 — LLM eval frameworks (RAGAS: faithfulness/relevance/context precision-recall, golden dataset, LLM-judge bias, offline vs online, regression) — `notes/advanced/aa06-llm-eval.md`
 - [2026-06-27 12:30] AA07 — Prompt management & versioning (prompt as code, registry, SemVer, regression eval, A/B, lineage prompt→output) — `notes/advanced/aa07-prompt-management.md`
 - [2026-06-27 12:30] AA08 — Multimodal pipelines (CLIP/OCR/Whisper, cross-modal search, multimodal RAG, object store + cost/incremental) — `notes/advanced/aa08-multimodal.md`
+- [2026-06-27 13:00] AA09 — GraphRAG + knowledge graph (LLM trích entity/relation, entity resolution, graph+vector hybrid, multi-hop, khi nào > vector RAG) — `notes/advanced/aa09-graphrag.md`
+- [2026-06-27 13:00] AA10 — LLMOps + vector DB at scale (version/deploy/monitor/cost/safety, quality drift, ANN/PQ/sharding, API vs self-host) + tổng kết AI-Advanced. **HOÀN THÀNH AI-ADVANCED (AA01–AA10 + 3 script mới).** — `notes/advanced/aa10-llmops.md`, `00-INDEX.md`

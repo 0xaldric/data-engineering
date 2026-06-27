@@ -24,6 +24,8 @@
 **Code chạy được:** [`projects/06-ai-data-engineering/`](../../projects/06-ai-data-engineering/) — `rag_over_notes.py` (RAG), `llm_output_pipeline.py` (governance), `test_semantic.py` (test non-det).
 [ai02 RAG writeup](ai02-rag-capstone-writeup.md) · [ai03 chunking](ai03-chunking.md) · [ai04 embedding versioning](ai04-embedding-versioning.md) · [ai05 retrieval eval](ai05-retrieval-eval.md) · [ai06 LLM governance ⭐](ai06-llm-output-governance.md) · [ai07 test non-det ⭐](ai07-testing-nondeterministic.md) · [ai08 cost/latency](ai08-ai-cost-latency.md) · [ai09 streaming AI](ai09-streaming-ai.md)
 
+**AI-Advanced** (code: `text_to_sql.py`, `guardrails_demo.py`, `dedup_minhash.py`): [aa01 text-to-SQL ⭐](aa01-text-to-sql.md) · [aa02 guardrails ⭐](aa02-guardrails.md) · [aa03 RAG production](aa03-rag-production.md) · [aa04 training-data dedup ⭐](aa04-training-data-prep.md) · [aa05 agentic](aa05-agentic-pipelines.md) · [aa06 LLM eval/RAGAS](aa06-llm-eval.md) · [aa07 prompt mgmt](aa07-prompt-management.md) · [aa08 multimodal](aa08-multimodal.md) · [aa09 GraphRAG](aa09-graphrag.md) · [aa10 LLMOps](aa10-llmops.md)
+
 ## 🔭 Phần đào sâu (Extra — sau Module F)
 ### Extra G — Deepening 1
 [g01 SQL set 3](g01-sql-interview-3.md) · [g02 SQL set 4](g02-sql-interview-4.md) · [g03 log analytics](g03-case-log-analytics.md) · [g04 gaming](g04-case-gaming.md) · [g05 healthcare](g05-case-healthcare.md) · [g06 ML/LLM-RAG data](g06-case-ml-llm-data.md) · [g07 DS&A cho DE](g07-dsa-for-de.md) · [g08 probabilistic DS](g08-probabilistic-ds.md)

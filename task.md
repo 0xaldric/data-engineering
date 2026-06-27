@@ -1,7 +1,7 @@
 # 📋 task.md — Advanced DE Track (overnight loop)
 
 > Loop tự động mỗi 30 phút (overnight, **MAX OUTPUT**). Notes trong `notes/advanced/`.
-> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). Module này **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/`.
+> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 6 script).
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
@@ -12,45 +12,42 @@
    git add -A && git commit -m "<mô tả ngắn>" && git push
    ```
    Commit message TUYỆT ĐỐI không có "Co-Authored-By"/"Generated with Claude". Push lỗi → commit local, lượt sau push.
-5. **Khi tất cả `[x]`**: sinh batch AI tiếp theo từ Module AI-Advanced trong `ADVANCED.md` (vẫn AI/LLM — user ưu tiên). Cập nhật `00-INDEX.md`. Giữ PROTOCOL.
+5. **Khi tất cả `[x]`**: sinh batch AI tiếp (vẫn AI/LLM — user ưu tiên). Cập nhật `00-INDEX.md`. Giữ PROTOCOL.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #24 — AI-Advanced (đẩy mạnh AI/LLM) ⭐
-**Nguồn:** ADVANCED.md (Module AI-Advanced)
+**Batch hiện tại:** #25 — AI-Advanced 2 (đẩy mạnh AI/LLM) ⭐
+**Nguồn:** đào sâu AI/LLM
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] AA01 — Text-to-SQL / NL2SQL Pipeline ⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/aa01-text-to-sql.md` + code `projects/06-ai-data-engineering/text_to_sql.py`. Vai trò DE: schema linking (đưa schema context cho LLM), SQL validation (parse/EXPLAIN trước khi chạy), **guardrail** (chặn DROP/DELETE, chỉ SELECT, giới hạn rows), sandbox execution, eval. Code: mock-LLM sinh SQL từ câu hỏi → validate trên DuckDB e-commerce → chặn lệnh nguy hiểm → chạy an toàn (không cần API). Liên hệ [[e05-semantic-layer]].
+### [ ] AB01 — Synthetic Data Generation với LLM ⭐ (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/ab01-synthetic-data.md` + code `projects/06-ai-data-engineering/synthetic_data.py`. Sinh dữ liệu giả bằng LLM (cho train/test khi thiếu data): đa dạng (diversity), quality filter, dedup (MinHash — [[aa04-training-data-prep]]), tránh mode collapse, label balance; rủi ro (bias khuếch đại, distribution drift vs data thật). Code: mock-LLM sinh N synthetic ticket đa dạng → dedup + balance + quality filter, đo.
 
-### [x] AA02 — Guardrails & Safety cho LLM ⭐⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/aa02-guardrails.md` + code `guardrails_demo.py`. **PII redaction** input/output (regex email/phone/CCCD), prompt injection detection (pattern), output filtering, grounding/hallucination check (output có trong context không). Code: redact PII + phát hiện injection + kiểm output grounded bằng cosine (dùng fastembed). Liên hệ [[64-governance-pii]], [[ai07-testing-nondeterministic]].
+### [ ] AB02 — RAG Eval Harness (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/ab02-rag-eval-harness.md` + code `rag_eval_harness.py`. Eval harness hoàn chỉnh: golden set → chạy retrieval → metric (recall@k/precision@k/MRR/nDCG) → report + so cấu hình (chunk size / hybrid on-off). Code: harness chạy nhiều cấu hình trên capstone, in bảng so sánh. Sâu hơn [[ai05-retrieval-eval]], [[aa06-llm-eval]].
 
-### [x] AA03 — RAG Production Patterns
-- **Note:** `notes/advanced/aa03-rag-production.md`. Semantic cache (câu hỏi tương tự → cache, dùng cosine), citations (trả nguồn chunk), fallback (retrieval rỗng → "không biết"), multi-tenancy (filter theo tenant), reranking, query rewriting/HyDE, online eval. Sâu hơn [[k05-vector-rag-deep]], [[ai05-retrieval-eval]].
+### [ ] AB03 — Context Engineering & Memory cho Agent
+- **Note:** `notes/advanced/ab03-context-engineering.md`. Quản context window (token budget): chọn/cắt/nén context, memory (short-term conversation + long-term vector), tool-result caching, context compression, "lost in the middle"; DE cung cấp memory store + retrieval cho agent. Liên hệ [[aa05-agentic-pipelines]].
 
-### [x] AA04 — Training / Fine-tuning Data Prep (vai trò DE) ⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/aa04-training-data-prep.md` + code `dedup_minhash.py`. DE chuẩn bị dữ liệu train: **near-duplicate detection (MinHash + LSH)**, quality filtering, dedup, instruction/RLHF data format, decontamination (loại test khỏi train), data mixing. Code: MinHash/LSH dedup phát hiện near-dup trên tập văn bản, đo. Liên hệ [[g07-dsa-for-de]].
+### [ ] AB04 — Semantic Layer cho LLM (NL→metrics)
+- **Note:** `notes/advanced/ab04-semantic-layer-llm.md`. Vì sao text-to-SQL thô nguy hiểm → LLM sinh **metric query qua semantic layer** ([[e05-semantic-layer]]) thay SQL thô: an toàn (metric định nghĩa sẵn), nhất quán, ít hallucination schema; NL → metric/dimension đã governed. Liên hệ [[aa01-text-to-sql]].
 
-### [x] AA05 — Agentic Data Pipelines
-- **Note:** `notes/advanced/aa05-agentic-pipelines.md`. LLM agent điều phối công việc data: tool use (gọi SQL/API/search), ReAct loop, self-healing pipeline (agent debug lỗi), text-to-pipeline; rủi ro (non-determinism, cost, loop vô hạn, sai lệnh); DE giám sát agent (guardrail, human approval, observability).
+### [ ] AB05 — Embedding Fine-tuning & Domain Adaptation
+- **Note:** `notes/advanced/ab05-embedding-finetune.md`. Khi embedding general kém với domain (y tế/legal/tiếng Việt) → fine-tune; contrastive learning (positive/negative pairs), hard negatives; vai trò DE: chuẩn bị training pairs (từ click log/feedback), eval cải thiện; khi nào fine-tune vs đổi model. Liên hệ [[ai04-embedding-versioning]].
 
-### [x] AA06 — LLM Evaluation Frameworks (RAGAS sâu)
-- **Note:** `notes/advanced/aa06-llm-eval.md`. Eval harness, RAGAS metrics (faithfulness, answer/context relevance, context precision/recall), golden dataset xây thế nào, human eval, LLM-as-judge bias, online eval (production feedback), regression suite cho prompt/model. Sâu hơn [[ai05-retrieval-eval]].
+### [ ] AB06 — LLM Observability & Tracing Pipeline
+- **Note:** `notes/advanced/ab06-llm-observability.md`. Trace mỗi request (input→retrieval→prompt→LLM→output) như distributed tracing; token/cost tracking per request; log để debug/eval/audit; công cụ (Langfuse/LangSmith/Phoenix); data pipeline cho LLM logs (volume lớn như clickstream [[c06-case-clickstream]]). Liên hệ [[k07-observability-tooling]], [[aa10-llmops]].
 
-### [x] AA07 — Prompt Management & Versioning
-- **Note:** `notes/advanced/aa07-prompt-management.md`. Prompt as code (git, review), prompt registry, versioning (prompt + model + output lineage), A/B prompt, template + variable, regression khi đổi prompt; vì sao prompt là "config" cần quản lý như code/schema. Liên hệ [[ai06-llm-output-governance]].
+### [ ] AB07 — Vector Search Optimization (sâu)
+- **Note:** `notes/advanced/ab07-vector-search-opt.md`. Tuning ANN: HNSW (ef_construction/ef_search/M) vs recall/latency; IVF nprobe; **quantization** (PQ/SQ/binary) giảm RAM; pre-filter vs post-filter; hybrid weight tuning; trade-off recall-latency-RAM-cost. Sâu hơn [[k05-vector-rag-deep]], [[aa10-llmops]].
 
-### [x] AA08 — Multimodal Data Pipelines
-- **Note:** `notes/advanced/aa08-multimodal.md`. Pipeline cho ảnh/audio/video: image embedding (CLIP), OCR (tài liệu scan), transcription (Whisper audio→text), video frame sampling; lưu trữ (object store + vector), multimodal RAG; vai trò DE (orchestrate model inference → feature/vector). Liên hệ [[c04-case-iot]] imagery, [[k05-vector-rag-deep]].
+### [ ] AB08 — Data Pipeline cho Fine-tuning Workflow
+- **Note:** `notes/advanced/ab08-finetune-pipeline.md`. Pipeline end-to-end cho fine-tune: thu thập (instruction/preference) → clean/dedup/decontaminate ([[aa04-training-data-prep]]) → format (chat template) → split → version dataset → train → eval → deploy; vai trò DE (data, không train); reproducibility.
 
-### [ ] AA09 — GraphRAG + Knowledge Graph
-- **Note:** `notes/advanced/aa09-graphrag.md`. Trích xuất entity/relation (LLM) → knowledge graph; GraphRAG (retrieval trên graph + vector hybrid); khi nào graph hơn vector (multi-hop/quan hệ); community detection; pipeline build KG. Liên hệ [[h04-case-social-graph]].
-
-### [ ] AA10 — LLMOps + Vector DB at scale + review
-- **Note:** `notes/advanced/aa10-llmops.md` + cập nhật `00-INDEX.md`. LLMOps (deploy/monitor model+prompt, cost dashboard, drift, A/B, model registry); vector DB at scale (sharding, quantization PQ, filtered search perf); tổng kết AI-Advanced. Sẵn sàng batch AI tiếp.
+### [ ] AB09 — AI Data Engineering review 2 + checklist phỏng vấn
+- **Note:** `notes/advanced/ab09-ai-review2.md` + cập nhật `00-INDEX.md`. Tổng kết AI-Advanced 2; checklist "AI Data Engineer sẵn sàng" đầy đủ; map mọi note/script AI → kỹ năng phỏng vấn; portfolio talking points.
 
 ---
-*Hết batch → sinh batch AI tiếp (synthetic data, context engineering, semantic layer cho LLM, RAG eval nâng cao...) — vẫn ưu tiên AI/LLM theo yêu cầu user.*
+*Hết batch → sinh batch AI tiếp (RAG đa ngôn ngữ, agentic sâu, data cho voice AI, recommendation+LLM, evaluation-driven dev...) — vẫn ưu tiên AI/LLM.*
