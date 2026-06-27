@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] K01 — SQL Interview Problems — Set 8 (mixed)
+### [x] K01 — SQL Interview Problems — Set 8 (mixed)
 - **Note:** `notes/advanced/k01-sql-interview-8.md`. 10 bài: overlapping count (max concurrent), running count distinct theo window, conditional pivot, hierarchical aggregate (rollup theo cây), nearest neighbor (asof join), first event after condition, ratio/share, sliding window distinct, deduplicate keeping latest non-null, sequence gap detection. Đề + lời giải.
 
-### [ ] K02 — Case: Insurance Data Platform
+### [x] K02 — Case: Insurance Data Platform
 - **Note:** `notes/advanced/k02-case-insurance.md`. Bảo hiểm: policy lifecycle, claims processing, underwriting/risk pricing, fraud detection, actuarial; bitemporal (policy/claim sửa hồi tố), reserving chính xác, regulatory. Liên hệ [[e04-bitemporal]], [[c07-case-fintech]].
 
-### [ ] K03 — Case: Real Estate / PropTech
+### [x] K03 — Case: Real Estate / PropTech
 - **Note:** `notes/advanced/k03-case-realestate.md`. Listing, pricing/valuation (AVM), market analytics, search; ingest đa nguồn (MLS, public records), geospatial, slowly changing listing, price history; estimate model data.
 
-### [ ] K04 — Case: AgriTech / Precision Farming
+### [x] K04 — Case: AgriTech / Precision Farming
 - **Note:** `notes/advanced/k04-case-agritech.md`. Cảm biến nông nghiệp (đất/thời tiết/drone/satellite), yield prediction, irrigation optimization; IoT + geospatial + weather data integration; time-series + image data. Liên hệ [[c04-case-iot]].
 
 ### [ ] K05 — Deep-dive: Vector DB & RAG sâu

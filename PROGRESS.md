@@ -214,3 +214,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 21:00] J06 — Lakehouse migration (dual-run+validate+blue-green cutover, Hive→Iceberg in-place, audit_helper) — `notes/advanced/j06-lakehouse-migration.md`
 - [2026-06-26 21:00] J07 — dbt at scale (domain+layer, contracts/exposures, slim CI, semantic layer, tránh spaghetti) — `notes/advanced/j07-dbt-at-scale.md`
 - [2026-06-26 21:00] J08 — Extra J review. **HOÀN THÀNH EXTRA J (7+1).** — `notes/advanced/00-extraJ-summary.md`
+
+## Track 2 — Batch #21: Extra K — NOTES-FIRST (overnight)
+- [2026-06-26 21:30] K01 — SQL set 8 (max concurrent, asof join, hierarchical rollup, sequence gap, divide-by-zero) — `notes/advanced/k01-sql-interview-8.md`
+- [2026-06-26 21:30] K02 — Case insurance (bitemporal policy/claim, accumulating snapshot claims, loss ratio, reserving/IBNR) — `notes/advanced/k02-case-insurance.md`
+- [2026-06-26 21:30] K03 — Case real estate/PropTech (MDM address, SCD2 listing/price history, AVM as-of comparables) — `notes/advanced/k03-case-realestate.md`
+- [2026-06-26 21:30] K04 — Case agritech (sensor+imagery NDVI+weather, yield prediction, edge buffer) — `notes/advanced/k04-case-agritech.md`
