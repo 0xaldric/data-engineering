@@ -1,7 +1,7 @@
 # 📋 task.md — Advanced DE Track (overnight loop)
 
 > Loop tự động mỗi 30 phút (overnight, **MAX OUTPUT**). Notes trong `notes/advanced/`.
-> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 6 script).
+> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 8 script).
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
@@ -15,39 +15,39 @@
 5. **Khi tất cả `[x]`**: sinh batch AI tiếp (vẫn AI/LLM — user ưu tiên). Cập nhật `00-INDEX.md`. Giữ PROTOCOL.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #25 — AI-Advanced 2 (đẩy mạnh AI/LLM) ⭐
-**Nguồn:** đào sâu AI/LLM
+**Batch hiện tại:** #26 — AI-Advanced 3 (RAG đa ngữ, recsys+LLM, eval-driven, agentic sâu) ⭐
+**Nguồn:** đào sâu AI/LLM (tiếp)
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] AB01 — Synthetic Data Generation với LLM ⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/ab01-synthetic-data.md` + code `projects/06-ai-data-engineering/synthetic_data.py`. Sinh dữ liệu giả bằng LLM (cho train/test khi thiếu data): đa dạng (diversity), quality filter, dedup (MinHash — [[aa04-training-data-prep]]), tránh mode collapse, label balance; rủi ro (bias khuếch đại, distribution drift vs data thật). Code: mock-LLM sinh N synthetic ticket đa dạng → dedup + balance + quality filter, đo.
+### [ ] AC01 — RAG đa ngôn ngữ / Cross-lingual ⭐ (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/ac01-multilingual-rag.md` + code `cross_lingual_eval.py`. Vì sao embedding EN-centric (bge-small) yếu cross-lingual; cách: model đa ngữ (multilingual-e5/bge-m3) vs dịch-rồi-embed; eval cross-lingual. Code: bắn golden query bản tiếng Anh vào index note tiếng Việt (rag.duckdb), đo recall **rớt** bao nhiêu so với query tiếng Việt → định lượng "khoảng cách đa ngữ", động lực dùng model đa ngữ. Liên hệ [[ai04-embedding-versioning]], [[ab02-rag-eval-harness]].
 
-### [x] AB02 — RAG Eval Harness (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/ab02-rag-eval-harness.md` + code `rag_eval_harness.py`. Eval harness hoàn chỉnh: golden set → chạy retrieval → metric (recall@k/precision@k/MRR/nDCG) → report + so cấu hình (chunk size / hybrid on-off). Code: harness chạy nhiều cấu hình trên capstone, in bảng so sánh. Sâu hơn [[ai05-retrieval-eval]], [[aa06-llm-eval]].
+### [ ] AC02 — Recommendation + LLM (semantic recsys) ⭐ (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/ac02-recsys-llm.md` + code `semantic_recsys.py`. Embedding-based reco (content/two-tower ý tưởng), cold-start nhờ content embedding, LLM re-rank/giải thích; vai trò DE: item/user embedding pipeline, point-in-time. Code: embed "item" (title note) + user profile = trung bình item đã thích → recommend item gần nhất chưa xem (cosine), in gợi ý + lý do. Liên hệ [[c09-case-recsys]], [[ab07-vector-search-opt]].
 
-### [x] AB03 — Context Engineering & Memory cho Agent
-- **Note:** `notes/advanced/ab03-context-engineering.md`. Quản context window (token budget): chọn/cắt/nén context, memory (short-term conversation + long-term vector), tool-result caching, context compression, "lost in the middle"; DE cung cấp memory store + retrieval cho agent. Liên hệ [[aa05-agentic-pipelines]].
+### [ ] AC03 — Evaluation-Driven Development cho AI
+- **Note:** `notes/advanced/ac03-eval-driven-dev.md`. "Eval trước, code sau" (như TDD cho LLM): golden set = spec, viết eval trước khi build pipeline, mọi thay đổi qua eval gate, regression CI; vòng lặp eval→cải tiến. Vì sao AI không eval-first = bay mù. Liên hệ [[ab02-rag-eval-harness]], [[aa06-llm-eval]], [[ai07-testing-nondeterministic]].
 
-### [x] AB04 — Semantic Layer cho LLM (NL→metrics)
-- **Note:** `notes/advanced/ab04-semantic-layer-llm.md`. Vì sao text-to-SQL thô nguy hiểm → LLM sinh **metric query qua semantic layer** ([[e05-semantic-layer]]) thay SQL thô: an toàn (metric định nghĩa sẵn), nhất quán, ít hallucination schema; NL → metric/dimension đã governed. Liên hệ [[aa01-text-to-sql]].
+### [ ] AC04 — Agentic sâu: Multi-agent & Tool Design
+- **Note:** `notes/advanced/ac04-multi-agent.md`. Planner/executor/critic, orchestration nhiều agent, thiết kế tool schema tốt (rõ input/output/lỗi), error recovery, khi nào multi-agent vs single (đa số single + tool là đủ); chi phí/độ trễ nhân lên. Vai trò DE: tool = truy cập data có kiểm soát. Sâu hơn [[aa05-agentic-pipelines]], [[ab03-context-engineering]].
 
-### [x] AB05 — Embedding Fine-tuning & Domain Adaptation
-- **Note:** `notes/advanced/ab05-embedding-finetune.md`. Khi embedding general kém với domain (y tế/legal/tiếng Việt) → fine-tune; contrastive learning (positive/negative pairs), hard negatives; vai trò DE: chuẩn bị training pairs (từ click log/feedback), eval cải thiện; khi nào fine-tune vs đổi model. Liên hệ [[ai04-embedding-versioning]].
+### [ ] AC05 — Voice/Audio AI Data Pipeline
+- **Note:** `notes/advanced/ac05-voice-audio-pipeline.md`. STT (Whisper), diarization (ai nói), alignment timestamp, chunk audio/transcript cho RAG, transcript = dữ liệu (search/analytics), PII trong audio (giọng + nội dung), cost xử lý audio lớn. Liên hệ [[aa08-multimodal]], [[ab06-llm-observability]].
 
-### [x] AB06 — LLM Observability & Tracing Pipeline
-- **Note:** `notes/advanced/ab06-llm-observability.md`. Trace mỗi request (input→retrieval→prompt→LLM→output) như distributed tracing; token/cost tracking per request; log để debug/eval/audit; công cụ (Langfuse/LangSmith/Phoenix); data pipeline cho LLM logs (volume lớn như clickstream [[c06-case-clickstream]]). Liên hệ [[k07-observability-tooling]], [[aa10-llmops]].
+### [ ] AC06 — Knowledge Base Freshness & Maintenance
+- **Note:** `notes/advanced/ac06-kb-freshness.md`. Vòng đời corpus RAG: phát hiện doc cũ/lỗi thời, re-ingest, xử lý thông tin **mâu thuẫn** (versions), freshness SLA, xoá/cập nhật (right-to-be-forgotten), incremental re-index. "RAG không phải build 1 lần". Liên hệ [[ai09-streaming-ai]], [[ai04-embedding-versioning]].
 
-### [x] AB07 — Vector Search Optimization (sâu)
-- **Note:** `notes/advanced/ab07-vector-search-opt.md`. Tuning ANN: HNSW (ef_construction/ef_search/M) vs recall/latency; IVF nprobe; **quantization** (PQ/SQ/binary) giảm RAM; pre-filter vs post-filter; hybrid weight tuning; trade-off recall-latency-RAM-cost. Sâu hơn [[k05-vector-rag-deep]], [[aa10-llmops]].
+### [ ] AC07 — Feature Store cho ML/LLM
+- **Note:** `notes/advanced/ac07-feature-store.md`. Online/offline parity, **point-in-time correctness** (chống leakage), embedding như feature, serving low-latency, reuse feature; quan hệ với vector store. Vai trò DE kinh điển gặp ML. Liên hệ [[ab05-embedding-finetune]], [[e04-bitemporal]].
 
-### [ ] AB08 — Data Pipeline cho Fine-tuning Workflow
-- **Note:** `notes/advanced/ab08-finetune-pipeline.md`. Pipeline end-to-end cho fine-tune: thu thập (instruction/preference) → clean/dedup/decontaminate ([[aa04-training-data-prep]]) → format (chat template) → split → version dataset → train → eval → deploy; vai trò DE (data, không train); reproducibility.
+### [ ] AC08 — Cost Optimization sâu cho AI ở scale
+- **Note:** `notes/advanced/ac08-ai-cost-scale.md`. Model routing (nhỏ↔lớn theo độ khó), cascade, semantic cache nhiều tầng, batch, prompt compression, distillation; unit economics ($/query), khi nào tự host. Sâu hơn [[ai08-ai-cost-latency]], [[aa10-llmops]].
 
-### [ ] AB09 — AI Data Engineering review 2 + checklist phỏng vấn
-- **Note:** `notes/advanced/ab09-ai-review2.md` + cập nhật `00-INDEX.md`. Tổng kết AI-Advanced 2; checklist "AI Data Engineer sẵn sàng" đầy đủ; map mọi note/script AI → kỹ năng phỏng vấn; portfolio talking points.
+### [ ] AC09 — AI review 3 + ngân hàng câu hỏi phỏng vấn
+- **Note:** `notes/advanced/ac09-ai-review3.md` + cập nhật `00-INDEX.md`. Tổng kết AI-Advanced 3; **ngân hàng câu hỏi phỏng vấn AI-DE** (40+ Q&A ngắn theo chủ đề) + final portfolio pitch.
 
 ---
-*Hết batch → sinh batch AI tiếp (RAG đa ngôn ngữ, agentic sâu, data cho voice AI, recommendation+LLM, evaluation-driven dev...) — vẫn ưu tiên AI/LLM.*
+*Hết batch → sinh batch AI tiếp (GraphRAG nâng cao, real-time RAG, data cho AI agents, eval tự động bằng LLM-judge, privacy/compliance cho LLM...) — vẫn ưu tiên AI/LLM.*

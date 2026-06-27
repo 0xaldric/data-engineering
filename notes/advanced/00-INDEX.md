@@ -20,11 +20,13 @@
 ## Module F — DataOps/Architecture/Career → [tổng kết](00-moduleF-summary.md)
 [f01 testing strategy](f01-testing-strategy.md) · [f02 reliability/SRE](f02-reliability-sre.md) · [f03 modern data stack](f03-modern-data-stack.md) · [f04 cost cases](f04-cost-cases.md) · [f05 data mesh](f05-data-mesh.md) · [f06 DataOps](f06-dataops.md) · [f07 career](f07-career-roadmap.md)
 
-## 🤖 Module AI — AI Data Engineering (trụ cột thứ 4) → [tổng kết](ai10-summary.md)
-**Code chạy được:** [`projects/06-ai-data-engineering/`](../../projects/06-ai-data-engineering/) — `rag_over_notes.py` (RAG), `llm_output_pipeline.py` (governance), `test_semantic.py` (test non-det).
+## 🤖 Module AI — AI Data Engineering (trụ cột thứ 4) → [tổng kết](ai10-summary.md) · [review 2 ⭐](ab09-ai-review2.md)
+**8 script chạy được:** [`projects/06-ai-data-engineering/`](../../projects/06-ai-data-engineering/) — `rag_over_notes.py` (RAG), `rag_eval_harness.py` (eval sweep), `llm_output_pipeline.py` (governance), `test_semantic.py` (test non-det), `text_to_sql.py` (guardrail SQL), `guardrails_demo.py` (PII/injection/grounding), `dedup_minhash.py` (MinHash/LSH), `synthetic_data.py` (sinh data + chất lượng).
 [ai02 RAG writeup](ai02-rag-capstone-writeup.md) · [ai03 chunking](ai03-chunking.md) · [ai04 embedding versioning](ai04-embedding-versioning.md) · [ai05 retrieval eval](ai05-retrieval-eval.md) · [ai06 LLM governance ⭐](ai06-llm-output-governance.md) · [ai07 test non-det ⭐](ai07-testing-nondeterministic.md) · [ai08 cost/latency](ai08-ai-cost-latency.md) · [ai09 streaming AI](ai09-streaming-ai.md)
 
 **AI-Advanced** (code: `text_to_sql.py`, `guardrails_demo.py`, `dedup_minhash.py`): [aa01 text-to-SQL ⭐](aa01-text-to-sql.md) · [aa02 guardrails ⭐](aa02-guardrails.md) · [aa03 RAG production](aa03-rag-production.md) · [aa04 training-data dedup ⭐](aa04-training-data-prep.md) · [aa05 agentic](aa05-agentic-pipelines.md) · [aa06 LLM eval/RAGAS](aa06-llm-eval.md) · [aa07 prompt mgmt](aa07-prompt-management.md) · [aa08 multimodal](aa08-multimodal.md) · [aa09 GraphRAG](aa09-graphrag.md) · [aa10 LLMOps](aa10-llmops.md)
+
+**AI-Advanced 2** (code: `synthetic_data.py`, `rag_eval_harness.py`): [ab01 synthetic data ⭐](ab01-synthetic-data.md) · [ab02 RAG eval harness ⭐](ab02-rag-eval-harness.md) · [ab03 context engineering](ab03-context-engineering.md) · [ab04 semantic layer cho LLM](ab04-semantic-layer-llm.md) · [ab05 embedding fine-tune](ab05-embedding-finetune.md) · [ab06 LLM observability](ab06-llm-observability.md) · [ab07 vector search opt](ab07-vector-search-opt.md) · [ab08 fine-tune pipeline](ab08-finetune-pipeline.md) · [ab09 AI review 2 ⭐](ab09-ai-review2.md)
 
 ## 🔭 Phần đào sâu (Extra — sau Module F)
 ### Extra G — Deepening 1
