@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AG01 — RAG cho BI/Analytics & Conversational Data
+### [x] AG01 — RAG cho BI/Analytics & Conversational Data
 - **Note:** `notes/advanced/ag01-rag-bi-analytics.md`. "Chat với dữ liệu": NL → insight, kết hợp semantic layer ([[ab04-semantic-layer-llm]]) + text-to-SQL ([[aa01-text-to-sql]]) + RAG metadata (hiểu bảng/cột). Conversational analytics (follow-up, ngữ cảnh), trả số chính xác + giải thích, viz gợi ý. Khác RAG text ([[ad05-structured-rag]]). Cạm bẫy số sai = mất niềm tin.
 
-### [ ] AG02 — Hallucination Detection & Mitigation ⭐ (CHẠY ĐƯỢC)
+### [x] AG02 — Hallucination Detection & Mitigation ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ag02-hallucination-detection.md` + code `hallucination_detect.py`. Phát hiện bịa: grounding (bám context?), **self-consistency** (hỏi N lần, lệch nhau nhiều = bịa), NLI/entailment, citation check. Code: mock-LLM trả N lần cho 2 câu (1 chắc chắn, 1 bịa) → đo độ nhất quán bằng cosine giữa các lần → cờ "có thể bịa". Liên hệ [[aa02-guardrails]], [[ad02-llm-judge]].
 
-### [ ] AG03 — RLHF & Preference Data Pipeline
+### [x] AG03 — RLHF & Preference Data Pipeline
 - **Note:** `notes/advanced/ag03-rlhf-preference-data.md`. Data cho RLHF/DPO: thu preference pair (chosen/rejected), nguồn (human annotation, AI feedback - RLAIF), chất lượng annotation (agreement, guideline), reward model data, cạm bẫy (annotator bias, reward hacking). Vai trò DE: pipeline thu/validate/version preference data. Liên hệ [[ab08-finetune-pipeline]], [[ae03-training-data-quality]].
 
-### [ ] AG04 — AI Observability sâu: Drift Detection ⭐ (CHẠY ĐƯỢC)
+### [x] AG04 — AI Observability sâu: Drift Detection ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ag04-drift-detection.md` + code `drift_detect.py`. Phát hiện drift trong hệ AI: input drift (phân phối câu hỏi đổi), embedding drift (centroid dịch), output drift, quality drift. Code: so 2 batch embedding (cũ vs mới) bằng khoảng cách centroid + avg pairwise → cờ drift khi vượt ngưỡng. Liên hệ [[ab06-llm-observability]], [[aa10-llmops]].
 
 ### [ ] AG05 — Agent Platform Data Infrastructure (sâu)
