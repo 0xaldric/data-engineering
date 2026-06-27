@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AH01 — LLM Serving & Inference Infrastructure
+### [x] AH01 — LLM Serving & Inference Infrastructure
 - **Note:** `notes/advanced/ah01-llm-serving.md`. Phục vụ LLM ở production: continuous batching, **KV cache**, throughput vs latency, vLLM/TGI, quantization khi serve (GPTQ/AWQ), multi-GPU (tensor/pipeline parallel), autoscaling theo tải. Khác serving model thường (stateful KV, độ dài đổi). Vai trò DE: serving layer cho embedding/LLM. Liên hệ [[ac08-ai-cost-scale]], [[ae05-edge-ai-data]].
 
-### [ ] AH02 — Embedding Model Selection & Benchmark ⭐ (CHẠY ĐƯỢC)
+### [x] AH02 — Embedding Model Selection & Benchmark ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ah02-embedding-benchmark.md` + code `embedding_benchmark.py`. Chọn embedding model bằng SỐ: MTEB là gì, chiều đánh giá (recall/MRR, tốc độ, kích thước, đa ngữ, max-length), trade-off. Code: ablation trên capstone — bật/tắt query-prefix + L2-normalize + đổi top-k, đo recall@k mỗi cấu hình → thấy lựa chọn embedding ảnh hưởng thật. Liên hệ [[ab02-rag-eval-harness]], [[ai04-embedding-versioning]].
 
-### [ ] AH03 — AI Red-Teaming & Adversarial Testing
+### [x] AH03 — AI Red-Teaming & Adversarial Testing
 - **Note:** `notes/advanced/ah03-red-teaming.md`. Chủ động tấn công hệ AI để tìm lỗ hổng trước kẻ xấu: taxonomy jailbreak (role-play/mã hoá/injection [[ad04-llm-security]]), automated red-team (sinh adversarial prompt), safety eval, harm categories, red-team như test suite. Vai trò DE: data adversarial + eval harness an toàn. Liên hệ [[aa02-guardrails]], [[ag02-hallucination-detection]].
 
-### [ ] AH04 — Tokenization Deep-dive
+### [x] AH04 — Tokenization Deep-dive
 - **Note:** `notes/advanced/ah04-tokenization.md`. BPE/WordPiece/SentencePiece, vocab size, **tokenizer đa ngữ kém hiệu quả** (tiếng Việt/Á tốn nhiều token hơn tiếng Anh → đắt hơn + context ngắn hơn), special token, ảnh hưởng tới cost ([[ac08-ai-cost-scale]]) + chunking ([[ai03-chunking]]). Vai trò DE: hiểu token để ước cost/context. Liên hệ [[af05-training-data-scale]].
 
 ### [ ] AH05 — Data cho Multimodal LLM Training
