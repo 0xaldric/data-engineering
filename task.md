@@ -22,10 +22,10 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AC01 — RAG đa ngôn ngữ / Cross-lingual ⭐ (CHẠY ĐƯỢC)
+### [x] AC01 — RAG đa ngôn ngữ / Cross-lingual ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ac01-multilingual-rag.md` + code `cross_lingual_eval.py`. Vì sao embedding EN-centric (bge-small) yếu cross-lingual; cách: model đa ngữ (multilingual-e5/bge-m3) vs dịch-rồi-embed; eval cross-lingual. Code: bắn golden query bản tiếng Anh vào index note tiếng Việt (rag.duckdb), đo recall **rớt** bao nhiêu so với query tiếng Việt → định lượng "khoảng cách đa ngữ", động lực dùng model đa ngữ. Liên hệ [[ai04-embedding-versioning]], [[ab02-rag-eval-harness]].
 
-### [ ] AC02 — Recommendation + LLM (semantic recsys) ⭐ (CHẠY ĐƯỢC)
+### [x] AC02 — Recommendation + LLM (semantic recsys) ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ac02-recsys-llm.md` + code `semantic_recsys.py`. Embedding-based reco (content/two-tower ý tưởng), cold-start nhờ content embedding, LLM re-rank/giải thích; vai trò DE: item/user embedding pipeline, point-in-time. Code: embed "item" (title note) + user profile = trung bình item đã thích → recommend item gần nhất chưa xem (cosine), in gợi ý + lý do. Liên hệ [[c09-case-recsys]], [[ab07-vector-search-opt]].
 
 ### [ ] AC03 — Evaluation-Driven Development cho AI
