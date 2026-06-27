@@ -200,3 +200,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 19:30] I02 — Case logistics/supply-chain (shipment accumulating snapshot, inventory semi-additive, geospatial) — `notes/advanced/i02-case-logistics.md`
 - [2026-06-26 19:30] I03 — Case video streaming (QoE real-time, watch-time, audience retention, Druid OLAP) — `notes/advanced/i03-case-video-streaming.md`
 - [2026-06-26 19:30] I04 — Case banking core/payments (double-entry, exactly-once, reconciliation, AML, bitemporal reporting) — `notes/advanced/i04-case-banking.md`
+- [2026-06-26 20:00] I05 — Spark tuning scenarios (OOM/skew/small-files/shuffle/spill/UDF: triệu chứng→fix) — `notes/advanced/i05-spark-tuning-scenarios.md`
+- [2026-06-26 20:00] I06 — DQ framework chi tiết (GE/Soda/dbt mỗi tầng, DQ score, quarantine/circuit-breaker) — `notes/advanced/i06-dq-framework.md`
+- [2026-06-26 20:00] I07 — Backfill & reprocessing (idempotent, partition overwrite/blue-green/Kappa replay, kiểm soát tải) — `notes/advanced/i07-backfill-reprocessing.md`
+- [2026-06-26 20:00] I08 — Extra I review. **HOÀN THÀNH EXTRA I (7+1).** — `notes/advanced/00-extraI-summary.md`
