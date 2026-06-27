@@ -22,13 +22,13 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AE01 — Self-Correcting / Self-Improving RAG ⭐ (CHẠY ĐƯỢC)
+### [x] AE01 — Self-Correcting / Self-Improving RAG ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ae01-self-correcting-rag.md` + code `self_correcting_rag.py`. RAG tự đánh giá retrieval: điểm thấp/không tự tin → **reformulate query** (mở rộng/đổi từ/HyDE-style) → retry → giữ kết quả tốt hơn. Vòng lặp self-correction; khi nào dừng. Code: query yếu (score thấp) → tự viết lại → đo retrieval cải thiện trên rag.duckdb. Liên hệ [[aa03-rag-production]], [[aa05-agentic-pipelines]].
 
-### [ ] AE02 — GraphRAG từ Wikilinks ⭐ (CHẠY ĐƯỢC)
+### [x] AE02 — GraphRAG từ Wikilinks ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ae02-graphrag-build.md` + code `graphrag_links.py`. Dựng **knowledge graph THẬT** từ `[[links]]` giữa các note → multi-hop traversal + vector hybrid. Trả lời câu cần "đi qua nhiều bước" (note A liên quan B liên quan C). Code: parse `[[...]]` trong notes/advanced → graph (dict adjacency), BFS multi-hop + kết hợp vector retrieve. Sâu hơn [[aa09-graphrag]].
 
-### [ ] AE03 — Data Quality cho LLM Training Data ⭐ (CHẠY ĐƯỢC)
+### [x] AE03 — Data Quality cho LLM Training Data ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ae03-training-data-quality.md` + code `data_quality_score.py`. Chấm CHẤT LƯỢNG dataset train: chiều đo (độ dài, trùng lặp, đa dạng, ngôn ngữ, toxic-flag heuristic, format-valid), quality score tổng hợp, lọc theo ngưỡng. Code: chấm 1 tập mẫu (tốt + xấu trộn), in điểm từng chiều + quyết định giữ/bỏ. Liên hệ [[aa04-training-data-prep]], [[ab01-synthetic-data]], [[ab08-finetune-pipeline]].
 
 ### [ ] AE04 — Multimodal RAG sâu (ảnh + text)
