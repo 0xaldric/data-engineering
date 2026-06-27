@@ -28,10 +28,10 @@
 ### [x] AD02 — LLM-as-Judge tự động ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ad02-llm-judge.md` + code `llm_judge.py`. Eval tự động bằng "judge" (rubric chấm điểm): pointwise/pairwise, rubric, bias (vị trí/độ dài/tự khen), calibrate vs human. Code: mock-judge chấm câu trả lời theo rubric (grounding bằng cosine với reference + heuristic độ dài/từ khoá), so 2 câu (pairwise), in điểm + cảnh báo bias. Sâu hơn [[aa06-llm-eval]], [[ac03-eval-driven-dev]].
 
-### [ ] AD03 — Privacy & Compliance cho LLM
+### [x] AD03 — Privacy & Compliance cho LLM
 - **Note:** `notes/advanced/ad03-privacy-compliance.md`. PII governance khi data đi qua LLM: data residency, gửi-ra-API vs self-host, consent, retention, right-to-be-forgotten ở vector store ([[ac06-kb-freshness]]), audit log, differential privacy (khái niệm), redaction trước khi gửi. GDPR/luật VN. Liên hệ [[aa02-guardrails]], [[k06-data-contract-impl]].
 
-### [ ] AD04 — LLM Security sâu: Indirect Prompt Injection
+### [x] AD04 — LLM Security sâu: Indirect Prompt Injection
 - **Note:** `notes/advanced/ad04-llm-security.md`. Sâu hơn [[aa02-guardrails]]: indirect injection (lệnh độc giấu trong DOC mà RAG kéo vào), data exfiltration, jailbreak, tool abuse; defense-in-depth: least-privilege tool, tách data/instruction, output filter, human approve hành động nguy hiểm, sandbox. Liên hệ [[ac04-multi-agent]], [[aa01-text-to-sql]].
 
 ### [ ] AD05 — RAG trên dữ liệu CÓ CẤU TRÚC (tables/SQL)
