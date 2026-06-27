@@ -1,56 +1,56 @@
 # 📋 task.md — Advanced DE Track (overnight loop)
 
 > Loop tự động mỗi 30 phút (overnight, **MAX OUTPUT**). Notes trong `notes/advanced/`.
-> 🔥 **ƯU TIÊN: Module AI Data Engineering** (tiêu chuẩn phỏng vấn DE mới 2025+). Module này **ĐƯỢC viết code chạy được** (ngoại lệ notes-first) vì là portfolio piece — chạy local bằng fastembed + DuckDB, KHÔNG cần API key. Capstone đã có: `projects/06-ai-data-engineering/rag_over_notes.py`.
+> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). Module này **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/`.
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
-2. **Làm CÀNG NHIỀU task càng tốt** (nhắm 3–4/lượt) giữ chất lượng. Mỗi task = 1 note đầy đủ tiếng Việt trong `notes/advanced/` (khái niệm + "tại sao" + sơ đồ + snippet + cạm bẫy + checklist + "tự mò"). **Nếu task yêu cầu code**: viết + CHẠY THỬ (local fastembed/DuckDB/pydantic, đã cài), verify không lỗi, rồi mới tick.
+2. **Làm CÀNG NHIỀU task càng tốt** (nhắm 3–4/lượt) giữ chất lượng. Mỗi task = 1 note đầy đủ tiếng Việt trong `notes/advanced/` (khái niệm + "tại sao" + sơ đồ + snippet + cạm bẫy + checklist + "tự mò"). **Task có code: viết + CHẠY THỬ verify rồi mới tick.**
 3. Mỗi task xong: `[ ]`→`[x]` + dòng vào `PROGRESS.md`.
 4. **Cuối lượt: commit + push** (KHÔNG Claude/co-author):
    ```
    git add -A && git commit -m "<mô tả ngắn>" && git push
    ```
    Commit message TUYỆT ĐỐI không có "Co-Authored-By"/"Generated with Claude". Push lỗi → commit local, lượt sau push.
-5. **Khi tất cả `[x]`**: quay lại đào sâu Extra (L: HR/manufacturing/retail; M...) hoặc thêm bài AI. Cập nhật `00-INDEX.md`. Giữ PROTOCOL.
+5. **Khi tất cả `[x]`**: sinh batch AI tiếp theo từ Module AI-Advanced trong `ADVANCED.md` (vẫn AI/LLM — user ưu tiên). Cập nhật `00-INDEX.md`. Giữ PROTOCOL.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #23 — Module AI Data Engineering ⭐
-**Nguồn:** ADVANCED.md (Module AI)
+**Batch hiện tại:** #24 — AI-Advanced (đẩy mạnh AI/LLM) ⭐
+**Nguồn:** ADVANCED.md (Module AI-Advanced)
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] AI01 — RAG Capstone over own notes (CHẠY ĐƯỢC) ⭐
-- **Đã build & verify:** `projects/06-ai-data-engineering/rag_over_notes.py` + README. Chunk 169 notes→1454 chunks, embed local (fastembed bge-small), DuckDB vector store + HNSW, hybrid search, **incremental idempotent** (re-embed chỉ file đổi), **recall@5=88%**. Chạy: `python projects/06-ai-data-engineering/rag_over_notes.py`.
+### [ ] AA01 — Text-to-SQL / NL2SQL Pipeline ⭐ (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/aa01-text-to-sql.md` + code `projects/06-ai-data-engineering/text_to_sql.py`. Vai trò DE: schema linking (đưa schema context cho LLM), SQL validation (parse/EXPLAIN trước khi chạy), **guardrail** (chặn DROP/DELETE, chỉ SELECT, giới hạn rows), sandbox execution, eval. Code: mock-LLM sinh SQL từ câu hỏi → validate trên DuckDB e-commerce → chặn lệnh nguy hiểm → chạy an toàn (không cần API). Liên hệ [[e05-semantic-layer]].
 
-### [x] AI02 — RAG capstone writeup + kiến trúc
-- **Note:** `notes/advanced/ai02-rag-capstone-writeup.md`. Giải thích kiến trúc capstone AI01 (sơ đồ chunk→embed→store→search→eval), từng quyết định & trade-off, map sang câu hỏi phỏng vấn AI-era; cách trình bày trong portfolio/interview. Link [[g06-case-ml-llm-data]], [[k05-vector-rag-deep]].
+### [ ] AA02 — Guardrails & Safety cho LLM ⭐⭐ (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/aa02-guardrails.md` + code `guardrails_demo.py`. **PII redaction** input/output (regex email/phone/CCCD), prompt injection detection (pattern), output filtering, grounding/hallucination check (output có trong context không). Code: redact PII + phát hiện injection + kiểm output grounded bằng cosine (dùng fastembed). Liên hệ [[64-governance-pii]], [[ai07-testing-nondeterministic]].
 
-### [x] AI03 — Chunking strategies sâu
-- **Note:** `notes/advanced/ai03-chunking.md`. fixed-size vs semantic vs structure-aware vs parent-child/late-chunking; overlap; chunk size ảnh hưởng recall thế nào; chunk metadata; code: thử 2 chiến lược chunk trên notes, đo recall@k khác nhau (mở rộng rag_over_notes hoặc script nhỏ).
+### [ ] AA03 — RAG Production Patterns
+- **Note:** `notes/advanced/aa03-rag-production.md`. Semantic cache (câu hỏi tương tự → cache, dùng cosine), citations (trả nguồn chunk), fallback (retrieval rỗng → "không biết"), multi-tenancy (filter theo tenant), reranking, query rewriting/HyDE, online eval. Sâu hơn [[k05-vector-rag-deep]], [[ai05-retrieval-eval]].
 
-### [x] AI04 — Embedding models & versioning ⭐
-- **Note:** `notes/advanced/ai04-embedding-versioning.md`. Chọn model (dimension/chất lượng/cost/latency/multilingual); **vì sao đổi model = re-embed TOÀN BỘ** (vector không tương thích) → chiến lược migration (blue-green index, dual-index); cache embedding; batch để rẻ. Code: thêm cột model_version + demo "đổi model phải rebuild".
+### [ ] AA04 — Training / Fine-tuning Data Prep (vai trò DE) ⭐ (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/aa04-training-data-prep.md` + code `dedup_minhash.py`. DE chuẩn bị dữ liệu train: **near-duplicate detection (MinHash + LSH)**, quality filtering, dedup, instruction/RLHF data format, decontamination (loại test khỏi train), data mixing. Code: MinHash/LSH dedup phát hiện near-dup trên tập văn bản, đo. Liên hệ [[g07-dsa-for-de]].
 
-### [x] AI05 — Retrieval eval sâu (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/ai05-retrieval-eval.md` + mở rộng capstone. recall@k, precision@k, MRR, nDCG; re-ranking; RAG faithfulness/groundedness (RAGAS/LLM-judge khái niệm); golden set xây thế nào. Code: thêm hàm tính MRR/nDCG vào rag_over_notes, in bảng metric.
+### [ ] AA05 — Agentic Data Pipelines
+- **Note:** `notes/advanced/aa05-agentic-pipelines.md`. LLM agent điều phối công việc data: tool use (gọi SQL/API/search), ReAct loop, self-healing pipeline (agent debug lỗi), text-to-pipeline; rủi ro (non-determinism, cost, loop vô hạn, sai lệnh); DE giám sát agent (guardrail, human approval, observability).
 
-### [x] AI06 — LLM-as-data-producer Governance ⭐⭐ (GAP quan trọng)
-- **Note:** `notes/advanced/ai06-llm-output-governance.md` + code demo. Dữ liệu LLM sinh (nhãn/JSON/tóm tắt) đổ vào bảng production: validate structured output (pydantic + retry/repair), **data contract cho output LLM** (schema+confidence+provenance), version `model+prompt+input→output` (lineage/reproducibility), human-in-loop sampling, drift khi model nâng cấp. Code: `llm_output_pipeline.py` mô phỏng LLM trả JSON (đôi khi lỗi) → validate/repair/quarantine + log provenance (chạy được, không cần API thật).
+### [ ] AA06 — LLM Evaluation Frameworks (RAGAS sâu)
+- **Note:** `notes/advanced/aa06-llm-eval.md`. Eval harness, RAGAS metrics (faithfulness, answer/context relevance, context precision/recall), golden dataset xây thế nào, human eval, LLM-as-judge bias, online eval (production feedback), regression suite cho prompt/model. Sâu hơn [[ai05-retrieval-eval]].
 
-### [x] AI07 — Testing dữ liệu Non-deterministic ⭐⭐ (GAP quan trọng)
-- **Note:** `notes/advanced/ai07-testing-nondeterministic.md` + code. Vì sao không exact-match (cùng input khác output); golden set; **semantic equivalence test** (cosine > ngưỡng, dùng embedding đã có); schema/format validation; statistical/distribution test; snapshot + review; CI cho output LLM. Code: `test_semantic.py` so 2 câu trả lời "khác chữ cùng nghĩa" pass, "khác nghĩa" fail (dùng fastembed).
+### [ ] AA07 — Prompt Management & Versioning
+- **Note:** `notes/advanced/aa07-prompt-management.md`. Prompt as code (git, review), prompt registry, versioning (prompt + model + output lineage), A/B prompt, template + variable, regression khi đổi prompt; vì sao prompt là "config" cần quản lý như code/schema. Liên hệ [[ai06-llm-output-governance]].
 
-### [ ] AI08 — Cost & Latency cho AI pipeline
-- **Note:** `notes/advanced/ai08-ai-cost-latency.md`. Token cost embedding/LLM; cache + batch embedding (đo: embed 1454 chunks tốn gì); latency budget real-time serving; rate-limit/backpressure API; chọn model theo cost/latency/chất lượng; FinOps cho AI (khác [[59-cost-finops]]).
+### [ ] AA08 — Multimodal Data Pipelines
+- **Note:** `notes/advanced/aa08-multimodal.md`. Pipeline cho ảnh/audio/video: image embedding (CLIP), OCR (tài liệu scan), transcription (Whisper audio→text), video frame sampling; lưu trữ (object store + vector), multimodal RAG; vai trò DE (orchestrate model inference → feature/vector). Liên hệ [[c04-case-iot]] imagery, [[k05-vector-rag-deep]].
 
-### [ ] AI09 — Streaming cho AI infra (re-index <1 phút)
-- **Note:** `notes/advanced/ai09-streaming-ai.md`. "Streaming cuối cùng có lý do": event-driven re-embed khi tài liệu đổi (watch→chunk→embed→upsert <1'), feature serving real-time cho inference, kiểm dữ liệu LLM trước khi vào production; cái gì vỡ khi traffic ×2 (embedding model throughput, vector DB write, rate limit). Liên hệ [[45-streaming-intro]], [[c03-case-fraud]].
+### [ ] AA09 — GraphRAG + Knowledge Graph
+- **Note:** `notes/advanced/aa09-graphrag.md`. Trích xuất entity/relation (LLM) → knowledge graph; GraphRAG (retrieval trên graph + vector hybrid); khi nào graph hơn vector (multi-hop/quan hệ); community detection; pipeline build KG. Liên hệ [[h04-case-social-graph]].
 
-### [ ] AI10 — Module AI review + tiêu chuẩn phỏng vấn mới
-- **Note:** `notes/advanced/ai10-summary.md` + cập nhật `00-INDEX.md`. Tổng kết Module AI; map 3 câu hỏi phỏng vấn mới (RAG pipeline / eval retrieval / version dữ liệu LLM) → note nào trả lời; checklist "sẵn sàng trụ cột thứ 4"; "danh từ đổi tư duy không đổi" — bảng đối chiếu ETL cũ ↔ RAG mới.
+### [ ] AA10 — LLMOps + Vector DB at scale + review
+- **Note:** `notes/advanced/aa10-llmops.md` + cập nhật `00-INDEX.md`. LLMOps (deploy/monitor model+prompt, cost dashboard, drift, A/B, model registry); vector DB at scale (sharding, quantization PQ, filtered search perf); tổng kết AI-Advanced. Sẵn sàng batch AI tiếp.
 
 ---
-*Hết Module AI (AI01–AI10) → sinh batch **AI-Advanced** từ ADVANCED.md (agentic, RAG production, guardrails, training-data, LLMOps, multimodal, text-to-SQL...). User ƯU TIÊN tiếp tục AI/LLM, chưa quay Extra. Ưu tiên task có code chạy được (local).*
+*Hết batch → sinh batch AI tiếp (synthetic data, context engineering, semantic layer cho LLM, RAG eval nâng cao...) — vẫn ưu tiên AI/LLM theo yêu cầu user.*

@@ -20,6 +20,10 @@
 ## Module F — DataOps/Architecture/Career → [tổng kết](00-moduleF-summary.md)
 [f01 testing strategy](f01-testing-strategy.md) · [f02 reliability/SRE](f02-reliability-sre.md) · [f03 modern data stack](f03-modern-data-stack.md) · [f04 cost cases](f04-cost-cases.md) · [f05 data mesh](f05-data-mesh.md) · [f06 DataOps](f06-dataops.md) · [f07 career](f07-career-roadmap.md)
 
+## 🤖 Module AI — AI Data Engineering (trụ cột thứ 4) → [tổng kết](ai10-summary.md)
+**Code chạy được:** [`projects/06-ai-data-engineering/`](../../projects/06-ai-data-engineering/) — `rag_over_notes.py` (RAG), `llm_output_pipeline.py` (governance), `test_semantic.py` (test non-det).
+[ai02 RAG writeup](ai02-rag-capstone-writeup.md) · [ai03 chunking](ai03-chunking.md) · [ai04 embedding versioning](ai04-embedding-versioning.md) · [ai05 retrieval eval](ai05-retrieval-eval.md) · [ai06 LLM governance ⭐](ai06-llm-output-governance.md) · [ai07 test non-det ⭐](ai07-testing-nondeterministic.md) · [ai08 cost/latency](ai08-ai-cost-latency.md) · [ai09 streaming AI](ai09-streaming-ai.md)
+
 ## 🔭 Phần đào sâu (Extra — sau Module F)
 ### Extra G — Deepening 1
 [g01 SQL set 3](g01-sql-interview-3.md) · [g02 SQL set 4](g02-sql-interview-4.md) · [g03 log analytics](g03-case-log-analytics.md) · [g04 gaming](g04-case-gaming.md) · [g05 healthcare](g05-case-healthcare.md) · [g06 ML/LLM-RAG data](g06-case-ml-llm-data.md) · [g07 DS&A cho DE](g07-dsa-for-de.md) · [g08 probabilistic DS](g08-probabilistic-ds.md)
