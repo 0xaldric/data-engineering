@@ -24,7 +24,10 @@
 ### Extra G — Deepening 1
 [g01 SQL set 3](g01-sql-interview-3.md) · [g02 SQL set 4](g02-sql-interview-4.md) · [g03 log analytics](g03-case-log-analytics.md) · [g04 gaming](g04-case-gaming.md) · [g05 healthcare](g05-case-healthcare.md) · [g06 ML/LLM-RAG data](g06-case-ml-llm-data.md) · [g07 DS&A cho DE](g07-dsa-for-de.md) · [g08 probabilistic DS](g08-probabilistic-ds.md)
 
-*(Loop tiếp tục sinh Extra H, I... — case mới, SQL set mới, deep-dive. Xem PROGRESS.md.)*
+### Extra H — Deepening 2 → [tổng kết](00-extraH-summary.md)
+[h01 SQL set 5](h01-sql-interview-5.md) · [h02 marketplace](h02-case-marketplace.md) · [h03 SaaS metrics](h03-case-saas-metrics.md) · [h04 social graph](h04-case-social-graph.md) · [h05 Trino/federation](h05-trino-federation.md) · [h06 real-time OLAP](h06-realtime-olap.md) · [h07 mock interview](h07-mock-interview.md)
+
+*(Loop tiếp tục sinh Extra I, J... — case mới, SQL set mới, deep-dive. Xem PROGRESS.md.)*
 
 ## Cách dùng Track 2
 - Ôn phỏng vấn: Module A (SQL coding) + B (Q&A) + C (system design) + B07 (behavioral).

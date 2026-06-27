@@ -190,3 +190,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 18:30] H02 — Case marketplace two-sided (GMV, take rate, supply-demand, 2 cohort, search ranking) — `notes/advanced/h02-case-marketplace.md`
 - [2026-06-26 18:30] H03 — Case SaaS metrics (MRR movement new/expansion/churn, logo vs revenue churn, SCD2 subscription, LTV/CAC) — `notes/advanced/h03-case-saas-metrics.md`
 - [2026-06-26 18:30] H04 — Case social graph (graph vs edge table, fan-out write/read/hybrid feed, FoF, supernode skew) — `notes/advanced/h04-case-social-graph.md`
+- [2026-06-26 19:00] H05 — Trino/Presto & federation (MPP no-storage, query across nguồn, vs Spark SQL) — `notes/advanced/h05-trino-federation.md`
+- [2026-06-26 19:00] H06 — Real-time OLAP (ClickHouse/Druid/Pinot, sub-giây user-facing, MergeTree, pre-agg) — `notes/advanced/h06-realtime-olap.md`
+- [2026-06-26 19:00] H07 — Mock interview đầy đủ (SQL+system design+conceptual+behavioral, tips đánh giá) — `notes/advanced/h07-mock-interview.md`
+- [2026-06-26 19:00] H08 — Extra H review + self-assessment tổng. **HOÀN THÀNH EXTRA H (7+1).** — `notes/advanced/00-extraH-summary.md`
