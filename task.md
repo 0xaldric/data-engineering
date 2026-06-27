@@ -28,10 +28,10 @@
 ### [x] AC02 — Recommendation + LLM (semantic recsys) ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ac02-recsys-llm.md` + code `semantic_recsys.py`. Embedding-based reco (content/two-tower ý tưởng), cold-start nhờ content embedding, LLM re-rank/giải thích; vai trò DE: item/user embedding pipeline, point-in-time. Code: embed "item" (title note) + user profile = trung bình item đã thích → recommend item gần nhất chưa xem (cosine), in gợi ý + lý do. Liên hệ [[c09-case-recsys]], [[ab07-vector-search-opt]].
 
-### [ ] AC03 — Evaluation-Driven Development cho AI
+### [x] AC03 — Evaluation-Driven Development cho AI
 - **Note:** `notes/advanced/ac03-eval-driven-dev.md`. "Eval trước, code sau" (như TDD cho LLM): golden set = spec, viết eval trước khi build pipeline, mọi thay đổi qua eval gate, regression CI; vòng lặp eval→cải tiến. Vì sao AI không eval-first = bay mù. Liên hệ [[ab02-rag-eval-harness]], [[aa06-llm-eval]], [[ai07-testing-nondeterministic]].
 
-### [ ] AC04 — Agentic sâu: Multi-agent & Tool Design
+### [x] AC04 — Agentic sâu: Multi-agent & Tool Design
 - **Note:** `notes/advanced/ac04-multi-agent.md`. Planner/executor/critic, orchestration nhiều agent, thiết kế tool schema tốt (rõ input/output/lỗi), error recovery, khi nào multi-agent vs single (đa số single + tool là đủ); chi phí/độ trễ nhân lên. Vai trò DE: tool = truy cập data có kiểm soát. Sâu hơn [[aa05-agentic-pipelines]], [[ab03-context-engineering]].
 
 ### [ ] AC05 — Voice/Audio AI Data Pipeline
