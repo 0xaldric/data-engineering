@@ -1,7 +1,7 @@
 # 📋 task.md — Advanced DE Track (overnight loop)
 
 > Loop tự động mỗi 30 phút (overnight, **MAX OUTPUT**). Notes trong `notes/advanced/`.
-> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 22 script).
+> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 23 script).
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
@@ -15,39 +15,39 @@
 5. **Khi tất cả `[x]`**: sinh batch AI tiếp (vẫn AI/LLM — user ưu tiên). Cập nhật `00-INDEX.md`. Giữ PROTOCOL.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #33 — AI-Advanced 10: Vertical AI Case Studies ⭐
-**Nguồn:** đào sâu AI/LLM — system design theo ngành
+**Batch hiện tại:** #34 — AI-Advanced 11: Mock Interviews, Exercises & More Verticals ⭐
+**Nguồn:** đào sâu AI/LLM — luyện phỏng vấn + bài tập + ngành mới
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] AK01 — Case Study: E-commerce AI Platform
-- **Note:** `notes/advanced/ak01-case-ecommerce-ai.md`. AI cho thương mại điện tử: product search ngữ nghĩa + ảnh ([[ae04-multimodal-rag]]), reco ([[ac02-recsys-llm]]), tóm tắt review, chatbot mua hàng, tạo mô tả sản phẩm. Nhấn: scale catalog lớn, real-time tồn kho/giá ([[af08-case-personalization]]), đa ngữ ([[ac01-multilingual-rag]]), cold-start sản phẩm mới. Khung 7 bước ([[af09-ai-review6]]).
+### [ ] AL01 — AI-DE Mock Interview 1 (đề + lời giải đầy đủ)
+- **Note:** `notes/advanced/al01-mock-interview-1.md`. Mock phỏng vấn AI Data Engineer hoàn chỉnh: 1 system-design (RAG đa nguồn có phân quyền) + 4 câu khái niệm (RAG eval, hallucination, governance, cost) + 1 behavioral STAR. **Viết đề + lời giải mẫu đầy đủ + thang chấm** (như phỏng vấn thật). Liên hệ [[af09-ai-review6]], [[h07-mock-interview]].
 
-### [x] AK02 — Case Study: Legal AI Platform
-- **Note:** `notes/advanced/ak02-case-legal-ai.md`. AI cho pháp lý: phân tích hợp đồng, RAG case law/luật, citation BẮT BUỘC (trích điều luật thật, không bịa — [[ag02-hallucination-detection]]), privilege/bảo mật, audit. Nhấn: grounding + citation chính xác tuyệt đối, privacy tài liệu, human (luật sư) quyết. Tương tự y tế ([[aj05-case-healthcare-ai]]) về độ gắt.
+### [ ] AL02 — AI-DE Coding Exercises 1 (bài tập + lời giải)
+- **Note:** `notes/advanced/al02-coding-exercises-1.md`. 5 bài tập code AI-DE (RAG/embedding/eval) **có đề + lời giải đầy đủ + reasoning**: vd "tính recall@k/MRR từ kết quả", "chunk text giữ cấu trúc", "đo cosine + ngưỡng", "incremental index theo hash", "dedup gần đúng". Dạng coding-round phỏng vấn. Liên hệ [[ab02-rag-eval-harness]], [[g07-dsa-for-de]].
 
-### [x] AK03 — Case Study: Education AI Platform
-- **Note:** `notes/advanced/ak03-case-education-ai.md`. AI giáo dục: gia sư cá nhân hoá, sinh nội dung/câu hỏi, chấm bài tự động + feedback, theo dõi tiến độ. Nhấn: personalization ([[af08-case-personalization]]), eval chất lượng sư phạm, an toàn trẻ em ([[aj02-ai-alignment]]), chống gian lận, đa trình độ. Data flywheel từ tương tác học ([[aj07-data-flywheel]]).
+### [ ] AL03 — Case Study: Logistics/Supply-chain AI
+- **Note:** `notes/advanced/al03-case-logistics-ai.md`. AI logistics: tối ưu tuyến (route), dự báo nhu cầu (time-series [[ak08-timeseries-tabular-fm]]), RAG tài liệu vận hành, chatbot tracking đơn, anomaly giao hàng. Nhấn: real-time + tối ưu + dự báo; LLM bổ trợ không tự điều phối. Khung 7 bước ([[af09-ai-review6]]).
 
-### [x] AK04 — Case Study: Government/Public Service AI
-- **Note:** `notes/advanced/ak04-case-govt-ai.md`. AI dịch vụ công: trợ lý thủ tục hành chính, RAG văn bản pháp quy, đa ngữ/dân tộc, accessibility, minh bạch (giải trình quyết định công), công bằng (không thiên lệch nhóm — [[af06-ai-data-governance]]). Nhấn: transparency + fairness + privacy công dân + độ phủ ngôn ngữ.
+### [ ] AL04 — Case Study: Media/Streaming AI
+- **Note:** `notes/advanced/al04-case-media-ai.md`. AI media/streaming: content reco ([[ac02-recsys-llm]]), kiểm duyệt nội dung (multimodal [[ag06-multimodal-production]]), tóm tắt/tag tự động, search video. Nhấn: scale nội dung khổng lồ, real-time personalization ([[af08-case-personalization]]), moderation an toàn, cost GPU video.
 
-### [x] AK05 — Case Study: Manufacturing/IoT AI
-- **Note:** `notes/advanced/ak05-case-manufacturing-ai.md`. AI sản xuất/IoT: predictive maintenance (sensor + LLM giải thích), anomaly detection, RAG tài liệu kỹ thuật/máy, edge AI ([[ae05-edge-ai-data]]), digital twin. Nhấn: time-series sensor scale lớn ([[c04-case-iot]]), real-time edge, LLM bổ trợ chẩn đoán không tự dừng máy.
+### [ ] AL05 — Case Study: HR/Recruiting AI (bias-critical)
+- **Note:** `notes/advanced/al05-case-hr-ai.md`. AI tuyển dụng: sàng lọc CV, match ứng viên-JD, tóm tắt phỏng vấn. CỰC nhạy bias (phân biệt đối xử = pháp lý + đạo đức — [[af06-ai-data-governance]]), transparency, không tự loại ứng viên. Nhấn: fairness audit nghiêm + human quyết + explainability. Tương tự government về fairness ([[ak04-case-govt-ai]]).
 
-### [ ] AK06 — Data Labeling & Annotation Infrastructure ⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/ak06-data-labeling.md` + code `annotation_agreement.py`. Hạ tầng gán nhãn (con người + AI): inter-annotator agreement (Cohen's kappa), gold questions, guideline, active learning (chọn mẫu đáng gán nhất), weak supervision, AI pre-label + human verify. Code: tính kappa giữa 2-3 annotator trên mẫu giả, phát hiện annotator lệch. Liên hệ [[ag03-rlhf-preference-data]], [[ae03-training-data-quality]].
+### [ ] AL06 — AI-DE Mock Interview 2 (đề + lời giải đầy đủ)
+- **Note:** `notes/advanced/al06-mock-interview-2.md`. Mock 2: 1 system-design (AI agent xử lý email + tool + safety) + 4 câu (drift, RLHF data, vector DB scale, eval-driven) + 1 behavioral. Đề + lời giải mẫu + thang chấm. Liên hệ [[ah03-red-teaming]], [[ag04-drift-detection]].
 
-### [ ] AK07 — Knowledge Graph Construction với LLM
-- **Note:** `notes/advanced/ak07-kg-construction.md`. Dựng KG từ text bằng LLM: trích entity + relation (triple), entity resolution (gộp trùng), ontology/schema, validate triple, KG + vector hybrid ([[ae02-graphrag-build]]). Sâu hơn [[aa09-graphrag]] (dùng) → đây là XÂY KG. Vai trò DE: pipeline trích → resolve → store → query.
+### [ ] AL07 — AI-DE Coding Exercises 2 (bài tập + lời giải)
+- **Note:** `notes/advanced/al07-coding-exercises-2.md`. 5 bài tập (governance/guardrails/DQ) có đề + lời giải + reasoning: vd "validate JSON output theo schema", "redact PII bằng regex", "hard-gate data quality", "Cohen's kappa", "self-consistency check". Dạng coding-round. Liên hệ [[ai06-llm-output-governance]], [[ak06-data-labeling]].
 
-### [ ] AK08 — Time-series & Tabular Foundation Models
-- **Note:** `notes/advanced/ak08-timeseries-tabular-fm.md`. Foundation model cho dữ liệu CÓ CẤU TRÚC (không phải text): time-series FM (TimeGPT/Chronos — forecast zero-shot), tabular FM (TabPFN), LLM cho tabular (serialize bảng → text), khi nào FM vs model truyền thống. Data đặc thù (chuỗi/bảng). Liên hệ [[ac07-feature-store]], [[c04-case-iot]].
+### [ ] AL08 — Case Study: Insurance AI
+- **Note:** `notes/advanced/al08-case-insurance-ai.md`. AI bảo hiểm: xử lý claim (trích/validate hồ sơ), phát hiện gian lận, underwriting hỗ trợ, RAG hợp đồng/điều khoản. Nhấn: compliance + explainability (giải trình từ chối) + point-in-time + LLM không tự quyết chi trả. Tương tự finance ([[aj06-case-finance-ai]]). Liên hệ [[k02-case-insurance]].
 
-### [ ] AK09 — AI review 10 + tổng kết vertical
-- **Note:** `notes/advanced/ak09-ai-review10.md` + cập nhật `00-INDEX.md`. Tổng kết vertical case studies; bảng "ngành → nhấn gì → kỹ thuật"; pattern chung vs đặc thù ngành; tổng kết 10 batch Module AI.
+### [ ] AL09 — AI review 11 + lộ trình luyện phỏng vấn
+- **Note:** `notes/advanced/al09-ai-review11.md` + cập nhật `00-INDEX.md`. Tổng kết; **lộ trình luyện phỏng vấn AI-DE** (4 tuần: concept → coding → system-design → mock); tổng hợp mọi mock/exercise; tổng kết 11 batch.
 
 ---
-*Hết batch → sinh batch AI tiếp (đào sâu trục yếu, case study ngành mới, hoặc chủ đề kỹ thuật mới) — vẫn ưu tiên AI/LLM.*
+*Hết batch → sinh batch AI tiếp (ngành mới, mock/exercise mới, đào sâu kỹ thuật) — vẫn ưu tiên AI/LLM.*
