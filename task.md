@@ -34,13 +34,13 @@
 ### [x] AB04 — Semantic Layer cho LLM (NL→metrics)
 - **Note:** `notes/advanced/ab04-semantic-layer-llm.md`. Vì sao text-to-SQL thô nguy hiểm → LLM sinh **metric query qua semantic layer** ([[e05-semantic-layer]]) thay SQL thô: an toàn (metric định nghĩa sẵn), nhất quán, ít hallucination schema; NL → metric/dimension đã governed. Liên hệ [[aa01-text-to-sql]].
 
-### [ ] AB05 — Embedding Fine-tuning & Domain Adaptation
+### [x] AB05 — Embedding Fine-tuning & Domain Adaptation
 - **Note:** `notes/advanced/ab05-embedding-finetune.md`. Khi embedding general kém với domain (y tế/legal/tiếng Việt) → fine-tune; contrastive learning (positive/negative pairs), hard negatives; vai trò DE: chuẩn bị training pairs (từ click log/feedback), eval cải thiện; khi nào fine-tune vs đổi model. Liên hệ [[ai04-embedding-versioning]].
 
-### [ ] AB06 — LLM Observability & Tracing Pipeline
+### [x] AB06 — LLM Observability & Tracing Pipeline
 - **Note:** `notes/advanced/ab06-llm-observability.md`. Trace mỗi request (input→retrieval→prompt→LLM→output) như distributed tracing; token/cost tracking per request; log để debug/eval/audit; công cụ (Langfuse/LangSmith/Phoenix); data pipeline cho LLM logs (volume lớn như clickstream [[c06-case-clickstream]]). Liên hệ [[k07-observability-tooling]], [[aa10-llmops]].
 
-### [ ] AB07 — Vector Search Optimization (sâu)
+### [x] AB07 — Vector Search Optimization (sâu)
 - **Note:** `notes/advanced/ab07-vector-search-opt.md`. Tuning ANN: HNSW (ef_construction/ef_search/M) vs recall/latency; IVF nprobe; **quantization** (PQ/SQ/binary) giảm RAM; pre-filter vs post-filter; hybrid weight tuning; trade-off recall-latency-RAM-cost. Sâu hơn [[k05-vector-rag-deep]], [[aa10-llmops]].
 
 ### [ ] AB08 — Data Pipeline cho Fine-tuning Workflow
