@@ -220,3 +220,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 21:30] K02 — Case insurance (bitemporal policy/claim, accumulating snapshot claims, loss ratio, reserving/IBNR) — `notes/advanced/k02-case-insurance.md`
 - [2026-06-26 21:30] K03 — Case real estate/PropTech (MDM address, SCD2 listing/price history, AVM as-of comparables) — `notes/advanced/k03-case-realestate.md`
 - [2026-06-26 21:30] K04 — Case agritech (sensor+imagery NDVI+weather, yield prediction, edge buffer) — `notes/advanced/k04-case-agritech.md`
+- [2026-06-26 22:00] K05 — Vector DB & RAG sâu (HNSW/IVF ANN, chunking, hybrid search BM25+vector+rerank, RAG eval, incremental re-embed) — `notes/advanced/k05-vector-rag-deep.md`
+- [2026-06-26 22:00] K06 — Data contract implementation (YAML schema+SLA+semantics, enforce 4 điểm, SemVer dual-publish) — `notes/advanced/k06-data-contract-impl.md`
+- [2026-06-26 22:00] K07 — Observability tooling (5 trụ đo cụ thể, rule vs anomaly, Elementary/Soda/Monte Carlo, SLO) — `notes/advanced/k07-observability-tooling.md`
+- [2026-06-26 22:00] K08 — Extra K review. **HOÀN THÀNH EXTRA K (7+1).** — `notes/advanced/00-extraK-summary.md`

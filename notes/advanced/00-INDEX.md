@@ -33,7 +33,10 @@
 ### Extra J — Deepening 4 → [tổng kết](00-extraJ-summary.md)
 [j01 SQL set 7](j01-sql-interview-7.md) · [j02 telecom](j02-case-telecom.md) · [j03 energy](j03-case-energy.md) · [j04 govtech](j04-case-govtech.md) · [j05 streaming EOS](j05-streaming-eos.md) · [j06 lakehouse migration](j06-lakehouse-migration.md) · [j07 dbt at scale](j07-dbt-at-scale.md)
 
-*(Loop tiếp tục sinh Extra K, L... — case mới, SQL set mới, deep-dive. Xem PROGRESS.md.)*
+### Extra K — Deepening 5 → [tổng kết](00-extraK-summary.md)
+[k01 SQL set 8](k01-sql-interview-8.md) · [k02 insurance](k02-case-insurance.md) · [k03 real estate](k03-case-realestate.md) · [k04 agritech](k04-case-agritech.md) · [k05 vector/RAG sâu](k05-vector-rag-deep.md) · [k06 data contract impl](k06-data-contract-impl.md) · [k07 observability tooling](k07-observability-tooling.md)
+
+*(Loop tiếp tục sinh Extra L, M... — case mới, SQL set mới, deep-dive. Xem PROGRESS.md.)*
 
 ## Cách dùng Track 2
 - Ôn phỏng vấn: Module A (SQL coding) + B (Q&A) + C (system design) + B07 (behavioral).
