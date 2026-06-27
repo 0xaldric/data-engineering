@@ -242,3 +242,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-27 12:00] AA02 — ⭐⭐ Guardrails CHẠY ĐƯỢC (PII redaction email/phone/CCCD + prompt injection EN/VN + grounding cosine calibrate 0.75) — `projects/06-ai-data-engineering/guardrails_demo.py`, `notes/advanced/aa02-guardrails.md`
 - [2026-06-27 12:00] AA03 — RAG production patterns (semantic cache, citations, fallback, query rewrite/HyDE, rerank, multi-tenancy, online eval) — `notes/advanced/aa03-rag-production.md`
 - [2026-06-27 12:00] AA04 — ⭐ Training data prep CHẠY ĐƯỢC (MinHash+LSH near-dup: 3 candidate vs 21 brute-force, bắt exact+reword; decontamination, quality filter) — `projects/06-ai-data-engineering/dedup_minhash.py`, `notes/advanced/aa04-training-data-prep.md`
+- [2026-06-27 12:30] AA05 — Agentic data pipelines (ReAct loop, tool use, self-healing, rủi ro loop/cost/hành-động-nguy-hiểm + DE giám sát: guardrail/human-approval/budget cap/trace) — `notes/advanced/aa05-agentic-pipelines.md`
+- [2026-06-27 12:30] AA06 — LLM eval frameworks (RAGAS: faithfulness/relevance/context precision-recall, golden dataset, LLM-judge bias, offline vs online, regression) — `notes/advanced/aa06-llm-eval.md`
+- [2026-06-27 12:30] AA07 — Prompt management & versioning (prompt as code, registry, SemVer, regression eval, A/B, lineage prompt→output) — `notes/advanced/aa07-prompt-management.md`
+- [2026-06-27 12:30] AA08 — Multimodal pipelines (CLIP/OCR/Whisper, cross-modal search, multimodal RAG, object store + cost/incremental) — `notes/advanced/aa08-multimodal.md`

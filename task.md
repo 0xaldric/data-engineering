@@ -34,16 +34,16 @@
 ### [x] AA04 — Training / Fine-tuning Data Prep (vai trò DE) ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/aa04-training-data-prep.md` + code `dedup_minhash.py`. DE chuẩn bị dữ liệu train: **near-duplicate detection (MinHash + LSH)**, quality filtering, dedup, instruction/RLHF data format, decontamination (loại test khỏi train), data mixing. Code: MinHash/LSH dedup phát hiện near-dup trên tập văn bản, đo. Liên hệ [[g07-dsa-for-de]].
 
-### [ ] AA05 — Agentic Data Pipelines
+### [x] AA05 — Agentic Data Pipelines
 - **Note:** `notes/advanced/aa05-agentic-pipelines.md`. LLM agent điều phối công việc data: tool use (gọi SQL/API/search), ReAct loop, self-healing pipeline (agent debug lỗi), text-to-pipeline; rủi ro (non-determinism, cost, loop vô hạn, sai lệnh); DE giám sát agent (guardrail, human approval, observability).
 
-### [ ] AA06 — LLM Evaluation Frameworks (RAGAS sâu)
+### [x] AA06 — LLM Evaluation Frameworks (RAGAS sâu)
 - **Note:** `notes/advanced/aa06-llm-eval.md`. Eval harness, RAGAS metrics (faithfulness, answer/context relevance, context precision/recall), golden dataset xây thế nào, human eval, LLM-as-judge bias, online eval (production feedback), regression suite cho prompt/model. Sâu hơn [[ai05-retrieval-eval]].
 
-### [ ] AA07 — Prompt Management & Versioning
+### [x] AA07 — Prompt Management & Versioning
 - **Note:** `notes/advanced/aa07-prompt-management.md`. Prompt as code (git, review), prompt registry, versioning (prompt + model + output lineage), A/B prompt, template + variable, regression khi đổi prompt; vì sao prompt là "config" cần quản lý như code/schema. Liên hệ [[ai06-llm-output-governance]].
 
-### [ ] AA08 — Multimodal Data Pipelines
+### [x] AA08 — Multimodal Data Pipelines
 - **Note:** `notes/advanced/aa08-multimodal.md`. Pipeline cho ảnh/audio/video: image embedding (CLIP), OCR (tài liệu scan), transcription (Whisper audio→text), video frame sampling; lưu trữ (object store + vector), multimodal RAG; vai trò DE (orchestrate model inference → feature/vector). Liên hệ [[c04-case-iot]] imagery, [[k05-vector-rag-deep]].
 
 ### [ ] AA09 — GraphRAG + Knowledge Graph
