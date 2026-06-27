@@ -227,3 +227,7 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 
 ## Track 2 — Batch #23: Module AI Data Engineering ⭐ (tiêu chuẩn phỏng vấn mới) — overnight
 - [2026-06-26 22:30] AI01 — ⭐ RAG capstone CHẠY ĐƯỢC: chunk 169 notes→1454 chunks, fastembed bge-small (local, no API/Java), DuckDB vector store + HNSW, hybrid search, incremental idempotent (re-embed chỉ file đổi, lần 2: 0.2s), recall@5=88% — `projects/06-ai-data-engineering/rag_over_notes.py` + README; +fastembed
+- [2026-06-26 23:00] AI02 — RAG capstone writeup + kiến trúc (sơ đồ, trade-off, "cái gì vỡ khi scale", bảng ETL cũ↔RAG mới) — `notes/advanced/ai02-rag-capstone-writeup.md`
+- [2026-06-26 23:00] AI03 — Chunking strategies sâu (fixed/semantic/structure-aware/parent-child, overlap, đo size bằng recall) — `notes/advanced/ai03-chunking.md`
+- [2026-06-26 23:00] AI04 — Embedding models & versioning ⭐ (chọn model, đổi model=re-embed toàn bộ, blue-green index, cache/batch) — `notes/advanced/ai04-embedding-versioning.md`
+- [2026-06-26 23:00] AI05 — Retrieval eval sâu + MỞ RỘNG capstone (recall@k/MRR/nDCG chạy được: recall=88%/MRR=0.542/nDCG=0.853; re-ranking, RAGAS/faithfulness) — `notes/advanced/ai05-retrieval-eval.md`, `rag_over_notes.py`

@@ -25,16 +25,16 @@
 ### [x] AI01 — RAG Capstone over own notes (CHẠY ĐƯỢC) ⭐
 - **Đã build & verify:** `projects/06-ai-data-engineering/rag_over_notes.py` + README. Chunk 169 notes→1454 chunks, embed local (fastembed bge-small), DuckDB vector store + HNSW, hybrid search, **incremental idempotent** (re-embed chỉ file đổi), **recall@5=88%**. Chạy: `python projects/06-ai-data-engineering/rag_over_notes.py`.
 
-### [ ] AI02 — RAG capstone writeup + kiến trúc
+### [x] AI02 — RAG capstone writeup + kiến trúc
 - **Note:** `notes/advanced/ai02-rag-capstone-writeup.md`. Giải thích kiến trúc capstone AI01 (sơ đồ chunk→embed→store→search→eval), từng quyết định & trade-off, map sang câu hỏi phỏng vấn AI-era; cách trình bày trong portfolio/interview. Link [[g06-case-ml-llm-data]], [[k05-vector-rag-deep]].
 
-### [ ] AI03 — Chunking strategies sâu
+### [x] AI03 — Chunking strategies sâu
 - **Note:** `notes/advanced/ai03-chunking.md`. fixed-size vs semantic vs structure-aware vs parent-child/late-chunking; overlap; chunk size ảnh hưởng recall thế nào; chunk metadata; code: thử 2 chiến lược chunk trên notes, đo recall@k khác nhau (mở rộng rag_over_notes hoặc script nhỏ).
 
-### [ ] AI04 — Embedding models & versioning ⭐
+### [x] AI04 — Embedding models & versioning ⭐
 - **Note:** `notes/advanced/ai04-embedding-versioning.md`. Chọn model (dimension/chất lượng/cost/latency/multilingual); **vì sao đổi model = re-embed TOÀN BỘ** (vector không tương thích) → chiến lược migration (blue-green index, dual-index); cache embedding; batch để rẻ. Code: thêm cột model_version + demo "đổi model phải rebuild".
 
-### [ ] AI05 — Retrieval eval sâu (CHẠY ĐƯỢC)
+### [x] AI05 — Retrieval eval sâu (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/ai05-retrieval-eval.md` + mở rộng capstone. recall@k, precision@k, MRR, nDCG; re-ranking; RAG faithfulness/groundedness (RAGAS/LLM-judge khái niệm); golden set xây thế nào. Code: thêm hàm tính MRR/nDCG vào rag_over_notes, in bảng metric.
 
 ### [ ] AI06 — LLM-as-data-producer Governance ⭐⭐ (GAP quan trọng)

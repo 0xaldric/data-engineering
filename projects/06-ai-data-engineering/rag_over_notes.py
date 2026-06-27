@@ -17,6 +17,7 @@ Lib: fastembed (ONNX, không cần API key/torch/Java), duckdb.
 from __future__ import annotations
 
 import hashlib
+import math
 import re
 import sys
 import time
@@ -106,8 +107,19 @@ def init_db(con):
         note VARCHAR PRIMARY KEY, hash VARCHAR, n_chunks INT, indexed_at VARCHAR)""")
 
 
+def load_vss(con) -> bool:
+    """Load vss extension SỚM — bắt buộc trước khi sửa bảng đã có HNSW index."""
+    try:
+        con.execute("INSTALL vss; LOAD vss;")
+        con.execute("SET hnsw_enable_experimental_persistence = true")
+        return True
+    except Exception:
+        return False
+
+
 def build_index(con) -> dict:
     init_db(con)
+    has_vss = load_vss(con)            # load TRƯỚC mọi DELETE/INSERT (table có thể đã có HNSW index)
     now = time.strftime("%Y-%m-%d %H:%M:%S")
     existing = dict(con.execute("SELECT note, hash FROM sources").fetchall())
     files = iter_note_files()
@@ -151,14 +163,14 @@ def build_index(con) -> dict:
         stats["chunks"] += len(cks)
 
     # HNSW index (vss) — tăng tốc ANN khi scale; brute-force cosine vẫn chạy nếu bỏ qua
-    try:
-        con.execute("INSTALL vss; LOAD vss;")
-        con.execute("SET hnsw_enable_experimental_persistence = true")
-        con.execute("DROP INDEX IF EXISTS hnsw_idx")
-        con.execute("CREATE INDEX hnsw_idx ON chunks USING HNSW (embedding) WITH (metric = 'cosine')")
-        stats["hnsw"] = True
-    except Exception:
-        stats["hnsw"] = False
+    stats["hnsw"] = False
+    if has_vss:
+        try:
+            con.execute("DROP INDEX IF EXISTS hnsw_idx")
+            con.execute("CREATE INDEX hnsw_idx ON chunks USING HNSW (embedding) WITH (metric = 'cosine')")
+            stats["hnsw"] = True
+        except Exception:
+            stats["hnsw"] = False
     return stats
 
 
@@ -193,17 +205,22 @@ GOLDEN = [
 ]
 
 
-def evaluate(con, k: int = 5) -> float:
-    hit = 0
+def evaluate(con, k: int = 5) -> dict:
+    """recall@k + MRR + nDCG@k (binary relevance, 1 doc đúng/query → IDCG=1)."""
+    recalls, rrs, ndcgs = [], [], []
     for q, expect in GOLDEN:
         df = search(con, q, k=k)
-        notes = " ".join(df["note"].tolist()).lower()
-        ok = expect in notes
-        hit += int(ok)
-        print(f"  recall@{k} [{'✓' if ok else '✗'}] {q[:42]:42s} -> {df['note'].iloc[0] if len(df) else '-'}")
-    recall = hit / len(GOLDEN)
-    print(f"\n  RECALL@{k} = {hit}/{len(GOLDEN)} = {recall:.0%}")
-    return recall
+        rels = [1 if expect in n.lower() else 0 for n in df["note"].tolist()]  # relevance theo rank
+        hit = 1 if any(rels) else 0
+        rr = next((1.0 / i for i, r in enumerate(rels, 1) if r), 0.0)          # MRR
+        ndcg = sum(r / math.log2(i + 1) for i, r in enumerate(rels, 1))        # = DCG (IDCG=1)
+        recalls.append(hit); rrs.append(rr); ndcgs.append(ndcg)
+        rank = "-" if rr == 0 else round(1 / rr)
+        print(f"  [{'✓' if hit else '✗'}] {q[:40]:40s} rank={rank} -> {df['note'].iloc[0] if len(df) else '-'}")
+    n = len(GOLDEN)
+    m = {"recall@k": sum(recalls) / n, "MRR": sum(rrs) / n, "nDCG@k": sum(ndcgs) / n}
+    print(f"\n  recall@{k}={m['recall@k']:.0%}   MRR={m['MRR']:.3f}   nDCG@{k}={m['nDCG@k']:.3f}")
+    return m
 
 
 # --------------------------- MAIN ------------------------------------
