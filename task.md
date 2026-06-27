@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] J01 — SQL Interview Problems — Set 7 (mixed hard)
+### [x] J01 — SQL Interview Problems — Set 7 (mixed hard)
 - **Note:** `notes/advanced/j01-sql-interview-7.md`. 10 bài tổng hợp khó: running max/min, islands có điều kiện, pivot + aggregate, recursive running balance, lead/lag nhiều bước, conditional first/last, dedup phức tạp, percentile bucket, time-weighted average, "khách mua đủ N category". Đề + lời giải.
 
-### [ ] J02 — Case: Telecom / CDR Platform
+### [x] J02 — Case: Telecom / CDR Platform
 - **Note:** `notes/advanced/j02-case-telecom.md`. Call Detail Records (CDR) khối lượng khổng lồ: billing, network usage, dropped call analytics, churn prediction; rating/charging real-time, fraud (SIM box), data usage; high volume + chính xác billing.
 
-### [ ] J03 — Case: Energy / Utility / Smart Meter
+### [x] J03 — Case: Energy / Utility / Smart Meter
 - **Note:** `notes/advanced/j03-case-energy.md`. Smart meter (đọc điện/nước theo interval), demand forecast, billing, grid monitoring, anomaly (rò rỉ/trộm); time-series khổng lồ, out-of-order, interval data, rollup. Liên hệ [[c04-case-iot]].
 
-### [ ] J04 — Case: GovTech / Public Data Platform
+### [x] J04 — Case: GovTech / Public Data Platform
 - **Note:** `notes/advanced/j04-case-govtech.md`. Dữ liệu công (census, thuế, y tế công, giao thông): tích hợp nhiều nguồn (Data Vault), privacy/anonymization, open data, audit, độ tin cậy; governance + lineage nặng. Liên hệ [[e01-data-vault]], [[64-governance-pii]].
 
 ### [ ] J05 — Deep-dive: Streaming Exactly-once thực chiến

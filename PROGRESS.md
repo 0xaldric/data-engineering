@@ -204,3 +204,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-26 20:00] I06 — DQ framework chi tiết (GE/Soda/dbt mỗi tầng, DQ score, quarantine/circuit-breaker) — `notes/advanced/i06-dq-framework.md`
 - [2026-06-26 20:00] I07 — Backfill & reprocessing (idempotent, partition overwrite/blue-green/Kappa replay, kiểm soát tải) — `notes/advanced/i07-backfill-reprocessing.md`
 - [2026-06-26 20:00] I08 — Extra I review. **HOÀN THÀNH EXTRA I (7+1).** — `notes/advanced/00-extraI-summary.md`
+
+## Track 2 — Batch #20: Extra J — NOTES-FIRST (overnight)
+- [2026-06-26 20:30] J01 — SQL set 7 mixed hard (running max, conditional islands, time-weighted avg, dedup đầy đủ nhất) — `notes/advanced/j01-sql-interview-7.md`
+- [2026-06-26 20:30] J02 — Case telecom/CDR (mediation, rating, charging real-time, fraud SIM box, billing chính xác) — `notes/advanced/j02-case-telecom.md`
+- [2026-06-26 20:30] J03 — Case energy/smart meter (VEE, interval data, gap-fill, rollup, anomaly trộm điện) — `notes/advanced/j03-case-energy.md`
+- [2026-06-26 20:30] J04 — Case govtech (Data Vault tích hợp, MDM, de-identify/k-anonymity, open data, privacy) — `notes/advanced/j04-case-govtech.md`
