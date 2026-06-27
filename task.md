@@ -1,7 +1,7 @@
 # 📋 task.md — Advanced DE Track (overnight loop)
 
 > Loop tự động mỗi 30 phút (overnight, **MAX OUTPUT**). Notes trong `notes/advanced/`.
-> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 13 script).
+> 🔥 **ƯU TIÊN AI/LLM** (user yêu cầu đẩy mạnh). **ĐƯỢC viết code chạy được** (local fastembed/DuckDB/pydantic, KHÔNG API key). Project: `projects/06-ai-data-engineering/` (đã có 16 script).
 
 ## 🔁 PROTOCOL mỗi lần loop chạy (đọc kỹ)
 1. `cd /Users/anhnd/Documents/mine/data-engineering`. Tìm task `[ ]` đầu tiên theo ID.
@@ -15,39 +15,39 @@
 5. **Khi tất cả `[x]`**: sinh batch AI tiếp (vẫn AI/LLM — user ưu tiên). Cập nhật `00-INDEX.md`. Giữ PROTOCOL.
 6. Notes tiếng Việt, code-comment tiếng Anh; liên kết `[[...]]`; không lặp note đã có.
 
-**Batch hiện tại:** #28 — AI-Advanced 5 (self-correcting RAG, GraphRAG, data quality, multimodal sâu) ⭐
-**Nguồn:** đào sâu AI/LLM (tiếp)
+**Batch hiện tại:** #29 — AI-Advanced 6: Case Studies AI-DE + Scale/Internals ⭐
+**Nguồn:** đào sâu AI/LLM — system design & vận hành thực tế
 
 ---
 
 ## BATCH HIỆN TẠI
 
-### [x] AE01 — Self-Correcting / Self-Improving RAG ⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/ae01-self-correcting-rag.md` + code `self_correcting_rag.py`. RAG tự đánh giá retrieval: điểm thấp/không tự tin → **reformulate query** (mở rộng/đổi từ/HyDE-style) → retry → giữ kết quả tốt hơn. Vòng lặp self-correction; khi nào dừng. Code: query yếu (score thấp) → tự viết lại → đo retrieval cải thiện trên rag.duckdb. Liên hệ [[aa03-rag-production]], [[aa05-agentic-pipelines]].
+### [ ] AF01 — Case Study: Customer Support AI Platform (system design)
+- **Note:** `notes/advanced/af01-case-support-ai.md`. Thiết kế hệ AI hỗ trợ khách: ingest tài liệu/ticket → RAG trả lời + trích dẫn → guardrail (PII/injection) → escalation sang người khi không tự tin ([[ae01-self-correcting-rag]]) → feedback loop. Kiến trúc, data flow, freshness, eval (deflection rate), cost. Tổng hợp [[aa03-rag-production]], [[ad02-llm-judge]], [[ac05-voice-audio-pipeline]].
 
-### [x] AE02 — GraphRAG từ Wikilinks ⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/ae02-graphrag-build.md` + code `graphrag_links.py`. Dựng **knowledge graph THẬT** từ `[[links]]` giữa các note → multi-hop traversal + vector hybrid. Trả lời câu cần "đi qua nhiều bước" (note A liên quan B liên quan C). Code: parse `[[...]]` trong notes/advanced → graph (dict adjacency), BFS multi-hop + kết hợp vector retrieve. Sâu hơn [[aa09-graphrag]].
+### [ ] AF02 — Case Study: Enterprise Knowledge Assistant (multi-source + permissions)
+- **Note:** `notes/advanced/af02-case-enterprise-kb.md`. RAG trên nhiều nguồn (Confluence/Drive/Slack/DB) với **phân quyền** (user chỉ thấy doc được phép — row-level security cho RAG), freshness đa nguồn ([[ac06-kb-freshness]]), conflicting info, audit. Thách thức: permission-aware retrieval, multi-tenancy ([[ad03-privacy-compliance]]).
 
-### [x] AE03 — Data Quality cho LLM Training Data ⭐ (CHẠY ĐƯỢC)
-- **Note:** `notes/advanced/ae03-training-data-quality.md` + code `data_quality_score.py`. Chấm CHẤT LƯỢNG dataset train: chiều đo (độ dài, trùng lặp, đa dạng, ngôn ngữ, toxic-flag heuristic, format-valid), quality score tổng hợp, lọc theo ngưỡng. Code: chấm 1 tập mẫu (tốt + xấu trộn), in điểm từng chiều + quyết định giữ/bỏ. Liên hệ [[aa04-training-data-prep]], [[ab01-synthetic-data]], [[ab08-finetune-pipeline]].
+### [ ] AF03 — Case Study: AI Coding Assistant Data Platform
+- **Note:** `notes/advanced/af03-case-coding-assistant.md`. Nền data cho code assistant ở repo scale: index nghìn repo ([[ae08-rag-for-code]]), incremental theo commit, repo-context (import/call graph), eval (acceptance rate), privacy (code là tài sản), latency thấp. Kiến trúc + trade-off.
 
-### [x] AE04 — Multimodal RAG sâu (ảnh + text)
-- **Note:** `notes/advanced/ae04-multimodal-rag.md`. Sâu hơn [[aa08-multimodal]]: shared embedding space (CLIP), cross-modal retrieval (text→ảnh, ảnh→text), multimodal chunking (ảnh+caption), khi nào OCR vs visual embedding, pipeline data ảnh (object store, cost, incremental). Liên hệ [[ad06-doc-parsing]], [[ac05-voice-audio-pipeline]].
+### [ ] AF04 — Vector DB Internals sâu
+- **Note:** `notes/advanced/af04-vector-db-internals.md`. Bên trong vector DB: HNSW build (layer/M/ef), IVF-PQ (cụm + nén), **DiskANN** (ANN trên đĩa khi vector vượt RAM), filtered search internals, sharding/replication, consistency. Vì sao chọn Qdrant/Milvus/pgvector. Sâu hơn [[ab07-vector-search-opt]], [[aa10-llmops]].
 
-### [x] AE05 — On-device / Edge AI Data
-- **Note:** `notes/advanced/ae05-edge-ai-data.md`. AI chạy trên thiết bị (điện thoại/IoT): model lượng tử hoá nhỏ, local embedding (như fastembed!), vì sao (privacy/latency/offline/cost), thách thức data (sync, eval phân tán, model update OTA), federated learning (khái niệm). Liên hệ [[ad03-privacy-compliance]], [[c04-case-iot]].
+### [ ] AF05 — LLM Training Data Pipeline ở Scale (petabyte)
+- **Note:** `notes/advanced/af05-training-data-scale.md`. Pipeline data train LLM ở scale lớn: thu thập web-scale, dedup ở scale (MinHash/LSH phân tán — [[aa04-training-data-prep]]), tokenization, sharding/streaming tới trainer, data mixing/weighting, quality filter ở scale ([[ae03-training-data-quality]]), decontamination. Spark/Ray, định dạng (WebDataset/Parquet).
 
-### [ ] AE06 — Query Understanding & Routing
-- **Note:** `notes/advanced/ae06-query-understanding.md`. Trước retrieval: hiểu câu hỏi → intent classification, query rewriting (chính tả/đồng nghĩa/mở rộng), query decomposition (câu phức → nhiều câu con), routing (RAG vs SQL vs cache vs từ chối). "Hỏi đúng mới tìm đúng". Liên hệ [[ad05-structured-rag]], [[ae01-self-correcting-rag]].
+### [ ] AF06 — AI Data Governance & Compliance
+- **Note:** `notes/advanced/af06-ai-data-governance.md`. Governance cho AI: data catalog + lineage cho AI artifact (dataset→model→prompt→output), **model cards** & **datasheets**, audit trail ([[ad03-privacy-compliance]]), EU AI Act/risk tiers (khái niệm), data provenance & consent, bias/fairness audit. Liên hệ [[k06-data-contract-impl]], [[f06-dataops]].
 
-### [ ] AE07 — Reranking sâu
-- **Note:** `notes/advanced/ae07-reranking-deep.md`. Sâu về rerank: bi-encoder (nhanh, retrieve) vs cross-encoder (chậm, chính xác, rerank top-N), ColBERT (late interaction), LLM-rerank, MMR (đa dạng chống trùng); trade-off recall→precision, latency/cost. Vì sao 2 tầng (retrieve rộng → rerank tinh). Liên hệ [[ab07-vector-search-opt]], [[ab02-rag-eval-harness]].
+### [ ] AF07 — Continuous RAG Eval & Regression Gate ⭐ (CHẠY ĐƯỢC)
+- **Note:** `notes/advanced/af07-continuous-eval.md` + code `continuous_eval.py`. Eval liên tục như CI: chạy harness → so với baseline lưu (JSON) → PASS/FAIL theo ngưỡng (exit code) → cảnh báo regression. Code: chạy eval, lưu/đọc baseline, gate recall@k, in delta + exit ≠0 nếu tụt. Sâu hơn [[ab02-rag-eval-harness]], [[ac03-eval-driven-dev]].
 
-### [ ] AE08 — RAG cho Code (code search & repo context)
-- **Note:** `notes/advanced/ae08-rag-for-code.md`. RAG trên codebase: chunk theo AST/hàm (không cắt giữa hàm), embedding cho code, repo-level context (import/call graph), khác text RAG (cú pháp, định danh, ngữ cảnh xa); ứng dụng (code assistant, search). Liên hệ [[ad06-doc-parsing]], [[ai03-chunking]].
+### [ ] AF08 — Case Study: Real-time AI Personalization
+- **Note:** `notes/advanced/af08-case-personalization.md`. Cá nhân hoá real-time bằng AI: streaming features ([[ac07-feature-store]]) + embedding user/item ([[ac02-recsys-llm]]) + LLM re-rank/giải thích; point-in-time, freshness, cold-start, cost ở scale. Kiến trúc lambda/kappa cho AI personalization.
 
-### [ ] AE09 — AI review 5 + final portfolio & career
-- **Note:** `notes/advanced/ae09-ai-review5.md` + cập nhật `00-INDEX.md`. Tổng kết AI-Advanced 5; **portfolio AI-DE hoàn chỉnh** (13+ script → kể chuyện), lộ trình học tiếp, định vị career "AI Data Engineer", tổng kết 5 batch Module AI.
+### [ ] AF09 — AI review 6 + system-design interview drill
+- **Note:** `notes/advanced/af09-ai-review6.md` + cập nhật `00-INDEX.md`. Tổng kết case studies; **khung trả lời system-design AI** (clarify→data flow→retrieval→safety→eval→scale→cost) + 3 đề system-design AI có lời giải; tổng kết 6 batch Module AI.
 
 ---
-*Hết batch → sinh batch AI tiếp (RAG benchmark tự động, LLM data pipeline ở scale petabyte, vector DB internals, AI data governance, real-world case studies AI-DE...) — vẫn ưu tiên AI/LLM.*
+*Hết batch → sinh batch AI tiếp (agent platform data, RAG cho analytics/BI, AI observability sâu, data cho fine-tune RLHF, multi-modal production...) — vẫn ưu tiên AI/LLM.*
