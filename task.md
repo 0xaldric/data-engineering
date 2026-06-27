@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AM01 — RAG Failure Modes & Debugging ⭐ (CHẠY ĐƯỢC)
+### [x] AM01 — RAG Failure Modes & Debugging ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/am01-rag-debugging.md` + code `rag_debugger.py`. Catalog cách RAG HỎNG (retrieval miss, sai chunk, lost-in-middle, chunk quá nhỏ/to, embedding lệch, generation bỏ context) + cách DEBUG từng cái. Code: với query fail, chẩn đoán — doc đúng có trong index? chunk tốt nhất điểm bao nhiêu? bị rank dưới k? note nào "cướp" top? Liên hệ [[ab02-rag-eval-harness]], [[ae01-self-correcting-rag]].
 
-### [ ] AM02 — Advanced Prompt Patterns
+### [x] AM02 — Advanced Prompt Patterns
 - **Note:** `notes/advanced/am02-prompt-patterns.md`. Mẫu prompt nâng cao: Chain-of-Thought (nghĩ từng bước), ReAct (reason+act+observe [[aa05-agentic-pipelines]]), few-shot (ví dụ trong prompt), structured output (JSON schema [[ai06-llm-output-governance]]), self-consistency (vote nhiều lần), role/persona. Khi nào dùng cái nào. Liên hệ [[aj08-prompt-optimization]], [[aj01-reasoning-models]].
 
-### [ ] AM03 — Advanced Chunking Strategies
+### [x] AM03 — Advanced Chunking Strategies
 - **Note:** `notes/advanced/am03-advanced-chunking.md`. Sâu hơn [[ai03-chunking]]: semantic chunking (cắt theo điểm đổi ngữ nghĩa), propositional (mệnh đề), parent-child (chunk nhỏ tìm, trả context cha), late chunking (embed cả doc rồi cắt), sliding window + overlap tuning. Trade-off mỗi cái. Liên hệ [[ad06-doc-parsing]], [[ae08-rag-for-code]].
 
-### [ ] AM04 — Hybrid Search Tuning: RRF & Fusion ⭐ (CHẠY ĐƯỢC)
+### [x] AM04 — Hybrid Search Tuning: RRF & Fusion ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/am04-hybrid-fusion.md` + code `rrf_fusion.py`. Sâu về kết hợp vector + keyword: Reciprocal Rank Fusion (RRF — gộp THỨ HẠNG không gộp điểm), weighted fusion, tuning trọng số α. Code: trên capstone, so RRF vs weighted-hybrid vs vector-only, đo recall@k → thấy fusion ảnh hưởng. Sâu hơn [[aa03-rag-production]], [[ae07-reranking-deep]].
 
 ### [ ] AM05 — Evaluation Metrics Deep
