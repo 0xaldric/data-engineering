@@ -347,3 +347,10 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-28 12:30] AK07 — KG Construction với LLM (trích triple structured-extraction → entity resolution=dedup/record-linkage → ontology=data-contract → store graph+vector hybrid; khác graphrag_links dùng links sẵn) — `notes/advanced/ak07-kg-construction.md`
 - [2026-06-28 12:30] AK08 — Time-series/Tabular Foundation Models (TS-FM Chronos/TimeGPT forecast zero-shot, TabPFN/LLM-serialize tabular, cây XGBoost vẫn vua data số lớn, khi-nào-FM-vs-truyền-thống, eval vs baseline) — `notes/advanced/ak08-timeseries-tabular-fm.md`
 - [2026-06-28 12:30] AK09 — AI review 10 + **bảng ngành→nhấn→kỹ thuật** + trục độ-gắt-an-toàn (e-commerce→healthcare) + khung 7 bước chung chỉnh-độ-gắt-theo-ngành. **HOÀN THÀNH AI-ADVANCED 10 (AK01–AK09). Tổng 10 batch: ~100 note AI + 23 script.** — `notes/advanced/ak09-ai-review10.md`, `00-INDEX.md`
+
+## Track 2 — Batch #34: AI-Advanced 11 — Mock Interviews, Exercises & Verticals ⭐ — overnight
+- [2026-06-28 13:00] AL01 — Mock Interview 1 (system-design RAG đa nguồn phân quyền + 4 câu khái niệm + behavioral STAR, có lời giải mẫu + thang chấm; permission-aware là điểm pass/fail) — `notes/advanced/al01-mock-interview-1.md`
+- [2026-06-28 13:00] AL02 — Coding Exercises 1 (5 bài RAG/embedding/eval có lời giải + reasoning: recall@k/MRR, chunk structure-aware, cosine+ngưỡng, incremental hash-diff, Jaccard near-dup; VERIFY bài 1+5 chạy đúng) — `notes/advanced/al02-coding-exercises-1.md`
+- [2026-06-28 13:00] AL03 — Case Logistics AI (route solver KHÔNG-LLM + demand forecast time-series + tracking RAG; ranh giới solver-vs-LLM, LLM không tự điều phối) — `notes/advanced/al03-case-logistics-ai.md`
+- [2026-06-28 13:00] AL04 — Case Media/Streaming AI (content reco + moderation AI-lọc-human-ca-khó recall-an-toàn-cao + search video; scale GPU video, chống filter bubble MMR) — `notes/advanced/al04-case-media-ai.md`
+- [2026-06-28 13:00] AL05 — Case HR/Recruiting AI bias-critical (bài học Amazon AI khuếch đại bias lịch sử, audit bias theo nhóm + bỏ proxy + fairness eval, human quyết + explainability, EU AI Act high-risk) — `notes/advanced/al05-case-hr-ai.md`

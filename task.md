@@ -22,19 +22,19 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AL01 — AI-DE Mock Interview 1 (đề + lời giải đầy đủ)
+### [x] AL01 — AI-DE Mock Interview 1 (đề + lời giải đầy đủ)
 - **Note:** `notes/advanced/al01-mock-interview-1.md`. Mock phỏng vấn AI Data Engineer hoàn chỉnh: 1 system-design (RAG đa nguồn có phân quyền) + 4 câu khái niệm (RAG eval, hallucination, governance, cost) + 1 behavioral STAR. **Viết đề + lời giải mẫu đầy đủ + thang chấm** (như phỏng vấn thật). Liên hệ [[af09-ai-review6]], [[h07-mock-interview]].
 
-### [ ] AL02 — AI-DE Coding Exercises 1 (bài tập + lời giải)
+### [x] AL02 — AI-DE Coding Exercises 1 (bài tập + lời giải)
 - **Note:** `notes/advanced/al02-coding-exercises-1.md`. 5 bài tập code AI-DE (RAG/embedding/eval) **có đề + lời giải đầy đủ + reasoning**: vd "tính recall@k/MRR từ kết quả", "chunk text giữ cấu trúc", "đo cosine + ngưỡng", "incremental index theo hash", "dedup gần đúng". Dạng coding-round phỏng vấn. Liên hệ [[ab02-rag-eval-harness]], [[g07-dsa-for-de]].
 
-### [ ] AL03 — Case Study: Logistics/Supply-chain AI
+### [x] AL03 — Case Study: Logistics/Supply-chain AI
 - **Note:** `notes/advanced/al03-case-logistics-ai.md`. AI logistics: tối ưu tuyến (route), dự báo nhu cầu (time-series [[ak08-timeseries-tabular-fm]]), RAG tài liệu vận hành, chatbot tracking đơn, anomaly giao hàng. Nhấn: real-time + tối ưu + dự báo; LLM bổ trợ không tự điều phối. Khung 7 bước ([[af09-ai-review6]]).
 
-### [ ] AL04 — Case Study: Media/Streaming AI
+### [x] AL04 — Case Study: Media/Streaming AI
 - **Note:** `notes/advanced/al04-case-media-ai.md`. AI media/streaming: content reco ([[ac02-recsys-llm]]), kiểm duyệt nội dung (multimodal [[ag06-multimodal-production]]), tóm tắt/tag tự động, search video. Nhấn: scale nội dung khổng lồ, real-time personalization ([[af08-case-personalization]]), moderation an toàn, cost GPU video.
 
-### [ ] AL05 — Case Study: HR/Recruiting AI (bias-critical)
+### [x] AL05 — Case Study: HR/Recruiting AI (bias-critical)
 - **Note:** `notes/advanced/al05-case-hr-ai.md`. AI tuyển dụng: sàng lọc CV, match ứng viên-JD, tóm tắt phỏng vấn. CỰC nhạy bias (phân biệt đối xử = pháp lý + đạo đức — [[af06-ai-data-governance]]), transparency, không tự loại ứng viên. Nhấn: fairness audit nghiêm + human quyết + explainability. Tương tự government về fairness ([[ak04-case-govt-ai]]).
 
 ### [ ] AL06 — AI-DE Mock Interview 2 (đề + lời giải đầy đủ)
