@@ -369,3 +369,9 @@ Phase 0–3: code chạy được + verified (run_all.sh ALL GREEN). Phase 4–9
 - [2026-06-28 14:30] AM07 — Case Agritech AI (edge-first model-trên-điện-thoại-offline sync-khi-có-mạng, multimodal ảnh-lá+sensor, accessibility đa-ngữ+voice+plain-language+rẻ, chẩn đoán bệnh) — `notes/advanced/am07-case-agritech-ai.md`
 - [2026-06-28 14:30] AM08 — Coding Exercises 3 (5 bài retrieval/fusion/eval + lời giải: RRF, nDCG graded, MMR diversity, sliding-window, semantic-cache; VERIFY bài 1+2+3 chạy đúng) — `notes/advanced/am08-coding-exercises-3.md`
 - [2026-06-28 14:30] AM09 — AI review 12 + **bảng kỹ-thuật-sâu→khi-nào-dùng** + **checklist debug RAG 7 bước** + 3 phát hiện code. **HOÀN THÀNH AI-ADVANCED 12 (AM01–AM09). Tổng 12 batch: ~113 note AI + 25 script.** — `notes/advanced/am09-ai-review12.md`, `00-INDEX.md`
+
+## Track 2 — Batch #36: AI-Advanced 13 — Advanced Patterns & Verticals ⭐ — overnight
+- [2026-06-28 15:00] AN01 — ⭐ RAG Advanced Patterns + Query Router CHẠY ĐƯỢC (routing SQL/RAG/ACTION/REJECT heuristic+embedding 6/6 đúng; multi-vector, hypothetical-questions index-câu-hỏi, RAPTOR cây-tóm-tắt; route sai=sai hết) — `projects/06-ai-data-engineering/query_router.py`, `notes/advanced/an01-rag-advanced-patterns.md`
+- [2026-06-28 15:00] AN02 — Agentic Patterns Deep (ReAct vs plan-first, reflection tự-phê, multi-agent debate, tool-use patterns; đa số ReAct-1-agent đủ; tool tốt > pattern phức tạp) — `notes/advanced/an02-agentic-patterns.md`
+- [2026-06-28 15:00] AN03 — Case Telecom AI (CDR tỉ-bản-ghi stream-aggregate+lakehouse, LLM ở lớp chăm-sóc không xử-lý-CDR-thô, network LLM bổ trợ không tự điều khiển, fraud SIM-box real-time, CDR privacy) — `notes/advanced/an03-case-telecom-ai.md`
+- [2026-06-28 15:00] AN04 — Case Energy AI (demand forecast time-series+thời-tiết tái-tạo-làm-khó, an toàn vật lý LLM-không-tự-điều-khiển-lưới hạ-tầng-thiết-yếu, trộm điện anomaly, privacy meter) — `notes/advanced/an04-case-energy-ai.md`

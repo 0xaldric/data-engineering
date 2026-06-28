@@ -22,16 +22,16 @@
 
 ## BATCH HIỆN TẠI
 
-### [ ] AN01 — RAG Advanced Patterns + Query Router ⭐ (CHẠY ĐƯỢC)
+### [x] AN01 — RAG Advanced Patterns + Query Router ⭐ (CHẠY ĐƯỢC)
 - **Note:** `notes/advanced/an01-rag-advanced-patterns.md` + code `query_router.py`. Mẫu RAG nâng cao: query routing (RAG/SQL/cache/từ chối), multi-vector (1 doc nhiều embedding: summary+chi tiết), hypothetical questions (index câu hỏi giả thay đoạn), RAPTOR (cây tóm tắt phân cấp). Code: router phân loại câu hỏi (định lượng/kiến thức/chitchat/hành động) bằng heuristic + embedding → route đúng đường, in quyết định. Liên hệ [[ae06-query-understanding]], [[ad05-structured-rag]].
 
-### [ ] AN02 — Agentic Patterns Deep
+### [x] AN02 — Agentic Patterns Deep
 - **Note:** `notes/advanced/an02-agentic-patterns.md`. Sâu hơn [[aa05-agentic-pipelines]], [[ac04-multi-agent]]: planner-executor, reflection (tự phê + sửa), tool-use patterns (chọn/gọi/lỗi), multi-agent debate (nhiều agent tranh luận → đồng thuận), ReAct vs plan-first, khi nào pattern nào. Vai trò DE: tool + state + trace. Liên hệ [[ag05-agent-platform]].
 
-### [ ] AN03 — Case Study: Telecom AI
+### [x] AN03 — Case Study: Telecom AI
 - **Note:** `notes/advanced/an03-case-telecom-ai.md`. AI viễn thông: tối ưu mạng (anomaly/dự báo tải), churn prediction, chăm sóc khách (RAG + chatbot), phát hiện gian lận cước. Nhấn: scale data khổng lồ (CDR [[j02-case-telecom]]), real-time mạng, time-series. Khung 7 bước.
 
-### [ ] AN04 — Case Study: Energy/Utilities AI
+### [x] AN04 — Case Study: Energy/Utilities AI
 - **Note:** `notes/advanced/an04-case-energy-ai.md`. AI năng lượng: dự báo nhu cầu điện (time-series [[ak08-timeseries-tabular-fm]]), tối ưu lưới (grid), predictive maintenance thiết bị, anomaly tiêu thụ. Nhấn: time-series + real-time grid + an toàn vật lý (không tự điều khiển lưới [[ak05-case-manufacturing-ai]]). Liên hệ [[j03-case-energy]].
 
 ### [ ] AN05 — Case Study: Travel/Hospitality AI
